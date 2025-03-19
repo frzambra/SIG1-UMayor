@@ -1,0 +1,55 @@
+---
+title: "Análisis Espaciales con Datos Rasters"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSD1020)"
+author: "Dr. Francisco Zambrano"
+date: "05/13/2024"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../logo_hemera.jpg"
+    footer: "IMSD1020|1-2024"
+    theme: simple
+    echo: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(mapview)
+library(leaflet)
+library(magrittr)
+```
+
+## Operaciones Espaciales con datos rasters {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. Cortar y cortar por mascara (clip and mask)
+2. Mosaico
+3. Calculadora raster
+
+## Cortar y enmsacarar (clipo and mask) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Cortar:` Recorta una parte de un dataset ráster, un dataset de mosaico o una capa de servicio de imágenes.
+
+![](img/cortar.gif)
+
+`Cortar por mascara:` La herramienta extraer por máscara no cambia la extensión del ráster, pero convierte los valores fuera de la entidad de recorte/ráster a NoData.
+
+
+## ¿Qué es un mosaico?  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Un mosaico es una combinación o fusión de dos o más imágenes. En ArcGIS, puede crear un único dataset ráster a partir de varios datasets ráster disponiéndolos en forma de mosaico. También puede crear un dataset de mosaico y crear un mosaico virtual a partir de una colección de datasets ráster.
+
+![](img/mosaico1.gif)
+
+## ¿Qué es un mosaico?  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+En muchos casos, los ejes de los datasets ráster que forman el mosaico presentarán cierto grado de superposición, como puede apreciarse en la ilustración.
+
+![](img/mosaico2.png)
+
+## Calculadora raster {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+La herramienta Calculadora ráster permite crear y ejecutar expresiones de Álgebra de mapas en una herramienta. 
+
+![](img/fig11.jpg)

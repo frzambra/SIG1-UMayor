@@ -1,0 +1,16 @@
+---
+title: "Taller 1: Aplicaciones SIG"
+---
+
+# El seguimiento de las polillas de la manzana con un SIG
+
+Los productores de árboles frutales en Columbia Británica, Canadá, están recurriendo a la tecnología para ayudar a proteger sus cultivos de las polillas de la manzana. Se creó un Sistema de Información Geográfica (SIG) para dibujar espacialmente la población de insectos en mapas del sur de Okanagan. Estos mapas se enviarán semanalmente a los agricultores para que puedan estar al tanto de los movimientos de los insectos, proporcionando a los productores una conciencia de las áreas de sus cultivos donde necesitan monitorear la presencia de las polillas.
+
+Como no existe un catastro para la provincia, los trabajadores viajan de comunidad en comunidad y juntan sus mapas existentes para crear un catastro en toda la provincia. Usando los nuevos mapas, se colocaron, mapearon y vincularon 2.500 trampas de polillas a 1.500 sitios de origen. Al contar la cantidad de polillas atrapadas y al ingresar esos datos en la computadora, se rastreó y analizó el movimiento de las polillas. Estos datos se integran con la propiedad y la información topográfica para crear nuevos mapas que muestran las áreas más activas de las polillas. Luego se emiten los mapas semanalmente en Internet, lugares donde los agricultores pueden acceder a ellos y en las oficinas de Liberación de Insectos Estériles.
+
+El SIG fue una elección perfecta para ayudar a resolver este problema. No solo les dio a los agricultores otra herramienta para ayudar a combatir a las polillas, sino que dio nacimiento a la encuesta catastral de la provincia de Okanagan, que permite que su información sobre la tierra sea más accesible y uniforme. Además, el SIG está diseñado para ser fácil de mantener, lo que ahorra dinero al no tener que contratar expertos en SIG para ejecutar los programas. Esto es importante porque los agricultores, que están familiarizados con sus tierras, y saben qué quieren exactamente de los mapas, pueden mantener y recuperar datos útiles para sus necesidades. Este artículo no detalla los SIG utilizados, pero ofrece un excelente ejemplo del uso de SIG y sus beneficios inmediatos y continuos.
+
+# Referencia
+
+Mithan, Peter. GIS helps pinpoint codling moth problem areas. www.goodfruit.com/archive/Aug-
+00/special5.html+gis+problem&hl=en. Accessed January 31, 2002

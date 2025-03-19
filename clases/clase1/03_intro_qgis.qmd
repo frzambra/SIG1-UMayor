@@ -1,0 +1,123 @@
+---
+title: "Introducción a QGIS"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSD1020)"
+author: "Dr. Francisco Zambrano"
+date: "17 marzo 2025"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../imgs/HEMERA_UM_color.png"
+    footer: "IMSD1020|1-2025"
+    css: "../../styles.css"
+    theme: simple
+    echo: true
+---
+
+## Contenidos
+
+1.  ¿Qué es QGIS?
+
+2.  ¿Por qué usar QGIS?
+
+3.  Descargar QGIS
+
+4.  Instalar QGIS
+
+5.  Interfaz de QGIS y sus partes
+
+## 1. ¿Qué es QGIS? {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   `QGIS` es un Sistema de Información Geográfica (GIS) de `código abierto` fácil de usar con licencia bajo la Licencia Pública General GNU.
+
+-   QGIS es un proyecto oficial de la `Open Source Geospatial Foundation (OSGeo)`.
+
+-   Es multiplataforma, es decir se ejecuta en Linux, Unix, Mac OSX, Windows y Android y admite numerosos formatos y funcionalidades vectoriales, raster y de base de datos.
+
+## 1. ¿Qué es QGIS? {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   `QGIS` es un SIG de escritorio: eso significa que obtienes un programa que se abre en tu computadora con ventanas y botones.
+
+-   `QGIS` es de código abierto: eso significa que el código está disponible para que lo lea o modifique, si así lo desea, pero no es necesario.
+
+-   `QGIS` es un proyecto oficial de la Open Source Geospatial Foundation (OSGeo): "La Open Source Geospatial Foundation (OSGeo) es una organización sin fines de lucro cuya misión es fomentar la adopción global de tecnología geoespacial abierta al ser una fundación de software inclusiva dedicada a una filosofía abierta y un desarrollo participativo impulsado por la comunidad".
+
+## 2. ¿Por qué usar QGIS? {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`QGIS` es un software SIG de escritorio de `código abierto` impulsado por la comunidad que permite a los usuarios visualizar y analizar datos espaciales de diversas maneras.
+
+-   Es un GIS de escritorio robusto y potente
+-   Se ejecuta en todas las plataformas principales: Mac, Linux y Windows
+-   Gratis, todo el acceso (sin complementos ni extensiones de pago)
+-   Actualizaciones frecuentes y corrección de errores
+-   Comunidad receptiva y entusiasta
+-   Integración con otras herramientas geoespaciales y lenguajes de programación como R, Python y PostGIS
+-   Acceso a herramientas de análisis de otro software establecido como GRASS y SAGA
+-   Acceso nativo a formatos de datos abiertos como geoJSON y GeoPackage
+-   Viene en más de 40 idiomas, lo que facilita el trabajo con una mayor variedad de colaboradores
+-   Uso creciente por parte de gobiernos locales, estatales, federales e internacionales
+
+## 3. Descargar QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  Ingresar a <http://www.qgis.org>
+
+2.  Ir a `Descargar ahora`
+
+3.  Elegir el sistema operativo (windows, linux, mac,..)
+
+## 4. Instalar QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/startup.png){fig.align="center"}
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  `Barra de menús:` La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/startup.png){fig.align="center"}
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  `Barra de menús:` La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.
+
+2.  Barras de herramientas
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/startup.png){fig.align="center"}
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  `Barra de menús:` La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.
+2.  `Barras de herramientas`
+3.  `Paneles:` Desde el menú `Ver`, puede activar y desactivar los widgets (Paneles ►) y las barras de herramientas (Barras de herramientas ►) de QGIS.
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/startup.png){fig.align="center"}
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  `Barra de menús:` La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.
+2.  `Barras de herramientas`
+3.  `Paneles:` Desde el menú `Ver`, puede activar y desactivar los widgets (Paneles ►) y las barras de herramientas (Barras de herramientas ►) de QGIS.
+4.  `Vista del mapa:` La vista de mapa (también llamada lienzo de mapa) es el "extremo comercial" de QGIS: los mapas se muestran en esta área, en 2D.
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/startup.png){fig.align="center"}
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  `Barra de menús:` La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.
+2.  `Barras de herramientas`
+3.  `Paneles:` Desde el menú `Ver`, puede activar y desactivar los widgets (Paneles ►) y las barras de herramientas (Barras de herramientas ►) de QGIS.
+4.  `Vista del mapa:` La vista de mapa (también llamada lienzo de mapa) es el "extremo comercial" de QGIS: los mapas se muestran en esta área, en 2D.
+5.  `Barra de estado:` La barra de estado le brinda información general sobre la vista del mapa y las acciones procesadas o disponibles, y le ofrece herramientas para administrar la vista del mapa.
+
+## 5. Interfaz de QGIS {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/startup.png){fig.align="center"}

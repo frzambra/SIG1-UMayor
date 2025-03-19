@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "Introducción a Tec. Información Geográfica"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: clases.qmd
+        text: Clases
+      - href: talleres.qmd
+        text: Talleres
+      - href: about.qmd
+        text: Acerca
+    right:
+        - icon: linkedin
+          href: https://linkedin.com/in/frzambra
+        - icon: github
+          href: https://github.com/frzambra/SIG1-UMayor
+
+format:
+  html:
+    theme: simplex
+    css: styles.css
+    toc: true
+    lang: es
+
+filters:
+  - r-wasm/drop
+
+margin-header: |
+  ![](/imgs/HEMERA_UM_color.png)
+
+editor: visual
+
+

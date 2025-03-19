@@ -1,0 +1,681 @@
+---
+title: "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSE1014)"
+author: "Dr. Francisco Zambrano"
+date: "01/04/2024"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../logo_hemera.jpg"
+    footer: "IMSE1014|1-2024"
+    theme: simple
+    echo: true
+---
+
+## Contenidos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. ¿Qué hemos visto?  
+2. ¿Todos los mapas están mal?
+3. Introducción a los SRC
+4. Datum
+5. Proyecciones
+6. Sistemas de referencia de coordenadas 3D
+7. Sistemas de referencia de coordenadas 2D
+
+# 1. ¿Qué hemos visto? {background-color='orange'}
+
+## Contenidos hasta el momento{.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+1. ¿Qué son los SIG y cuáles son sus partes?
+
+. . .
+
+2. Conceptos del Espacio
+
+. . .
+
+3. Modelos de datos geospaciales y sus formatos
+
+. . .
+
+4. Atributos y tabla de atributos
+
+## Antes de empezar.. 
+
+- ¿Es la tierra redonda?
+
+- ¿Cómo lo sabemos?
+
+[https://www.youtube.com/watch?v=JiwFpDuQtFE](https://www.youtube.com/watch?v=JiwFpDuQtFE)
+
+# 2. ¿Todos los mapas están mal? {background-color='darkgreen'}
+
+## ¿Cuál es la superficie real? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- [The true size of](https://thetruesize.com/)
+
+- [Por qué todo los mapas están malos](https://www.youtube.com/watch?v=kIID5FDi2JQ)
+
+# 3. Introducción a los SRC {background-color='black'}
+
+## ¿Por qué necesito saber esto? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Los `SIG` trabajan con información espacial
+
+. . . 
+
+- Los datos se deben ubicar en una posición en el espacio
+
+. . .
+
+- Aunque los `globos terráqueos` son buenos para propósitos de visualización, no son prácticos para otros usos 
+
+. . .
+
+- Una tierra redonda no se puede ajustar sin distorsión en una hoja de papel plano
+
+## Distorsión en un mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/projection_animation.gif){fi.align='center'}
+
+
+## Coordenadas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Representar el `espacio` es importante
+
+- ¿Cómo podemos representar este espacio numéricamente?
+
+- SRC 2D y 3D
+
+# Sistemas de Coordenadas 3D {background-color='grey'}
+
+## Coordenadas esféricas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Solo 3D
+
+- No ignora la curvatura de la tierra
+
+- Utiliza dos ángulos de rotación (latitud/longitud) y un radio para especificar la ubicación.
+
+
+## Coordenadas esféricas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/erath_angles.png){fig.align='center'}
+
+## Longitud (aka Meridianos) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Se mide de Este a Oeste
+
+- Varía de +180°E a -180° O
+
+\
+
+::: {.columns}
+::: {.column width=30%}
+![](img/meridianos.png){fig.align='center'}
+:::
+::: {.column width=30%}
+![](img/longitud.png){fig.align='center'}
+:::
+:::
+
+## Latitud (aka Paralelos) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Se mide de Norte a Sur
+- Varía desde +90°N a -90°S  
+
+\
+
+::: {.columns}
+::: {.column width=30%}
+![](img/paralelos.png){fig.align='center'}
+:::
+::: {.column width=30%}
+![](img/Latitud.png){fig.align='center'}
+:::
+:::
+
+## Representación esférica de las coordenadas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Latitud y longitud se pueden representar de dos formas
+
+  - Grados, Minutos, Segundos (GMS)
+      - -34°23'45.23", +124°12'45.32"
+
+  - Grados decimales (GD)
+      - -34.395897, 124.212589 (usados por computador)
+    
+# Sistemas de Coordenadas 2D {background-color='brown'}
+
+## Coordenadas Cartesianas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Define la ubicación y localización espacial
+
+::: {.columns}
+::: {.column width=50%}
+.2D(x,y)
+:::
+::: {.column width=50%}
+3D (x,y,z)
+:::
+:::
+
+![](img/2D_coordinate.png)
+
+
+## Coordenadas Cartesianas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Los datos SIG tipicamente utilizan el sistema cartesiano
+
+- Ignora la curvatura de la tierra
+
+  - Usualmente aceptable para áreas pequeñas
+  
+## Representación de coordenadas cartesianas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Muchas representaciones posibles
+  - Incluso puedes crear las tuyas.
+  
+- Representación comun.
+  - Sistema de Coordenadas Universal Transversal de Mercator (UTM)
+  - Sistema de coordenadas de plano de estado (SPCS) (Estados Unidos)
+  
+# Datum {background-color='darkgreen'}
+
+## Forma de la tierra {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Geoide:` superficie equipotencial del campo gravitatorio terrestre que coincide con el nivel del agua de mar
+
+![](img/GRACE_globe_animation.gif){fig.align='center'}
+
+## Forma de la tierra {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/Deflection-vertical-geoid-spheroid.jpg){fig.align='center'}
+
+## Tipos de elevaciones {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/tipos_de_elevaciones.jpg)
+
+## Forma de la tierra {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Elipsoide:` es la forma geométrica que mejor se adapta a la forma real de la Tierra, y por tanto la que mejor permite idealizar esta, logrando un mayor ajuste.
+
+![](img/elipse-elipsoide.png){fig.align='center'}
+
+## Definición {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+- Un `datum` es una superficie de referencia para poder medir localizaciones en la tierra
+
+. . .
+
+- Un datum tiene dos componenetes principales
+
+. . .
+
+  - especificaciones de un elipsoide
+
+. . .
+
+  - conjunto de puntos y líneas que han sido reconocidos y definen el origen y la orientación de las líneas de latitud y longitud
+
+. . .
+
+`Video:` [https://www.youtube.com/watch?v=xKGlMp__jog](https://www.youtube.com/watch?v=xKGlMp__jog)
+
+## Ejemplos Elipsoides {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/elipsoide.png){fig-align='center'}
+
+## Datum comunes en Chile {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Provisional Sudamericano de 1956 (PSAD56)
+
+  - Utilizado para cartografía 1:50.000 y 1:100.000
+  
+  - Elipsoide internacional de 1924 (Hayford)
+  
+  - Cubre Chile en el rango 17°30° - 43°30' latitud sur.
+
+## Datum comunes {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Sudamericano del 1969 (SAD69)
+
+  - Utilizado para cartografía regular 1:50.000 de la zona austral
+  
+  - Utilizado para cartografía nacional 1:25.000 de la zona austral
+  
+  - Elipsoide de referencia Sudamericano 1969
+  
+  - Empleado desde los 43°30' a los 56° latitud sur
+
+## Datum comunes {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Sistema Geodésico Mundial 1984 (WGS84)
+
+  - Basado en medicones de satélite doppler
+  
+  - Basado en el elipsoide WGS84, que es similar al elipsoide GRS80
+  
+  - Los datum no son estáticos y con frecuencia son actualizados y ajustados a lo largo del tiempo.
+  
+  - WGS84 ha sido actualizado multiples veces.
+  
+
+## Datum verticales {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Datum vertical: una referencia para especificar elevación
+
+  - Establecido a través de una serie de puntos de control medidos.
+
+- Normal Chilena NCh-ISO 19111-2011
+
+  1. `Sistema de Referencia de Coordenadas Verticales`: Sistema de referencia
+de coordenadas unidimensionales basado en un Datum Vertical.
+
+  2. `Sistema de Coordenadas Verticales`: sistema de coordenadas unidimensionales usados para mediciones de altura o profundidad relacionada con la gravedad.
+  
+  3. `Datum Vertical`: datum que describe la relación de alturas o profundidades relacionadas con la gravedad a la tierra.
+
+# Universal Transversal de Mercator (UTM) {background-color="orange"}
+
+## Universal Transversal de Mercator (UTM) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Sistema de coordenadas global
+
+  - Divide la tierra en zonas de 6° de ancho y se extiende desde 80°S a 84°N.
+  
+  - Enumerados desde 1 a 60 hacia el Este desde 180° O
+    - Las zonas también se dividen en norte y sur de acuerdo al Ecuador
+    
+- UTM es de uso comun para datos y áreas de estudio que cubren regiones extensas.
+
+- Las coordenadas son siempre positivas y especificas en dirección Este (X) y dirección Norte (Y) 
+  
+## Universal Transversal de Mercator (UTM) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/utm_fig1.jpg)
+
+## UTM Chile {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+¿Cuáles husos corresponden a Chile? 
+
+- Huso 18 Sur (-78° a -72° de longitud)
+
+- Huso 19 Sur (-72° a -66° de longitud)
+
+:::
+::: {.column width=50%}
+![](img/UTM_husos_Chile.png){width="150"}
+:::
+:::
+
+## Universal Transversal de Mercator (UTM) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/utm_ejemplo.png)
+
+## Universal Transversal de Mercator (UTM) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+
+- El origen no tiene una coordenada `X` de 0 metros, sino de `500.000 metros`.
+
+- El origen tiene una coordenada `Y` de `10.000.000 metros`
+
+:::
+
+::: {.column width=50%}
+![](img/utm_huso.png){fig-align='center'}
+:::
+:::
+
+## Universal Transversal de Mercator (UTM) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+
+- El origen no tiene una coordenada `X` de 0 metros, sino de `500.000 metros`.
+
+- El origen tiene una coordenada `Y` de `10.000.000 metros`
+
+:::
+::: {.column width=50%}
+
+![](img/geometria_del_huso.jpg){width="300"}
+:::
+:::
+
+
+# 5. Proyecciones {background-color='red'}
+
+## Introducción a las proyecciones  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Proyección geográfica:` una representación sistemática de ubicaciones desde la curva
+superficie terrestre sobre una superficie plana del mapa.
+
+- `Propósito:`
+
+  - Forma práctica de retratar la curvatura de la tierra en una superficie plana
+  
+  - Es dificl llevar una esfera en el bolsillo
+
+Video: [https://www.youtube.com/watch?v=2LcyMemJ3dE](https://www.youtube.com/watch?v=2LcyMemJ3dE)
+
+## Introducción a las proyecciones  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/pantalla-proyeccion.png){fig-align='center'}
+
+## Introducción a las proyecciones  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Idea ilustrativa básica de un mapa proyectado
+
+![](img/map-proyeccion.png){fig-align='center'}
+
+##  Las tres familias de proyecciones cartográficas  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/projection_families.png)
+
+## Tipos de proyecciones cartográficas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Tangente**
+
+![](img/proj1.gif)
+
+## Tipos de proyecciones cartográficas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Secante**
+
+![](img/proj2.gif)
+
+## Orientación de proyecciones cartográficas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/proj3.gif)
+
+## Precisión de las proyecciones cartográficas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Todas las proyecciones` tienen alteración de área, forma, distancia y dirección en una proyección geográfica.
+
+`¿Por qué?`
+
+Todos los mapas tienen errores debido al proceso de transformación `3D a 2D`
+
+`¿Cómo?`
+
+Al proyectar una superficie esférica en un plano causa un rasgado, deformación o compresión de la superficie.
+
+
+## Precisión de las proyecciones cartográficas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Son cuatro
+
+- `Area`
+
+- `Forma`
+
+- `Distancia`
+
+- `Dirección`
+
+Estas cuatro propiedades de proyección de mapa describen cuatro características de una proyección geográfica que pueden ser  `mantenidas` o `distorsionadas`.
+
+## Precisión de las proyecciones cartográficas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- **Propiedades mayores**
+
+Área y Forma: mutuamente excluyenetes
+
+- **Propiedades menores**
+
+Distancia y Dirección: 
+
+No pueden existir en todas partes en un mapa
+
+## Distorción del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Son inevitables cuando se crea un mapa plano a partir de una esféra
+
+  - La distorción puede tomar distintas formas en diferentes partes del mapa
+  
+  - Pocos puntos donde la distorsión es cero.
+  
+  - La distorción comunmente es menor cerca de los puntos o lineas de intersección dónde la superficie del mapa intersecta la esfera.
+  
+## Distorción del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Un mapa puede presentar una o más - `pero nunca todas` - al mismo tiempo de las siguientes propiedades
+
+  - Área real
+  
+  - Distancia real
+  
+  - Dirección real
+  
+  - Forma real
+  
+## Proyección Geográfica de Igual Área {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+También conocido como: `proyección geográfica equivalente`
+
+Objetivo: preservar las relaciones de `área` de todas partes del mundo
+
+Características identificativas: 
+
+  - los meridianos y paralelos no forman ángulos rectos. 
+  
+  - esta presente la distorsión de distancia 
+  
+  - la forma está sesgada.
+
+## Proyección Geográfica de Igual Área {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Útil para:
+
+- para mapas temáticos cuantitativos generales 
+
+- cuando se desea mantener las propiedades de área
+
+## Proyección Geográfica de Igual Área {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyección cilíndrica de igual área**
+
+![](img/mapa-igual-area.png){fig-align='center'}
+
+## Proyección Geográfica de Igual Área {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Hammer-Aitoff**
+
+![](img/proyeccion-hammer-aitoff.png){fig-align='center'}
+
+## Proyección Geográfica Conforme {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+También conocida como: proyección geográfica `ortomórfica`
+
+Objetivo: conservar los ángulos alrededor de los puntos y la forma en áreas pequeñas
+
+misma escala en todas las direcciones hacia/desde un punto en el mapa
+
+Características identificativas: 
+
+  - meridianos intersectan paralelos en ángulo recto 
+  
+  - las áreas están distorsionadas significativamente a escalas pequeñas
+  
+  - las formas de regiones grandes pueden estar severamente distorsionadas
+
+## Proyección Geográfica Conforme {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Útil para:
+
+- mapas a gran escala
+
+- fenómeno con patrones radiales circulares 
+(transmisiones de radio, direcciones promedio del viento)
+
+## Proyección Geográfica Conforme {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/proyeccion-mercator.png){fig-align='center'}
+
+## Proyección Geográfica Equidistante {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Objetivo:` preservar grandes distancias circulares
+
+se puede mantener la distancia real desde un punto a todos los demás puntos, o desde unos pocos puntos seleccionados a otros, pero no desde todos los puntos a todos los demás puntos
+
+la escala es uniforme a lo largo de estas líneas que mantienen la distancia real
+
+Características identificativas: 
+
+  - no es de tipo conforme ni de igual área, 
+  
+  - parece menos distorsionado.
+
+## Proyección Geográfica Equidistante {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Útil para
+
+- Mapas de propósito general
+
+- Atlas
+
+
+## Proyección Geográfica Equidistante {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyección equidistante cilíndrica**
+
+![](img/proyeccion-equidistante.png){fig-align='center'}
+
+## Proyección Geográfica Acimutal {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+También conocida como: dirección verdadera
+
+Objetivo: conserva la dirección de un punto a todos los demás puntos en el mapa. 
+
+Es importante tener en cuenta que la dirección no es la verdadera entre puntos no centrales
+
+Es útil para 
+
+- preservar la dirección desde un punto
+
+## Proyección Geográfica Acimutal {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyección geográfica Azimutal equidistante**
+
+![](img/proyeccion-azimutal-equidistante.png){fig-align='center'}
+
+## Combinación de proyecciones geográficas en una única proyección {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+   .        | Igual Area | Conforme | Equidistante | Acimutal |
+------------|:----------:|:--------:|:------------:|:--------:|
+Igual área  |    --      |  NO      |      NO      |   SI     |
+Conforme    |   NO       |   --     |     NO       |   SI     |
+Equidistante|  NO        |    NO    |   --         |   SI     |
+Acimutal    |   SI       |    SI    |      SI      |   --     |
+
+## Proyección Geográfica de Mínimo Error {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+También conocido como: proyección de `compromiso`
+
+Objetivo: Minimizar todas las propiedades de la proyección geográfica
+
+Útil para: cartografía geográfica general 
+
+## Proyección Geográfica de Mínimo Error {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyección geográfica de Robinson**
+
+![](img/proyeccion-robinson.png)
+
+## Proyecciones de forma interactiva 
+
+```{=html}
+<iframe width="100%" height="100%" src="https://www.jasondavies.com/maps/transition/" title=""></iframe>
+```
+
+# Indicatriz de Tissot {background-color='orange'}
+
+## ¿Qué es las indicatriz de Tissot? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Todos los mapas proyectados distorsionan la `forma`, `área`, `dirección` y `distancia`.
+
+- La indicatriz de Tissor ayuda a cuantificar la distorsión y y propiedades de la proyección.
+
+  - se compone de círculos inconmensurablemente pequeños centrados en puntos en la tierra
+  
+  - considerar la forma de los circulos antes de proyectar el mapa
+  
+
+## ¿Qué es las indicatriz de Tissot? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/Tissot.png){fig-align='center'}
+
+
+## ¿Qué es las indicatriz de Tissot? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/tissot2.png){fig-align='center'}
+
+## Interpretando la indicatriz de Tissot {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+`Igual área`
+
+>Los circulos se transforman en elipses pero mantienen su área
+
+`Conforme (igual forma)`
+
+>Los nciruclos se transforman en circulos pero los tamaños varian en el mapa
+
+## Interpretando la indicatriz de Tissot {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/tissot3.png){fig-align='center'}
+
+## Interpretando la indicatriz de Tissot {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/tissot4.png){fig-align='center'}
+
+
+## Interpretando la indicatriz de Tissot {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/tissot5.png){fig-align='center'}
+
+## Interpretando la indicatriz de Tissot {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/tissot6.png){fig-align='center'}
+
+## Propiedades de proyección conforme {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyección de Mercator**
+
+![](img/tissot-mercator.png){fig-align='center'}
+
+## Propiedades de projección de igual área {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyección plana cuarto polar**
+
+![](img/tissot-falt-polar.png){fig-align='center'}
+
+## Propiedades de proyección equidistante {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Proyecicón cilíndrica equidistante**
+
+![](img/tissot-equidistante.png){fig-align='center'}
+
+## Indicatriz de Tissot interactiva 
+
+[https://observablehq.com/@d3/tissots-indicatrix](pinche aquí)
+```{=html}
+<iframe width="100%" height="100%" src="http://metrocosm.com/compare-map-projections.html" title="Quarto Documentation"></iframe>
+```
+
+
+
+

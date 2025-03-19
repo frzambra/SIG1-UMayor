@@ -1,0 +1,614 @@
+---
+title: "Creación de mapas con datos geoespaciales"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSD1020)"
+author: "Dr. Francisco Zambrano"
+date: "05/06/2024"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../logo_hemera.jpg"
+    footer: "IMSD1020|1-2024"
+    theme: simple
+    echo: true
+---
+
+## Contenidos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  Mapa
+2.  Proceso para crear un mapa
+3.  Diseño del mapa
+
+# Mapa {background-color="grey"}
+
+## Salida de un SIG: Mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+> Para que un SIG sea ampliamente utilizado, los mapas deben ser creado para difundir los datos.
+
+![](img/fig1.png){fig-align="center"}
+
+## ¿Qué es un mapa? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+`Definición`: Un mapa es una representación gráfica del entorno.
+
+. . .
+
+`Propósito:` medio para transmitir conocimiento
+
+. . .
+
+> comprende uno de los tres principales modos de comunicación.
+
+## ¿Quiénes hacen mapas? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+**Cartógrafos**
+
+. . .
+
+-   alguien que diseña y prepara un mapa para su distribución
+
+-   estudian las bases filosóficas y teóricas de las reglas para crear/hacer mapas
+
+. . .
+
+La `cartografía` es el arte y la ciencia de hacer mapas
+
+. . .
+
+Hoy en día gracias a la accesibilidad a los software SIG muchos profesionales pueden realizar mapas.
+
+Ej. Ingeniero en Medio ambiente
+
+## Tipos de mapas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Dos tipos de mapas**
+
+::::: columns
+::: {.column width="50%"}
+**1 Referencia**
+
+-   énfasis en la ubicación
+
+-   muestra diversidad del mundo
+
+-   principalmente muestra objetos físicos
+
+![](img/fig2.png)
+:::
+
+::: {.column width="50%"}
+**2 Temático**
+
+-   énfasis en atributos
+
+-   muestra solo un tema
+
+![](img/fig3.png)
+:::
+:::::
+
+## Ejemplo: Mapa de Referencia {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r echo=FALSE,fig.width=10}
+library(mapview)
+library(leaflet)
+mapview()@map %>% setView(-72,-36,zoom=5)
+```
+
+## Mapas temáticos: dos tipos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+**1 Cualitativo**
+
+-   Muestra datos nominales
+
+-   Muestra como están distribuidos
+
+-   
+
+```{r echo=FALSE,fig.width=4}
+library(sf)
+library(tmap)
+library(units)
+tmap_mode('view')
+cuencas <- read_sf('../../datos/cuencas.gpkg') |> 
+  st_transform(4326)
+cuencas$area <- st_area(cuencas) |>  set_units(km2)
+ext <- st_bbox(c(xmin=-70.45702,ymin=-40,xmax=-66.24093,ymax=-35),crs=4326)
+ind <- st_intersects(cuencas,st_as_sf(st_as_sfc(ext))) |> as.numeric()
+ind <- which(ind==1)
+cuencas <- cuencas[ind,]
+
+tm_shape(cuencas) + 
+  tm_polygons(fill='NOM_CUEN',style = 'cat')+
+  tm_layout()
+```
+
+<!-- ![](img/fig4.png) -->
+:::
+
+::: {.column width="50%"}
+**2 Cuantitativo**
+
+-   muestra datos numéricos
+
+-   muestra variaciones entre lugares
+
+-   números generalizados
+
+<!-- ![](img/fig5.png) -->
+
+```{r echo=FALSE, fig.width=4}
+tm_shape(cuencas) + 
+  tm_polygons(col='area')+
+  tm_layout()
+```
+:::
+:::::
+
+## Tres medios de mapas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**1. Tangible**
+
+![](img/fig1.png)
+
+## Tres medios de mapas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**2. Virtual**
+
+![](img/fig6.png)
+
+## Tres medios de mapas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**3. Mental**
+
+![](img/fig7.png)
+
+## Recapitulando: tipos de mapas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig8.png){fig-align="center"}
+
+# Proceso para crear un mapa {background-color="orange"}
+
+## ¿Cuál es el proceso para crear un mapa? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+> es una serie de pasos que seguimos para pasar de un conjunto de datos no mapeado a un mapa final
+
+. . .
+
+**Pasos**
+
+. . .
+
+1.  definir el propósito y significado
+
+. . .
+
+2.  elegir la escala
+
+. . .
+
+3.  determinar el formato del mapa (limitaciones de impresión, costo de reproducción, etc)
+
+. . .
+
+4.  resumir y generalizar
+
+. . .
+
+5.  diseño del mapa
+
+## 1. definir el propósito y significado {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+-   interpretar lo que requiere el usuario
+
+. . .
+
+-   ¿qué se debe comunicar?
+
+. . .
+
+-   ¿cómo comunicar de la mejor forma lo que se quiere representar?
+
+## 2. elegir la escala {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Escala del mapa:** relación entre la distancia del mapa y la real.
+
+Funciona de forma continua, va desde una gran escala a una pequeña escala.
+
+. . .
+
+`escala grande` -\> 1:0 - 1:600.000
+
+`escala media` -\> 1:600.001 - 1:2.000.000
+
+`escala pequeña` -\> 1:2.000.001 - $\infty$
+
+. . .
+
+> La selección de la escala del mapa es posiblemente la decisión más importante que debe tomar un cartógrafo
+
+## 3. Formato del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+-   ¿qué tipo de mapa?
+
+. . .
+
+-   ¿cómo se debe visualizar el mapa?
+
+. . .
+
+-   ¿cuánto costará (\$) hacer el mapa?
+
+## 4. resumir y generalizar {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+-   solo información que es útil para el contexto del mapa debe ser incluida
+
+. . .
+
+-   se selecciona y organiza la información que es necesaria para comunicar el concepto del mapa a quien revisará el mapa
+
+. . .
+
+-   se debe reducir la cantidad de detalle en el mapa para crear una visualización simple
+
+## 4. resumir y generalizar {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Cuatro métodos para resumir y generalizar**
+
+::::: columns
+::: {.column width="50%"}
+`Selección`
+
+![](img/fig9.png)
+
+`Simplificación`
+
+![](img/fig10.png)
+:::
+
+::: {.column width="50%"}
+`Clasificación`
+
+![](img/fig11.png)
+
+`Simbología`
+
+![](img/fig12.png)
+:::
+:::::
+
+## 4. resumir y generalizar {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**simbología**
+
+-   use símbolos aceptados universalmente cuando sea posible
+
+-   asegurese de que los símbolos discretos y continuos se usan adecuadamente
+
+-   use colores aceptados universalmente
+
+## 5. diseño del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+**Elementos del mapa**
+
+-   cuerpo del mapa
+-   marco
+-   inserciones
+-   barra de escala
+-   leyenda
+-   título
+-   flecha norte
+-   meta data
+-   texto auxiliar
+-   objetos auxiliares
+-   grilla
+-   etiqueta
+:::
+
+::: {.column width="50%"}
+![](img/fig13.png)
+:::
+:::::
+
+## Proceso de crear un mapa
+
+> es una serie de pasos que seguimos para pasar de un conjunto de datos no mapeado a un mapa final
+
+. . .
+
+1.  definir el `propósito` y significado
+
+2.  elegir la `escala`
+
+3.  determinar el `formato del mapa`, limitaciones de impresión, costo de reproducción
+
+4.  `resumir` y generalizar
+
+5.  `diseño` del mapa
+
+# Diseño del mapa {background-color="darkgreen"}
+
+## Escala, tamaño y forma {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+-   Tamaño del objeto principal
+
+-   La forma del objeto principal
+
+-   Tamaño y forma del medio en el que se producirá
+:::
+
+::: {.column width="50%"}
+![](img/fig22.jpg){width="250"}
+:::
+:::::
+
+## Escala, tamaño y forma {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+-   Tamaño del objeto principal
+
+-   La forma del objeto principal
+
+-   Tamaño y forma del medio en el que se producirá
+:::
+
+::: {.column width="50%"}
+![](img/fig23.png){width="300"}
+:::
+:::::
+
+## Título {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   Tamaño dominante
+
+-   Pone la atención en el propósito del mapa
+
+-   Debe ser breve
+
+-   Tipicamente incluye: dónde, qué y cuando
+
+-   Se debe omitir si existe como figura con leyenda (ej, artículo científico)
+
+## Cuerpo del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   el foco principal del mapa
+
+-   contiene características importantes al mensaje del mapa
+
+![](img/fig24.jpg){width="300"}
+
+## Mapa insertado {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   pequeño mapa auxiliar
+
+-   de `mayor` escala que el cuerpo del mapa (generalmente)
+
+![](img/fig25.jpg){width="300"}
+
+## Mapa insertado {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   muestra mayor detalle que el cuerpo del mapa
+
+-   debería mostrar un esquema de las extensiones del mapa insertado en el cuerpo del mapa principal
+
+![](img/fig25.jpg){width="300"} ![](img/fig26.png){width="400"}
+
+## Mapa de ubicación {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+-   pequeño mapa auxiliar
+
+-   de `menor` escala que el cuerpo del mapa
+
+-   identifica la ubicación del cuerpo del mapa
+
+-   se utiliza cuando el área no es familiar para el que lee el mapa\]
+:::
+
+::: {.column width="50%"}
+![](img/fig27.jpg){width="400" fig-align="center"}
+:::
+:::::
+
+## Escala del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   se utiliza para mediar la relación lineal en el mapa
+
+-   tipicamente incluida en los `mapas de referencia`
+
+-   a veces incluida en los `mapas temáticos`
+
+-   hay tres tipos de escalas:
+
+    -   `gráfica:` ![](img/fig28.png)
+
+    -   `verbal:` un milimetro en el mapa corresponden a 100 kilometros
+
+    -   `fracción representativa:` 1:100
+
+## Leyenda {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   identifica brevemente características del mapa desconocidas o únicas
+
+-   puede llevar título
+
+::::: columns
+::: {.column width="50%"}
+**Leyenda general mapa de referencia**
+
+![](img/fig29.png){fig-align="center"}
+
+**Indicador de dirección**
+
+\![\](img/fig13.jpg\]{width="150"}
+:::
+
+::: {.column width="50%"}
+**Leyenda de símbolos graduados**
+
+`Vertical` ![](img/fig30.png){width="100" fig-align="center"}
+
+`anidado`
+
+![](img/fig31.png){width="100"}
+:::
+:::::
+
+## Flecha norte {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   necesaria cuando el lector no está familiarizado con el área en el mapa
+
+-   no necesaria en mapas de pequeña escala (ej, global)
+
+![](img/fig14.png){width="600"}
+
+## Etiquetas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+-   Comunica atributos o información auxiliar
+
+-   ayuda a orientar al lector con el mapa
+:::
+
+::: {.column width="50%"}
+![](img/fig15.jpg){width="600"}
+:::
+:::::
+
+## Creditos/Metadata {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   Se cita las fuentes de datos usados para crear el mapa
+
+-   Información del autor(es) del mapa
+
+-   Fecha de cuando fue creado el mapa
+
+-   Otra información que explique la creación del mapa
+
+-   Tipicamente puesta en la parte inferior del mapa y sin énfasis
+
+## Grilla {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+-   Representación visual del sistema de coordenadas o esquema de localización
+
+-   incluir la grilla en un mapa para que el lector pueda hacer referencia a ubicaciones de coordenadas en todo el mapa.
+
+-   usar divisiones significativas
+
+-   tipicamente no utilizada en `mapa temáticos`
+:::
+
+::: {.column width="50%"}
+![](img/fig16.jpg){width="400"}
+:::
+:::::
+
+## Marco del mapa {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   Tipicamente el marco debe contener el mapa y si es necesario los elementos del mapa
+
+-   El objetivo es proporcionar un marco que lo aisle del resto de los elementos.
+
+![](img/fig16.jpg){width="300"}
+
+## Textos y objetos auxiliares {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   información adicional que proporciona un mejor entendimiento de el tema del mapa
+
+-   puede se texto, gráfico, fotos, etc,...
+
+-   indica como se manipularon los datos para ayudar a una mejor interpretación
+
+-   indica casos especiales o datos faltámtes
+
+## Buenas prácticas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Ubica los elementos del mapa de forma que ...
+
+-   que su tamaño y posición esté de acuerdo a su importancia
+
+-   reducir espacios en blanco
+
+-   el diseño del mapa debe estar balanceado
+
+# Ejemplo de crítica de un mapa {background-color="lightblue"}
+
+##  {background-image="img/fig17.png" background-size="contain"}
+
+##  {background-image="img/fig18.png" background-size="contain"}
+
+##  {background-image="img/fig19.png" background-size="contain"}
+
+## Código de ética de la cartografía {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  Un objetivo simple
+
+2.  esforzarce por conocer a su audiencia
+
+3.  no mentir intencionalmente con los datos
+
+4.  siempre muestra toda la información relevante cuando sea posible
+
+5.  no descarta datos que sean contrarios, solo por ser contrarios
+
+6.  esforzarce por una representación precisa de los datos
+
+7.  evitar el plagio
+
+8.  la seleccion de símbolos no debe sesgar el mapa
+
+9.  el mapa debe ser repetible
+
+10. prestar atención a diferentes valores culturales y principios
+
+## Lectura Recomendada {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Documentación QGIS
+
+Manual de entrenamiento QGIS
+
+<https://docs.qgis.org/3.28/es/docs/training_manual/index.html>
+
+## Taller 5: Creación de un mapa básico con el compositor de impresión {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Descargar datos desde <https://github.com/qgis/QGIS-Training-Data/archive/release_3.28.zip>
+
+Realizar las lecciones
+
+2.  Crear y explorar un mapa básico
+
+    2.2. Añadiendo las primeras capas\
+    2.4. Lesson: Simbología
+
+3.  Module: Clasificación de Datos Vectoriales
+
+    3.1. Lesson: Atributos de Datos Vectoriales\
+    3.2. Lesson: Etiquetas\
+    3.3. Lesson: Clasificación
+
+4.  Module: Trazando los mapas
+
+    4.1. Lesson: Usando el Compositor de impresión\
+    4.2. Lesson: Creando una Impresión de Composición Dinámica\
+    4.3. Ejercicio 1

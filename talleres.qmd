@@ -1,0 +1,8 @@
+---
+title: "Talleres"
+---
+
+# Unidad 1: Datos geoespaciales
+
++ [Taller 1: Aplicaciones GIS en Medio Ambiente](talleres/taller1.qmd)
++ [Taller 1: Ejemplo](talleres/taller1_ejemplo.qmd)

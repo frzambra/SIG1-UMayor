@@ -1,0 +1,451 @@
+---
+title: "Análisis Espaciales con Datos Vectoriales"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSD1020)"
+author: "Dr. Francisco Zambrano"
+date: "05/13/2024"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../logo_hemera.jpg"
+    footer: "IMSD1020|1-2024"
+    theme: simple
+    echo: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(mapview)
+library(leaflet)
+library(magrittr)
+```
+
+## ¿Qué es un análisis geoespacial? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+- Es la aplicación de operaciones para manipular o calcular
+coordenadas y/o atributos de datos relacionados.
+
+- Aplicados para resolver problemas como:
+
+  - Ruta de buses
+  
+  - Zonas de inundación
+  
+  - Determinación de un sitio adecuado
+  
+- El análisis espacial utiliza `operaciones espaciales` para manipular y calcular.
+
+- `AEs`: se utilizará para referirse a análisis espacial por el resto de esta clase.
+
+---
+
+## Ejemplo de AEs {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+Delimitación de cuenca.
+
+![](img/fig1.png){width="700px"}
+
+---
+
+## Input, Operación y Output {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `AEs` generalmente usa datos de 1 o más capas para crear un output (salida)
+
+  - Uno a uno
+  - Uno a muchos
+  - Muchos a uno
+  - Muchos a muchos
+  
+- El output no necesariamente debe ser espacial
+
+  - Estadísticas
+  
+  - Reporte/Informe
+  
+---
+
+## Técnicas de análisis geoespacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. Selección
+
+2. Buffering
+
+3. Disolver (dissolve)
+
+4. Operaciones de superposición (overlay)
+
+5. Clasificación
+
+6. Operaciones con tablas
+
+# 1. Selección {background-color='orange'}
+
+## 1. Selección {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Las `operaciones de selección` identifican objetos que cumplen ciertas condiciones.
+
+- Las condiciones de selección pueden ser `espaciales` o `no espaciales`
+
+  - Selección basada en atributos (no espacial)
+  
+  - Selección basada en posición (espacial)
+  
+## Selección no espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Consulta de tabla de atributos**
+
+- Consulta de tabla es una operación SIG no espacial muy común.
+
+- Selecciona una submuestra de los registros basado en valores específicos de atributos.
+
+- Utiliza `operaciones algebraicas` y `operadores booleanos`
+
+## Selección no espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Operaciones algebraicas**
+
+- Operaciones:
+
+  - Menor que `<`
+  
+  - Mayor que `>`
+  
+  - Igual que `=`
+  
+  - No igual a `<>`
+  
+- mayor que y menor que no se pueden aplicar a atributos nominales
+
+  - ¿Por qué?
+
+- se pueden aplicar solos o en combinación  
+
+## Selección no espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Operaciones algebraicas**
+
+**Ejemplo**
+
+Datos de riego censo agropecuario 2007 (IDE Minagri). Descargar datos [acá](https://drive.google.com/file/d/1KPnRGvfW5ktKYyU_tukzTfqX6YJZCShn/view?usp=sharing)
+
+- Superficie de riego mayor a 1000 ha
+
+  - Expresión:  "sup_riego" >1000
+
+- Superficie de riego goteo menor a 10 ha
+
+  - Expresión:   "goteo" <10
+
+- Todos los distritos que se encuentran en la región Metropolitana
+
+  - Expresión:  "nom_reg"  =  'Región Metropolitana de Santiago' 
+  
+- Todos los distritos que NO se encuentran en la región Metropolitana
+
+  - Espresión:  "nom_reg"  <>  'Región Metropolitana de Santiago' 
+  
+---
+
+## Selección no espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Algebra booleana (lógicos)**
+
+- Utiliza condiciones `OR`, `AND` o `NOT`
+
+- La evaluación se hace asignando a la salida un valor de verdadero (TRUE) o falso (FALSE), a cada condición.
+
+- El orden de las operaciones no importa
+
+
+## Operadores y tablas de verdad {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/fig2.gif){width="700px"}
+
+## ¿Cuál es el resultado? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- NOT (F)
+
+- V AND V
+
+- F OR NOT(V)
+
+- V OR (F OR (V AND V))
+
+- (V AND V) OR F AND (NOT(F) AND V)
+
+
+## ¿Cuál es el resultado? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- NOT (F) -> V
+
+- V AND V -> V
+
+- F OR NOT(V) -> F 
+
+- V OR (F OR (V AND V)) -> V
+
+- (V AND V) OR F AND (NOT(F) AND V) -> V
+
+---
+
+## Ejemplo {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Riego Censo agropecuario 2007. Descargar datos [acá](https://drive.google.com/file/d/1KPnRGvfW5ktKYyU_tukzTfqX6YJZCShn/view?usp=sharing)
+
+- Superificie de riego por goteo distinta de 0 y que perteneza a la región de O'Higgins
+
+  -  ("goteo" <>0) AND  ("nom_reg"  =  'Región del Libertador General Bernardo O''Higgins' )
+  
+- ¿Qué pasa si cambio el AND por un OR?
+
+  -  -  ("goteo" <>0) OR  ("nom_reg"  =  'Región del Libertador General Bernardo O''Higgins' )
+  
+- Si quiero seleccionar todos los distritos con superficie de riego total a 500 ha o  que tengan superficie por goteo mayor a 100 ha y que estén en la región del Maule.
+
+. . .
+
+  - ( "sup_riego" > 500 OR  "goteo" >100) AND  "nom_reg"  =  'Región del Maule' 
+  
+  
+## Selección Espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Operaciones espaciales de selección**
+
+1. `Intersección:` Comprueba si una geometría se cruza con otra. Devuelve 1 (verdadero) si las geometrías se intersecan espacialmente (comparten cualquier parte del espacio, se superponen o se tocan) y 0 si no lo hacen. 
+
+2. `Contiene:` Devuelve 1 (verdadero) si y solo si ningún punto de b se encuentra en el exterior de a, y al menos un punto del interior de b se encuentra en el interior de a. Esto es lo opuesto a están dentro de.
+
+3. `Inconexo:` Devuelve 1 (verdadero) si las geometrías no comparten ninguna porción de espacio (sin superposición, sin tocar). 
+
+4. `Igual:` Devuelve 1 (verdadero) si y solo si las geometrías son exactamente iguales. 
+
+## Selección Espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Operaciones espaciales de selección**
+
+5. `Tocan:` Comprueba si una geometría toca a otra. Devuelve 1 (verdadero) si las geometrías tienen al menos un punto en común, pero sus interiores no se cruzan.
+
+6. `Superponer:` Comprueba si una geometría se superpone a otra. Devuelve 1 (verdadero) si las geometrías comparten espacio, son de la misma dimensión, pero no están completamente contenidas entre sí. 
+
+7. `Están dentro:` Comprueba si una geometría está dentro de otra. Devuelve 1 (verdadero) si la geometría a está completamente dentro de la geometría b. 
+
+8. `Cruza:` Devuelve 1 (verdadero) si las geometrías proporcionadas tienen algunos puntos interiores en común, pero no todos, y el cruce real es de una dimensión menor que la geometría proporcionada más alta. Por ejemplo, una línea que cruza un polígono se cruzará como una línea (seleccionada). Dos líneas que se cruzan se cruzarán como un punto (seleccionado). Dos polígonos se cruzan como un polígono (no seleccionado).
+
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Poligono de rectangulo y circulos. Descargar [acá](https://drive.google.com/file/d/1YxUh5TAYmuQFBna7nIZWMRnhtWC3ET3F/view?usp=sharing)
+
+![](img/pols_seleccion.png)
+
+# 2. Buffering {background-color='orange'}
+
+## Buffers {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Buffers` son regiones que estan a menos de o igual a una distancia desde uno o varios objetos.
+
+  - Los buffers se pueden crear desde puntos, lineas, poligonos, o raster.
+  
+- Los `buffers` son tipicamente usados para identificar areas o objetos que están `dentro` o `fuera` desde la distancia umbral.
+
+  - ¿Ejemplos de usos de buffer?
+
+## 2. Buffering {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Buffer de puntos
+
+![](img/point_buffer.png)
+
+## 2. Buffering {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Buffer de lineas
+
+![](img/line_buffer.png)
+
+## 2. Buffering {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Buffer de polígonos
+
+![](img/polygon_buffer.png)
+
+## Ejercicio en QGIS (buffers) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Datos:` descargar desde [acá](https://drive.google.com/drive/folders/1rC4xQtiE71ypXphwI4B6NYBJHjYAvj3f?usp=sharing)
+
+- seleccionar un distrito de Ñuble
+
+- crear puntos aleatorios y centroide
+
+- crear buffer para los puntos y para el distrito
+
+`Taller:` Guardar los dos buffer en un archivo geopackage. Las capas deben estar en SRC geográficas y datums WGS84. Subir en el campus virtual pregunta 1.
+
+# 3. Disolver {background-color='orange'}
+
+## Disolver  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Disolver` combina objetos similares dentro de una capa basado en atributos
+
+![](img/fig6.gif){width="700px"}
+
+## Ejercicio en QGIS (Disolver) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Datos:` descargar desde [acá](https://drive.google.com/drive/folders/1rC4xQtiE71ypXphwI4B6NYBJHjYAvj3f?usp=sharing)
+
+- Disolver por provincia y región la capa de comunas de la región Metropolitana.
+
+`Taller:` Guardar los resultados de la operación de disolver en un archivo geopackage. Las capas deben estar en SRC UTM y datums WGS84 Huso 19S. Subir en el campus virtual pregunta 2.
+
+# 4. Operaciones de superposición  {background-color='orange'}
+
+## 4. Operaciones de superposición {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Consideran la combinación de datos y atributos espaciales de dos o más capas espaciales.
+
+  - Muy poderosa y popular aplicación
+
+  - ¿Ejemplos de superposición?
+
+- Superposición requiere que los datos esten en el mismo sistema de coordenadas
+
+
+## 4. Superposición vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Considera combinar geometrias de tipo punto, linea, poligono y sus atributos.
+
+  - La superposición crea nuevas geometrías.
+
+- El resultado puede generar grandes tablas de atributos si la operación de superposición combina muchas capas.
+
+  - el duplicado de atributos también puede suceder
+
+## Casos básicos de superposición - Cortar {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Cortar` define el área de salida del objeto espacial basado en un póligono `cortado`
+
+- Los atributos de la capa de corte no son pasados al objeto cortado final, solo los del objeto de entrada.
+
+![](img/fig7.gif){width="700px"}
+
+
+## Casos básicos de superposición - Intersección  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Combina los datos de los dos objetos, pero solo para regiones en que ambos objetos se intersectan.
+
+- Similar a `cortar` pero en este caso los atributos del `poligono` de corte son pasados al objeto de salida.
+
+![](img/fig8.png){width="600px"}
+
+## Casos básicos de superposición - Unión  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Unión` es una operación de superposición que incluye todos los datos de los dos objetos.
+
+- No se descartan objetos espaciales en la unión y los atributos correspondientes son almacenados para todas las regiones.
+
+![](img/fig9.png){width="600px"}
+
+## Ejercicio en QGIS (superposición) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Datos:` descargar desde [acá](https://drive.google.com/drive/folders/1rC4xQtiE71ypXphwI4B6NYBJHjYAvj3f?usp=sharing)
+
+- Utilice el poligono de superposición para `cortar` los distritos de la región de Ñuble. Guarde la capa en un archivo geopackage en SRC geográficas y datum WGS84. 
+
+- Utilice el poligono de superposición para `unir` con los distritos de la región de Ñuble. Guarde la capa en un archivo geopackage en SRC geográficas y datum WGS84.
+
+- Utilice el poligono de superposición para `intersectar` con los distritos de la región de Ñuble. Guarde la capa en un archivo geopackage en SRC geográficas y datum WGS84.
+
+- Compare las tablas de atributos
+
+`Taller:` Guardar los resultados de la operación de superposición en un archivo geopackage. Subir en el campus virtual pregunta 3.
+
+## Problemas de superposición vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Objetos de entrada representen entidades comunes que se representan en ambas capas, pueden tener una geometría ligeramente diferente.
+
+- Esto crea `polígonos de astilla` cuando las operaciones de astilla son realizadas.
+
+- Existen diferentes técnicas para reducir la ocurrencia de `polígonos de astilla`
+
+## Ejemplo {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig10.png)
+
+## Ejemplo {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig11.png){width="600px"}
+
+# 5. Operaciones con tablas {background-color='orange'}
+
+## Operaciones con tablas {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Combinar tablas de atributos es una poderosa herramienta de análisis
+
+- Tres tipos comunes de operaciones con tablas:
+
+  - Intersección
+
+  - Unión
+
+  - Juntar (Join)
+
+## Operaciones con tablas - Intersección {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig12.png){width="600px"}
+
+## Operaciones con tablas - Unión {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig13.png){width="600px"}
+
+## Operaciones con tablas - Juntar {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig14.png){width="600px"}
+
+## Ejercicio en QGIS (juntar tablas) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Datos:` descargar desde [acá](https://drive.google.com/drive/folders/1rC4xQtiE71ypXphwI4B6NYBJHjYAvj3f?usp=sharing)
+
+- Realice la unión de las tablas de atributos de los distritos de linares para superficie de riego y superficie forestal.
+
+- Elimine los atributos duplicados.
+
+- Guarde la capa resultante en un archivo geopackage con SRC geográfica y datum WGS84.
+
+`Taller:` Guardar los resultados de la operación de union en un archivo geopackage. Subir en el campus virtual pregunta 4.
+
+<!-- ## 6. Geocodificación -->
+
+<!-- - Es el proceso de referenciar objetos espacialmente de acuerdo a su dirección con su ubicación en la tierra. -->
+
+<!-- - Dos tipos de geocodificación -->
+
+<!--   - Geocodifcación lineal -->
+
+<!--     - Asume que una dirección varia linealmente a través del objeto (linea) -->
+
+<!--   - Geocodificación de área -->
+
+<!--     - Asigna una localización geocodificada a un área (polígono) -->
+
+<!-- --- -->
+
+<!-- ## 6. Geocodificación lineal -->
+
+<!-- Ubicación estimada -->
+
+<!-- ¿Dónde queda el 180 Easy St? -->
+
+<!-- $$\frac{180-100}{200-100} = .8 = 80%$$ -->
+
+<!-- Se encuentra al 80% del inicio -->
+
+<!-- ![](img/fig15.png){width="700px"} -->
+
+<!-- --- -->
+
+<!-- # Geocodificación de área -->
+
+<!-- ![](img/fig16.png){width="700px"} -->

@@ -1,0 +1,37 @@
+---
+title: "Taller 1: Aplicaciones SIG en Medio Ambiente"
+---
+
+# Instrucciones
+
+Revise tres ejemplos de aplicación de los SIG relacionado con medio ambiente. Las revisiones de las aplicaciones deben prepararse a partir de literatura publicada en alguno de los siguientes links:
+
++ Red SciELO (https://scielo.org/)
++ Asociación Española de Teledetección (http://www.aet.org.es/)
++ Sciencedirect (http://www.sciencedirect.com)
+
+Las revisiones consistirán en un resumen de una página del artículo publicado y deben cumplir con los siguientes requisitos:
+
+## Formato:
+
+- Doble espacio, Times New Roman, 12pt.
+- Título centrado en la parte superior de la página.
+- Nombre, curso y número del artículo en la esquina superior derecha del margen.
+
+## Párrafo uno:
+
+Párrafo introductorio que describe el problema que se está abordando (1/3 página)
+- Párrafo dos: Párrafo central que describe la solución SIG al problema; incluya una descripción de software, hardware,
+datos, modelos de datos, algoritmos, modelos, según corresponda. ¿Qué hicieron para resolver el problema?
+
+## Párrafo tres:
+Párrafo de conclusión que documenta su evaluación de SIG como la herramienta para resolver el problema; ¿Se están utilizando correctamente los datos, el software, el hardware, los métodos, etc.? ¿Por qué o por qué no?
+
+## Referencias:
+
+Fuente de información en margen inferior. Norma APA (American Psychological Association). Ver https:
+//normasapa.com/como-hacer-referencias-bibliografia-en-normas-apa/
+
+## Plazo de entrega
+
+Lunes 24 marzo hasta las 08:30am

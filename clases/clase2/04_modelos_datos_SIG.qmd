@@ -1,0 +1,792 @@
+---
+title: "Modelos de datos geoespaciales (IMSE1014)"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSE1014)"
+author: "Dr. Francisco Zambrano"
+date: "18 marzo 2024"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../logo_hemera.jpg"
+    footer: "IMSE1014|1-2024"
+    theme: simple
+    echo: true
+---
+
+## Contenidos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. ¿Qué hemos visto?
+2. Conceptos del espacio
+3. Modelos de datos geoespaciales
+4. Tipos de modelos de datos geoespaciales
+5. Atributos
+
+# ¿Qué hemos visto? {background-color='orange'}
+
+## ¿Qué son los SIG? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+.center[Es un `sistema` basado en computador para ayudar a la `recolección`, `mantención`, `almacenamiento`, `análisis`, `salida` y `distribución` de <br> información y datos espaciales y no-espaciales]
+
+1.- **Recolección:** a la habilidad del SIG de tomar `diferentes tipos de información`.  
+2.- **Mantención:** capacidad de mantener los `datos` recolectados `actualizaods`.  
+3.- **Almacenamiento:** la estructura de `codificación` de la información que es guardada en forma `digital` en el computador.  
+4.- **Análisis:** proceso de `transformar` los `datos` a `información`.  
+5.- **Salida:** se refiere a los `mapas`, `reportes` y `estadísticas`.  
+6.- **Distribución:** `intercambio` de datos espaciales y no-espaciales. 
+
+## ¿Los componentes del SIG? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. `Hardware`: ej: computador, celular
+
+2. `Software`: ej: QGIS
+
+3. `Datos`: con lo que se trabaja en los SIG, ej: datos censales
+
+4. `Métodos`: funciones algorítmos matemáticos
+
+5. `Personas`: todo aquel que usa un SIG
+
+6. `Red`: tanto la internet como la forma colaborativa de trabajar en forma de red
+
+# 2. Conceptos del espacio {background-color='orange'}
+
+## Conceptos Fundamentales de Análisis Espacial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.- Espacio
+
+2.- Localización 
+
+3.- Distancia
+
+
+## Espacio {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+El `espacio` se puede medir en términos `absolutos`, `relativos` y `cognitivos`
+
+` Espacio absoluto`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Se puede pensar como un espacio matemático
+
+- Implica la precisa medición de la ubicación (x,y,z)
+:::
+::: {.column width="50%"}
+![](img/absolute_space.png){fig-align='center'}
+:::
+:::
+
+## Espacio {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+El `espacio` se puede medir en términos `absolutos`, `relativos` y `cognitivos`
+
+`Espacio relativo`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Espacio topológico
+
+- Se preocupa de la conección entre lugares
+:::
+
+::: {.column width="50%"}
+
+![](img/topological-DC-metro.png){fig-align='center'}
+:::
+:::
+
+## Espacio {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+El `espacio` se puede medir en términos `absolutos`, `relativos` y `cognitivos`
+
+`Espacio cognitivo`: refleja las `creencias`, `experiencias` y `percepciones` de las personas sobre los lugares.
+
+![](img/cognitive-space.png){fig-align='center'}
+
+## Localización {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+La `ubicación/localización` se puede medir en términos `absolutos`, `relativos`, `cognitivos` y `nominales`
+
+Absolutos: Latitud/Longitud
+
+Relativos: sitio y situación
+
+Cognitivos: nombre del lugar
+
+Nominal: ¿Dónde estabas tú cuando....?
+
+## Localización {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Absoluta`
+
+. . .
+
+se considera un descriptor `inequívoco` de la ubicación, típicamente expresado como una `coordenada`, como la latitud y la longitud.
+
+![](img/latitudelongitude.png){fig-align='center'}
+
+## Localización {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Relativa:` se puede medir usando `sitio` y `situación`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Sitio:
+
+Atributo físico de un lugar
+
+
+Ejemplo: terreno, suelo, vegetación, fuente de agua, entorno construido, etc
+:::
+::: {.column width="50%"}
+Situación
+
+ubicación de un lugar en relación con otros lugares y actividades humanas
+
+`Ejemplo:` a 50km de Santiago, cerca de una materia prima (cobre), lejos de oportunidades laborales
+:::
+:::
+
+## Localización {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Cognitiva:` se refiere a las imágenes cognitivas personales de lugares y regiones compiladas a partir de conocimientos, experiencias e impresiones personales.
+
+![](img/cognitive-location.png){fig-align='center'}
+
+## Localización {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`Nominal:` Una ubicación nominal es una ubicación en la que se `recuerda haber estado` cuando se enteró de un evento que tuvo lugar en una ubicación diferente.
+
+> Es importante tener en cuenta que los `sistemas de medición` que representan la `ubicación`, por ejemplo, `absoluto`, `relativo`, `nominal`, son `sistemas culturales` que están integrados en diferentes culturas y cosmovisiones y se pueden inscribir en los lugares.
+
+## Distancia {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+se puede definir en términos `absolutos`, `relativos` y `cognitivos`
+
+`Absoluto:` es una unidad de medida física, por ejemplo, el número de kilometros entre el centro de la ciudad de Santiago y Rancagua.
+
+`Relativa:` se calcula midiendo la distancia, utilizando `métricas` como `tiempo`, `esfuerzo` o `costo`. Ej. Cuanta bencina se gasta.
+
+`Cognitiva:` se refiere a la percepción individual de cuán lejos son las cosas
+
+## Primera ley de la geografía {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+> "Todo está relacionado con todo lo demás, pero las cosas `cercanas` están `más relacionadas` entre sí" 
+
+- `Waldo Tobler` (profesor emérito de la Universidad de California en Santa Bárbara, Departamento de geografía)
+
+
+# 3. Modelos de datos geoespaciales {background-color="darkgreen"}
+
+## ¿Qué son? {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+- medios formales de representar información `espacialmente` referenciada.
+
+. . .
+
+- vista simplificada de `entidades físicas`
+
+. . .
+
+- una `conceptualización` de la realidad
+
+## Componentes {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Compuestos de `dos partes`  
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Objeto
+:::
+::: {.column width="50%}
+Atributo
+:::
+:::
+
+![](img/gdm-1.png) 
+
+## Ejemplo 1 {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r,echo=FALSE,error=FALSE,fig.width=10}
+library(magrittr)
+library(leaflet)
+leaflet() %>% 
+  addProviderTiles('Esri.WorldImagery') %>% 
+  setView(lng=-70.7,lat= -33.5, zoom = 6) 
+```
+
+## Ejemplo 2 {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r,echo=FALSE,error=FALSE,fig.width=10}
+leaflet() %>% 
+  addProviderTiles("OpenStreetMap.Mapnik") %>% 
+  setView(lng=-70.7,lat= -33.5, zoom = 6) 
+```
+
+## Tipos de Fenómenos Espaciales {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.- Discretos
+
+2.- Continuos
+  
+
+## Fenómenos Espaciales Discretos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Discreto:
+
+  - `individualmente` distinguibles
+  
+  - `No existe` entre observaciones
+  
+Ejemplos: 
+ 
+:::: {.columns}
+::: {.column width="50%"}
+rios,lagos
+:::
+::: {.column width="50%"}
+caminos
+:::
+:::
+
+![](img/discreto.png)
+
+
+## Fenómenos Espaciales Continuos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Continuos:
+
+  - `Existe` entre observaciones
+  
+  - Representa datos de `naturaleza continua`
+  
+Ejemplos: 
+    
+:::: {.columns}
+::: {.column width="50%"}
+temperatura
+:::
+::: {.column width="50%"}
+elevación
+:::
+:::
+
+![](img/continuo.png)
+
+## Fenómenos espaciales continuos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r,echo=FALSE,error=FALSE,fig.width=10}
+leaflet() %>% 
+  addProviderTiles('OpenTopoMap') %>% 
+  setView(lng=-70.7,lat= -33.5, zoom = 6) 
+```
+
+## Organización (capas) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Típicamente, el fenómeno espacial se organiza en modelos de datos geoespaciales `separados por tema`.
+
+![](img/sig_capas.jpg){fig-align='center'}
+
+## Organización (capas) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/gdm-2.png){fig-align='center'}
+
+
+## Organización (capas) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/gdm-2.png){fig-align='center'}
+
+## Organización (capas) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/sig_capas_2.png){fig-align='center'}
+
+# 4. Tipos de modelos de datos espaciales {background-color='orange'}
+
+
+## Tipos de modelos de datos espaciales {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Dos modelos de datos espaciales
+
+. . .
+
+  - Vectorial
+
+. . .
+
+  - Raster
+  
+## Datos Vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Define objetos discretos
+  - Ej. hidrante, caminos, rios, 
+  
+- Hay tres tipos de datos vectorial
+
+  - Punto
+  
+  - Linea
+  
+  - Polígono
+  
+- están compuestos de coordenadas y atributos.
+
+## Datos Vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+- `Punto`
+
+  - usa un par de coordenadas para definir la ubicación
+  
+  - se consiera que no tiene dimensión
+   (puede tener dimensión real, pero para el propóstio del SIG se considera dimención cero)
+   
+  - la información de atributos se adjuna al punto
+  
+  - Ej. postes de luz, estación agroclimática, ubicación de un crimen
+
+## Datos Vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Punto`
+
+![](img/puntos.png){fig-align='center'}
+
+## Datos Vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+- `Linea`
+
+  - se define por un conjunto ordenado de coordenadas.
+    
+  - cada linea (y curva) están formadas de múltiples segmentos de linea
+  
+  - Ocasionalemnte, lineas curvas se representan matemáticamente
+  
+  - el punto de partida de una linea es un `nodo`
+  
+  - puntos intermedios de la linea son `vertices`
+  
+  - los atributos pueden estar adjuntos a toda la linea, un nodo o vertice.
+  
+  - Ej: caminos, tuberias, linea eléctrica
+
+## Datos vectoriales {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Red de drenaje representada por lineas
+
+![](img/stream.png){fig-align='center'}
+
+## Datos Vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Polígono`
+
+  - formado por un grupo de lineas conectadas
+  
+  - polígonos deben ser cerrados. El punto de partida y de término debe ser el mismo.
+  
+  - los polígonos tienen una región interior
+  
+  - información de atributos se adjunta al polígono
+  
+  - Ej. lagos, ciudad, límites administrativos
+
+## Datos Vectorial {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+- `Polígono`
+
+![](img/poligono.png){fig-slign='center'}
+
+## Modelos de datos espaciales {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+- Dos modelos de datos espaciales
+
+  - Vectorial
+  
+  - `Raster`
+  
+## Datos Raster {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+::: {.columns}
+::: {.column width="50%"}
+- Representa objetos continuos
+  Ej. temperatura, elevación
+  
+- conjunto regular de celdas (matriz) en un patrón cuadrículado
+
+- objetos del mundo real son representados por valores en las celdas
+:::
+::: {.column width="50%"}
+![](img/raster_dataset.png)
+:::
+:::
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/Elementos_capa_raster.png){width="60%" fig-align="center"}
+
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r, echo=FALSE,fig.align='center'}
+library(raster)
+library(sf)
+im <- raster(matrix(1:100,ncol=10),xmn=0,xmx=100,ymn=0,ymx=100)
+plot(im,xaxt="n",yaxt="n")
+axis(1, at = seq(10, 100, by = 10), las=2)
+axis(2, at = seq(10, 100, by = 10), las=2)
+
+```
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r echo=FALSE, fig.align='center', warning=FALSE}
+plot(im,xaxt="n",yaxt="n")
+axis(1, at = seq(10, 100, by = 10), las=2)
+axis(2, at = seq(10, 100, by = 10), las=2)
+plot(rasterToPolygons(im), add=TRUE, border='black', lwd=1) 
+centr <- st_centroid(st_as_sf(rasterToPolygons(im)))
+plot(centr,add=TRUE)
+```
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r, echo=FALSE,fig.align='center'}
+plot(im,xaxt="n",yaxt="n")
+axis(1, at = seq(10, 100, by = 10), las=2)
+axis(2, at = seq(10, 100, by = 10), las=2)
+plot(rasterToPolygons(im), add=TRUE, border='black', lwd=1) 
+text(im)
+```
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/raster_image.png){fig-align='center'}
+
+## Resolución datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- El tamaño de la celda (pixel) corresponde a la resolución
+
+- hay una compensación entre la resolución y el tamaño del archivo raster
+
+- la coordenada de la celda corresponde al punto central del pixel
+
+- la coordenada aplica al área total de la celda
+
+## Resolución datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Cada celda raster representa una determinada área y el valor asignado representa toda esta área.
+
+- el valor de la celda raster representa el valor promedio, más común, o el único valor cubierto por la celda.
+
+## Resolución datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/raster_image-2.png){fig-align='center'}
+
+## Resolución datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/raster_image-3.png){fig-align='center'}
+
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/raster_image-4.png){fig-align='center'}
+
+
+## Datos Raster  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Ejemplo: uso de suelo (landcover)
+
+![](img/landcover-biobio.png){fig-align='center'}
+
+Zambrano et al. (2016)
+
+## Raster vs Vectorial
+
+::: {.columns}
+::: {.column width="50%"}
+**Raster**
+
+- buenos para cambios frecuentes
+
+- modelo de datos simple
+
+- fáciles superposiciones
+
+- mejores para imágenes digitales
+
+:::
+::: {.column width="50%"}
+**Vectorial**
+
+- almacenamiento de datos compacto
+
+- ideal para representaciones lineales y de redes
+
+- seres humanos más familiarizados con datos vectoriales
+
+- puede contener topología
+:::
+:::
+
+# 5. Atributos {background-color='red'}
+## Atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+## Atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Registrar características `no espaciales` que describen entidades espaciales
+
+::: {.columns}
+::: {.column width="50%"}
+- Dispuestos en tablas :
+
+  - Fila: `entidad`
+  
+  - Columna: `atributo`
+:::
+::: {.column width="50%"}
+![](img/tabla.png)
+:::
+:::
+
+- se puede almacenar como un formato de archivo plano, o en un sistema de gestión de base de datos (SGBD).
+  
+## Atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/hidrante.png){fig-align='center'}
+
+## Categorias de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Nominal
+
+- Ordinal
+
+- Intervalo
+
+- Razón
+
+## Categorias de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Nominal`
+
+  - Entrega información `descriptiva`
+    Ej. color, nombre de ciudad, tipo de planta
+      
+  - `no` implica ningún `orden`
+  
+  - Tambien pueden ser imágenes, sonidos o peliculas
+  
+## Categorias de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Ordinal`
+
+  - `implican` un ranking u `orden` basado en sus valores.
+
+  - los valores pueden ser texto descriptivo o numérico
+  
+    - Ej. alto/mediano/bajo o 1/50/100
+
+  - especifiqua `solo rango`, y no escala
+  
+    - Ej. alto/50 es mayor que bajo/1 pero no sabemos por cuanto
+
+## Categorias de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Intervalo`
+
+  - orden de rango y magnitud está implícito
+  
+  - `No` tiene un cero natural
+    - Usa un cero arbitrario
+  
+  - Usa atributos númericos
+    - Ej: 30° C son 10°C mayor que 20°C
+        
+  -  `suma y resta aplica` pero `no multiplicación` ya que los valores son absolutos de un cero arbitrario.
+
+## Categorias de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- `Razón`
+
+  - orden de rango y magnitud está implícito
+  
+  - Tiene un cero natural
+  
+  - Usa atributos númericos
+    - Ej: 50 km/hr es dos veces más rápido que 25 km/hr
+        
+  - suma, resta, división y multiplicación tiene sentido, ya que los valores son absolutos de un cero natural
+
+## Categorias de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Identficar columnas como:  
+  - Nominal  
+  - Ordinal  
+  - Intervalo/Razón  
+  
+::: {.columns}
+::: {.column width="50%"}
+![](img/puntos_tabla.png)
+:::
+::: {.column width="50%"}
+![](img/tabla_tipo_dato.png)
+:::
+:::
+
+## Tipos de datos de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+- los `datos` de atributos son `guardados` en la `memoria`
+
+. . .
+
+- el tipo de `dato` del `atributo` necesita ser `definido` para un `eficiente` uso de la `memoria` y determinación de la aplicabilidad operativa
+
+. . .
+
+- hay cuatro tipos comunes de datos
+
+  1. entero
+  
+  2. flotante/real
+  
+  3. texto/caracter
+  
+  4. fecha
+  
+## Tipos de datos de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.- `Entero`
+
+- Sin punto decimal
+
+- se puede usar para `cálculos matemáticos`
+  
+  - sin embargo el resultado de una fracción será redondeado
+  
+- Ejemplos:
+
+  - 1
+  - 2458
+  - -54
+  
+## Tipos de datos de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+2.- `Flotante/real`
+
+- Número decimal
+  
+- se puede usar para `cálculos matemáticos`
+  
+- Ejemplos:
+  
+  - 1,4532
+    
+  - 254783,1
+    
+  - -845,157
+    
+## Tipos de datos de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+3.- `texto/caracter`
+
+- no se puede usar para cálculos matemáticos
+  
+- el texto puede ser manipulado, ej. para encontrar subcadenas o para cortar cadenas.
+
+- Ej.
+  
+  - "A"
+    
+  - "SIG"
+    
+  - "Avenida Bernardo O'Higgins 2345"
+
+## Tipos de datos de atributos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+4- `fecha`
+
+- guarda fechas
+  
+- `no` se puede usar para `cálculos matemáticos`
+  
+- sin embargo, se puede usar para `calcular` el periodo de `tiempo` entre dos fechas
+  
+- Ej.
+  
+  - 12-12-1980
+    
+  - 12 de diciembre 1980
+    
+  - 12/12/80
+
+
+# 6. Consideraciones con datos vectoriales {background-color='orange'}
+
+## Inclusiones en polígonos y generalización de límites.
+
+![](img/inclusion_generalizacion..jpg)
+
+## Topología {.smaller}
+
+La topología expresa las `relaciones espaciales` entre entidades vectoriales adyacentes o conectadas (puntos, polilíneas y polígonos) en un SIG. 
+
+Los datos topológicos o basados en topología son útiles para `detectar y corregir errores` de digitalización. 
+
+La topología es necesaria para realizar algunos tipos de análisis espacial, como el análisis de redes.
+
+## Topología {.smaller}
+
+![](img/topology1.png){fig-aling="center"}
+
+## Topología {.smaller}
+
+![](img/topology2.png){fig-aling="center"}
+
+## Topología {.smaller}
+
+![](img/topology3.png){fig-aling="center"}
+
+## Tipos de formatos de archvios en SIG {.smaller}
+
+**Datos Vectoriales**
+
+  - ESRI Shapefile : formado por una serie de archivos con el mismo nombre pero diferente extensión.  
+      *shp: es el archivo principal que almacena la geometría de la entidad; necesario.  
+      *.shx: es el archivo de índice que almacena el índice de la geometría de la entidad; necesario.  
+      *.dbf: es la tabla dBASE que almacena la información de atributos de las entidades; necesaria.   
+
+Entre la geometría y los atributos existe una relación de uno a uno, basada en el número de registro. Los registros de atributo del archivo dBase deben estar en el mismo orden que registros del archivo principal.
+
+## Tipos de formatos de archvios en SIG {.smaller}
+
+**Datos Raster**
+
+`GeoTIFF`: es un estándar de metadatos de dominio público que permite incrustar información de georreferenciación en un archivo TIFF. 
+
+`TIFF` (Tagged Image File Format) es un formato de archivo informático para almacenar imágenes de mapa de bits.
+
+La posible información adicional incluye proyección de mapas, sistemas de coordenadas, elipsoides, datos de referencia y todo lo demás necesario para establecer la referencia espacial exacta para el archivo. 
+
+## Tipos de formatos de archvios en SIG {.smaller}
+
+**Vectorial y raster**
+
+El estándar de codificación `GeoPackage` describe un conjunto de convenciones para almacenar lo siguiente dentro de una base de datos `SQLite`:
+
+- características vectoriales
+- conjuntos de matrices de mosaicos de imágenes y mapas ráster a varias escalas
+- atributos (datos no espaciales)
+- extensiones
+

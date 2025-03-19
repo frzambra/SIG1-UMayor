@@ -1,0 +1,10 @@
+---
+title: "Clases"
+---
+
+# Unidad 1: Datos geoespaciales
+
++ Lunes 18 de marzo 
+  + [Introducción al curso](clases/clase1/01_intro_curso.qmd)
+  + [Introducción a los SIG](clases/clase1/02_intro_SIG.qmd)
+  + [Introducción a QGIS](clases/clase1/03_intro_qgis.qmd)

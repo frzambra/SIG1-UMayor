@@ -1,0 +1,23 @@
+---
+title: "Acerca"
+---
+
+Este repositorio ha sido creado por el Dr. Francisco Zambrano para el curso de `Introducción a las Tecnologías de Información Geográfica`. 
+
+El curso es parte de la carrera de `Ingeniería en Medio Ambiente y Sustentabilidad de la Universidad Mayor`. Para mayor información sobre la carrera hacer clic en el [link](https://www.umayor.cl/um/carreras/ingenieria-en-medio-ambiente-y-sustentabilidad-santiago)
+
+La carrera es coordinado por la escuela de Ingeniería en Medio Ambiente de la Universidad Mayor. 
+
+El Dr. Francisco es Ingeniero Civil Agrícola y Doctor en Ingeniería Agrícola con mención en Recursos Hídricos, Ambos de la Universidad de Concepción. El Dr. Zambrano, ha realizado estadias de investigación en el Centro de Sequía de la Universidad de Nebraska y el CALMIT, en Lincoln, Nebraska, Estados Unidos. También, en la Facultad de Ciencia Geo-Información y Observación de la Tierra, en la Universidad de Twente, Enschede, Paises Bajos.
+
+Sus lineas de investigación están asociadas a el impacto del cambio climático en la agricultura y los recursos hídricos de Chile.
+
+Pinche en el icono para ver listado de publicaciones [![](https://static-00.iconduck.com/assets.00/google-scholar-icon-2048x2048-sjbhklt7.png){width=50}](https://scholar.google.es/citations?user=mKQRdOEAAAAJ&hl=es)
+
+
+
+
+
+
+
+

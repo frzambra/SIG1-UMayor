@@ -1,0 +1,7 @@
+---
+title: "Introducción a Tecnologías de la Información Geográfica"
+institution: "Escuela de Ing. en Medio Ambiente, Universidad Mayor"
+author: "Dr. Francisco Zambrano"
+---
+
+En este repositorio pongo a disposición de los alumnos de la carrera de `Ingeniería en Medio Ambiente y Sustentabilidad` de la Universidad Mayor, las clases, talleres y material que se utilizará en la asignatura de `Introducción a la Tecnología de Información Geográfica`. Este repositorio está creado con [quarto](https://quarto.org/) por medio del software `R`.

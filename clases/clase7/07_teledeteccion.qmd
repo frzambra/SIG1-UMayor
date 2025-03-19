@@ -1,0 +1,737 @@
+---
+title: "Teledetección e Imágenes Satelitales"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSE1014)"
+author: "Dr. Francisco Zambrano"
+date: "24/05/2023"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../logo_hemera.jpg"
+    footer: "IMSE1014|1-2023"
+    theme: simple
+    echo: true
+---
+
+## Contenidos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. Introducción
+2. Teledetección
+3. Teoría del color
+4. Imágenes satelitales
+5. Índices de vegetación
+
+```{setup}
+#| echo: false
+library(mapview)
+```
+
+# Introducción {background-color='brown'}
+
+## Datos remotos y útiles  {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Datos sensados de forma remota
+
+  - Imágenes Aéreas
+  
+  - Imágenes de Satélite
+  
+- Útiles por muchas razones
+
+  - Cubren grandes extensiones
+  
+  - Rango espectral extendido
+  
+  - Precisión geométrica
+  
+  - Registro permanente
+  
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+```{r echo=FALSE,fig.width=10}
+mapview::mapview()@map  |>  
+  leaflet::setView(-72, -36,  zoom = 12) 
+
+```
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Volcan Llaima**
+
+```{r echo=FALSE,fig.width=10}
+mapview::mapview()@map |> 
+    leaflet::setView(-71.72, -38.7,  zoom = 12)
+```
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Liceo El Carmen, San Fernando**
+
+
+![](img/im1.png){width="530px" fig-align="center"}
+
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Liceo El Carmen, San Fernando**
+
+![](img/im2.png){width="530px" fig-align="center"}
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Liceo El Carmen, San Fernando**
+
+![](img/im3.png){width="530px" fig-align="center"}
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig1.png)
+
+## Ejemplos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig2.png)
+
+# Teledetección {background-color='ocean'}
+
+## {background-image="img/What-Is-Remote-Sensing.jpg" background-position="contain"}
+
+## Principios básicos {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- La **teledetección** se basa en la energía electromagnética reflejada
+
+- La energía solar caracterizada por la **longitud de onda**
+
+  - cada `color` tiene una longitud de onda específica.
+  
+  - el rango compleo de longitud de onda se denómina **espectro electromagnético**
+  
+   nuestros ojos perciben la luz en el rango **visible** del espectro
+   
+
+
+## Espectro electromagnético (Videos) {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. [Espectro electromagnetico](https://www.youtube.com/watch?v=ixwxOQf50kc&t=106s)
+
+2. [La luz visible](https://www.youtube.com/watch?v=YCWvxv__nmQ)
+
+3. [Infrarojo](https://www.youtube.com/watch?v=8ybXNZQGzSQ)
+
+## Espectro electromagnético {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig3.png)
+
+## Espectro electromagnético {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/EspectroElectromagnetico.png)
+
+## Principios básicos teledetección {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1. Energía electromagnética que golpea un objeto puede ser **absorvida**, **reflejada** o **transmitida**
+
+2. Los objetos se ven como el color que deben **reflejar**.
+
+3. Los objetos además reflejan otras porciones del espectro.
+
+::: {.columns}
+::: {.column width=50%}
+![](img/energia_incidente.png){width="60%"}
+:::
+::: {.column width=50%}
+
+$r = f_r/f_i$ (reflectividad)  
+$a = f_a/f_i$ (absortividad)  
+$t = f_t/f_i$ (transmisividad) 
+
+:::
+:::
+
+## Curva espectral vegetación sana {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/veg-reflect.png){width="700px"}
+
+## Curva espectral vegetación sana {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/leaf-reflected-infrared.png){width="700px"}
+
+## Curva espectral vegetación sana {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+![](img/espectro_absor_pigmentos.png){fig-align='center' width=100%}
+:::
+::: {.column width=50%}
+- Hay diferentes pigmentos en la vegetación.
+- Los cloroplastos absorben parte de la radiación para activar el proceso de la fotosíntesis.
+- Dependiendo del tipo de pigmento se absorbe más en unas longitudes de onda que en otras.
+:::
+:::
+
+## Ejemplo {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/rgb.png){width="530px" fig-align='center'}
+
+## Ejemplo {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/falso_color.png){width="530px" fig-align='center'}
+
+# Teoría del color {background-color='orange'}
+
+## Aditiva y sutractiva {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/colores-aditivos-sustractivos.png){fig-align='center' width="100%"}
+
+## Aditiva {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+
+- Colores primarios: Rojo, Azul y verde. 
+- Cuando se unen forman luz blanca
+- `La teoría aditiva es la base para la interpretación de imágenes satelitales`
+
+:::
+::: {.column width=50%}
+![](img/colores-aditivos.png)
+:::
+:::
+
+## Sustractiva {.smaller .scrollable background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+
+- La teoria substractiva tiene como colores primario: Amarillo, Cian y Magenta.
+- Los colores complementarios se crean al quitar un color al primario. 
+- Las pinturas, pigmentos y tintes funcionan con esta teoria 
+- `La teoria sustractiva sienta las bases para las impresiones fotográficas.` 
+
+:::
+::: {.column width=50%}
+![](img/colores--sustractivos.png)
+:::
+:::
+
+## Teoría aditiva {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/teoria_color_1){width=80%}
+
+## Teoría aditiva {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/teoria_color_2){width=80%}
+
+## Teoría aditiva {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/teoria_color_3){width=80%}
+
+## Teoría aditiva {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/teoria_color_4){width=80%}
+
+## Teoría aditiva {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/teoria_color_5){width=74%}
+
+## Composición de color {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Falso Color**
+
+Se asignan bandas que no pueden verse con el ojo humano y se pueden combinar, produciendo una imagen de Falso Color
+
+- Para visualizer una imagen en `falso color` hay que utilizar la siguiente combinación: 
+    - NIR band al display Rojo, 
+    - Red band al display Verde, 
+    - Green band al display Azul
+    
+## Composicion de color {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Una composición de 3 bandas en falso color incluye una banda de la region no visible del espectro EM
+
+::: {.columns}
+::: {.column width=50%}
+![](img/foto_color_verdadero.png){width=100%}
+Imagen de color verdadero
+:::
+::: {.column width=50%}
+![](img/foto_falso_color.png){width=100%}
+Imagen de falso color, La banda del rojo fue reemplazada por la del infrarrojo cercano
+:::
+:::
+
+## Composicion de color {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::: {.columns}
+::: {.column width=50%}
+La banda azul se carga en el canal azul del visualizador.
+
+![](img/banda_azul){width=40% fig-align='center'}
+
+La banda roja se carga en el canal rojo del visualizador.
+
+![](img/banda_roja){width=40% fig-align='center'}
+:::
+::: {.column width=50%}
+La banda azul se carga en el canal azul del visualizador.
+
+![](img/banda_verde){width=40% fig-align='center'}
+
+El resultado es una composición de color verdadero (RGB)
+
+![](img/color_verdadero){width=40% fig-align='center'}
+:::
+:::
+
+## Composicion de color {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/bandas_rgb2truecolor.png){width=100%}
+
+## Falso color {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Las tonalidades más habituales en una composición en falso color son:
+
+- Rojo, indica una vegetación sana y bien desarrollada.
+- Rosa, áreas vegetales menos densa o con vegetación menos desarrollada.
+- Blanco, áreas con escasa o nula vegetación.
+- Azul oscuro o negro indica la presencia de agua.
+- Marrón, vegetación arbustiva muy variable.
+- Beige-dorado, zonas de transición, prados secos asociados a matorral ralo.
+
+## Falso color {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/bandas_rgb2truecolor.png){width=100%}
+
+<!-- # Imágenes aéreas y Drones (UAV) {background-color='darkgreen'} -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - Las imágenes aéreas han sido una fuente importante de información geográfica -->
+
+<!--   - Comenzaron al mismo tiempo que las camaras portables -->
+
+<!--   - Se hicieron prácticas con la invención de los aeroplanos. -->
+
+<!-- - Fotogrametría: ciencia de de medir geometria desde imágenes -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig9.png){width="450px" fig-align='center'}  -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig10.png){width="600px" fig-align='center'} -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig11.png){width="400px" fig-align='center'} -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig12.png){width="600px" fig-align='center'} -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig13.png){width="500px" fig-align='center') -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig14.jpg){fig-align='center'} -->
+
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig15.png){fig-align='center'} -->
+
+<!-- ## Imágenes aéreas - atributos {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - En un principio se utilizaban camaras análogas con rollo (film) -->
+
+<!-- - luego se comenzo a utilizar camaras digitales, en vez de un rollo (film) se basan en el sistema CCD. -->
+
+<!-- - Hoy en día los drones pueden tener camaras multiespectrales -->
+
+<!-- ## Imágenes aéreas - Camaras digitales {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - Utilizan el sistema CCD (charge coupled device) o similar. -->
+
+<!--   - El CCD es un sistema rectangular de pixeles que responde a la luz -->
+
+<!-- - Multiples CCD se pueden utilizar con uno o multiples lentes -->
+
+<!-- ## Imágenes aéreas - Camaras digitales{.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig16.png){width="600px" fig-align='center'} -->
+
+<!-- ## Imágenes aéreas - Sensores multiespectrales {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- **Parrot Sequoia** -->
+
+<!-- [https://www.youtube.com/watch?time_continue=137&v=SaztuWuDEsg&feature=emb_logo](https://www.youtube.com/watch?time_continue=137&v=SaztuWuDEsg&feature=emb_logo) -->
+
+
+<!-- ## Calidad geométrica de una imágen aérea {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - Todas las imágenes aéreas tienen distorción geométrica -->
+
+<!-- - Ortofóto: posición del objeto despues de ser proyectado a un plano -->
+
+<!--   - equivalente a mirar verticalmente una escena desde una altura infinita -->
+
+<!-- - la mayoría de las fotos aéreas no proveen una vista ortofotográfica, sino que una vista en perspectiva, la que es una visión distorsionada de la imagen de la tierra. -->
+
+<!-- ## Calidad geométrica de una imágen aérea {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig17.jpg){width="600px" fig-align='center'} -->
+
+
+<!-- ## Calidad geométrica de una imágen aérea {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- Cinco principales fuentes de distorsión -->
+
+<!-- 1. terreno: error mayor -->
+
+<!-- 2. inclinación de la camara: error mayor -->
+
+<!-- 3. Lente de la camara: error menor -->
+
+<!-- 4. refracción atmosférica: error menor -->
+
+<!-- 5. otros errores de camara: error menor -->
+
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - La variación del terreno es generalmente la mayor fuente de distorisón geométrica -->
+
+<!-- - Produce desplaciamiento del relieve -->
+
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig18.png){width="600px" fig-align='center'} -->
+
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig19.png){width="600px" fig-align='center'} -->
+
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - Las distorsiones de terreno son radiales. -->
+
+<!-- - La distorsión de relieve afecta angulos y distancias en una imágene aérea. -->
+
+<!-- - La escala no es constante en una imágene aérea -->
+
+<!-- - Una imágene aérea tomada vertical sobre el terreno no es **ortofotográfica** -->
+
+<!-- ## Distorsión por inclinación de la camara {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - Es cuando el eje de la camara no se encuentra en un angulo vertical -->
+
+<!-- - Resulta en una compleja convergencia de perspectiva -->
+
+<!-- ## Distorsión por inclinación de la camara {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig20.png){width="150px" fig-align='center'} -->
+
+<!-- ## Otros errores {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - Desplazamiento radial del lente: imperfección en la superficie de la camara del lente -->
+
+<!-- - Error sistemático: patron deformado -->
+
+<!-- - Errores atmosféricos: reflexión de la luz -->
+
+<!-- ## Corrección geométrica {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - La fotogrametríca proporciona herramientas para realizar corrección geométrica. -->
+
+<!-- - El proceso de corrección requiere medir las coordenadas de la imágen y sus correspondientes coordenadas en terreno. -->
+
+<!-- - **Resultado final:** imágen ortorectificada- una imágen con corrección de distorsión de terreno y perspectiva. -->
+
+<!-- ## Ortorectificación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- ![](img/fig21.png) -->
+
+<!-- ## Usos de las imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - La base para la agromensura y mapeo topográfico -->
+
+<!--   - Mide X, Y, Z -->
+
+<!-- - Foto interpretación -->
+
+<!--   - Categorizar o asignar atributos a objetos/lugares en la superficie -->
+
+<!-- - Usadas como mapa de fondo (referencia) -->
+
+<!-- - Monitoreo agrícola -->
+
+<!--   - Estado de la vegetación - enfermedades -->
+
+<!--   - conteo de plantas -->
+
+<!--   - estado hídrico -->
+
+<!--   - ..... y mucho más -->
+
+<!-- ## Usos de las imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- - **Fotointerpretación:** el proceso de convertir las imágenes en información -->
+
+<!-- - Los interpretes utilizan: -->
+
+<!--   - tamaño -->
+<!--   - forma -->
+<!--   - color -->
+<!--   - brillo -->
+<!--   - textura -->
+<!--   - ubicación relativa y absoluta -->
+
+<!-- para interpretar las imágenes -->
+
+<!-- ## Usos de las imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+<!-- **Fotointerpretación** -->
+
+<!-- tamaño, forma, color, brillo, textura, ubicación relativa y absoluta -->
+
+<!-- ![](img/fig22.png){width="350px" fig-align='center'} -->
+<!-- ![](img/fig23.png){width="350px" fig-align='center'} -->
+
+
+# Imágenes Satelitales {background-color='orange'}
+
+
+<!-- ## Características {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+
+
+<!-- - concepto similar a las imágenes aéreas -->
+
+<!-- - Tiene los mismo usos -->
+
+<!--   - Base para crear mapas -->
+
+<!--   - Interpretación de imágenes -->
+
+<!--   - Como mapa de referencia -->
+
+<!-- - ... pero hay algunas diferencias importantes -->
+
+## Características {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Perspectiva desde muy arriba
+
+  - reduce la distorsión de terreno
+  
+- Cubren grandes superficies
+  - costo muy alto para superficies pequeñas
+  
+- Requieren procesamiento especializado de imágenes
+
+- Programar la adquisición de imágene se debe realizar con días o semanas de anticipación
+  
+  -O seguir los cronogramas de vuelos fijos
+
+- Menor resolución efectiva
+
+
+## Tipos de imágenes satelitales {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+- Públicas: 
+
+  - Landsat, 
+    
+  - Sentinel, 
+    
+  - MODIS
+
+- Privadas: 
+
+  - Ikonos, 
+
+  - Worldview
+  
+## Principios básicos {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Los sensores en los satelites operan apuntando al área a ser tomada
+  
+  - Vista instantane del campo (VIC): corresonde al área que puede ser vista por cada sensor.
+
+- Los sensores construyen imágenes 2D de la superficie al registrar la energía reflejada
+
+## Landsat (USGS/NASA) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Lanzado en Julio 1972 (Landsat-1)
+
+- Primer sistema diseñado para adquirir datos de la superficie de la tierra.
+
+- Tres sensores abordo
+
+  - Cámara de video
+  
+  - sensor multiespectral
+  
+  - mapeador temático (thematic mapper)
+  
+  - mapeador temático mejorado (enhanced thematic mapper)
+
+- Revisita cada 16 días.
+
+- Resolución espacial de 15/30/100m
+
+## Landsat (USGS/NASA) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+  
+![](img/fig24.jpg){width="750px" fig-align='center'}
+
+## Landsat (USGS/NASA) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+ 
+![](img/fig25.jpg){width="750px" fig-align='center'}
+
+## Landsat (USGS/NASA - USA) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Embalse el Yeso
+
+![](img/fig26.png){width="750px" fig-align='center'}
+
+## Sentinel (ESA - Europa) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig27.jpg){width="750px" fig-align='center'}
+
+## Sentinel 2 (A/B) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Sentinel A lanzado 23 Junio 2015
+
+- Sentinel B lanzado 7 Marzo 2017
+
+- Cuentan con un sensor multiespectral (MSI)
+
+- Cada satelite captura imágenes cada 10 días, en conjunto la revisita es de 5 días.
+
+- Resolución espacial 10/20/60 m
+
+## Sentinel 2 (A/B) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig28.png){width="750px" fig-align='center'}
+
+## Sentinel 2 (A/B) {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig29.png){width="750px" fig-align='center'}
+
+## Worldview 4 {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+- Bandas:
+
+  - Pancromática: 450 - 800nm
+  - Red: 655 - 690 nm, 
+  - Green: 510 - 580 nm
+  - Blue: 450 - 510 nm
+  - Near-IR: 780-920
+  
+- Resolución espacial entre 0.31 a 4m
+
+- Costo 22.5 $USD/km^2$
+
+- Mínima superficie: 25 $km^2$
+
+- Datos de archivo
+
+## Worldview 4 {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+
+![](img/fig31.jpg){width="650px" fig-align='center'}
+
+## ¿Cuál usar? ¿satelital o aérea? {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Considerar los siguientes factores:
+
+- Resolución espacial
+
+- La superficie del área a analizar
+
+- Costo
+
+- Limitaciones de tiempo
+
+- Post-proceso
+
+- Requerimientos espectrales
+
+
+# Indices de Vegetación {background-color='lightblue'}
+
+## Espectro electromagnético {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig1.png){fig-width="800px" fig-align='center'}
+
+
+## Espectro electromagnético {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig2.jpg){fig-width="800px" fig-align='center'}
+
+
+## Curva espectral {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Vegetación**
+
+![](img/fig4.png){fig-width="550px" fig-align='center'}
+
+## Respuesta de la vegetación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Vegetación**
+
+![](img/fig3.jpg){fig-width="700px" fig-align='center'}
+
+## Índices de vegetación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Índice de Diferencia Normalizada (NDVI)**
+
+![](img/fig5.png){fig-width="550px" fig-align='center'}
+
+
+## Índices de vegetación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Índice de Diferencia Normalizada (NDVI)**
+
+$$NDVI = \frac{NIR-RED}{NIR+RED} $$
+
+![](img/fig7.png){fig-width="800px" fig-align='center'}
+
+## Índices de vegetación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Índice de Humedad de Diferencia Normalizada (NDMI)**
+
+$$NDMI = \frac{NIR-SWIR}{NIR+SWIR} $$
+
+![](img/fig8.png){fig-width="800px" fig-align='center'}
+
+## Imagenes de Satelite {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Imágenes Sentinel-2**
+
+![](img/fig6.png){fig-width="800px" fig-align='center'}
+
+## Bandas Sentinel-2 {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+**Imágenes Sentinel-2**
+
+![](img/fig9.png){fig-width="600px" fig-align='center'}
+
+# Calculadora Raster en QGIS  {background-color='orange'}
+
+## Utilidad {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Permite realizar operaciones aritméticas con datos raster
+
+![](img/fig10.gif){fig-width="600px" fig-align='center'}
+
+## Ejemplo {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/fig11.jpg){fig-width="700px" fig-align='center'}
+
+## Para cálculo de Índices de Vegetación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+La vamos a utilizar para calcular los índices de vegetación NDVI y NDMI.
+
+$$NDVI = \frac{NIR-RED}{NIR+RED} $$
+
+$$NDMI = \frac{NIR-SWIR}{NIR+SWIR} $$

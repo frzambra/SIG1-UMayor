@@ -1,0 +1,278 @@
+---
+title: "Introducción a los SIG"
+subtitle: "Introducción a la Tecnología de Información Geográfica (IMSD1020)"
+author: "Dr. Francisco Zambrano"
+date: "18 marzo 2025"
+format: 
+  revealjs:
+    slide-number: true
+    title-block-banner: true
+    logo: "../../imgs/HEMERA_UM_color.png"
+    footer: "IMSD1020|1-2025"
+    css: "../../styles.css"
+    theme: simple
+    echo: true
+---
+
+## Contenidos {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.  Utilidad de los SIG
+
+2.  ¿Qué son los SIG?
+
+3.  Partes de los SIG
+
+# 1. Utilidad de los SIG {background-color="darkgreen"}
+
+## Algunas aplicaciones {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+-   [IPCC WGI Interactive Atlas](https://interactive-atlas.ipcc.ch/)
+
+-   [Coronavirus COVID-19 global cases (Johns Hopkins)](https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
+
+-   [Monitoreo de calidad del aire (Chile)](https://sinca.mma.gob.cl/)
+
+-   [Monitoreo de calida del aire (España)](https://sig.mapama.gob.es/calidad-aire/)
+
+## ¿Cómo nos pueden servir los SIG para medio ambiente? {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+1.  Manejo de desastres
+
+2.  Análisis de impacto ambiental
+
+3.  Modelos de distribución de especies
+
+4.  Incendios forestales
+
+5.  Gestión de plagas
+
+6.  ...
+
+## IDE Ministerio de Medio Ambiente {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+`IDE`: Infraestructura de datos espaciales\
+`SINIA`: Sistema Nacional de Información Ambiental
+
+<https://ide.mma.gob.cl/>
+
+> Los SIG nos permiten utilizar datos espaciales con aplicaciones en multiples disciplinas. Por ejemplo, medio ambiente.
+
+`Los SIG nos ayudan a entender el mundo por medio de considerar la ubicación en el espacio`
+
+# ¿Qué son los SIG? {background-color="gray"}
+
+. . .
+
+## Definición de SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Es un `sistema` basado en computador para ayudar a la `recolección`, `mantención`, `almacenamiento`, `análisis`, `salida` y `distribución` de información y datos espaciales y no-espaciales.
+
+. . .
+
+1.- **Recolección:** a la habilidad del SIG de tomar `diferentes tipos de información`.
+
+. . .
+
+2.- **Mantención:** capacidad de mantener los `datos` recolectados `actualizaods`.
+
+. . .
+
+3.- **Almacenamiento:** la estructura de `codificación` de la información que es guardada en forma `digital` en el computador.
+
+. . .
+
+4.- **Análisis:** proceso de `transformar` los `datos` a `información`.
+
+. . .
+
+5.- **Salida:** se refiere a los `mapas`, `reportes` y `estadísticas`.
+
+## Definición de SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+6.- **Distribución:** `intercambio` de datos espaciales y no-espaciales.
+
+-   Puede distribuir información en formato `visual` o `tabular`.
+
+datos e información `espacial` y `no espacial`" se refiere al hecho de que un SIG puede contener información si tiene un componente espacial o no.
+
+. . .
+
+> "Los SIG son simultáneamente el `telescopio`, el `microscopio`, la `computadora` y la `impresora` de análisis regional y síntesis de datos espaciales".- Ron Abler (1988) -
+
+## Los SIG como un paraguas {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/umbrella.png)
+
+. . .
+
+¿Quá hay bajo el paraguas?
+
+## Los SIG como un paraguas {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+![](img/under_umbrella.png)
+
+## Las seis partes de los SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+1.- **Hardware:**
+
+. . .
+
+-   Computadoras potentes
+
+-   Impresoras/ploters y otras capacidades de visualización
+
+-   Dispositivos de entrada
+
+-   Gran capacidad de espacio en disco/memoria
+
+![](img/hardware.jpeg){fig-align="center"}
+
+## Las seis partes de los SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+2.- **Software:**
+
+. . .
+
+se refiere a los muchos paquetes de software `gratuitos` y `comerciales` que permiten a un `usuario de SIG` realizar funciones de SIG tales como la `manipulación, almacenamiento, consulta y análisis` de información espacial y no espacial.
+
+. . .
+
+![](img/sofwatres-sig.jpg){fig-align="center"}
+
+## Las seis partes de los SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+3.- **Datos:**
+
+. . .
+
+se refiere a toda la información `espacial` y `no espacial` `almacenada` en un formato digital en el `computador`
+
+. . .
+
+-   un `SIG` puede trabajar con cualquier tipo de datos en muchos tipos `diferentes de formatos`. (espacial y no espacial)
+
+. . .
+
+-   actualmente estamos `sobrecargados` de `datos` (data overload)
+
+. . .
+
+-   la `mitad de todo (50%)` el tiempo que se pasa en un `proyecto SIG`, simplemente se estará trabajando en `preparar los datos`
+
+![](img/Baddatameme.png){fig-align="center"}
+
+## Las seis partes de los SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+4.- **Métodos:** Los métodos que forman parte de un SIG se refieren a las
+
+::::: columns
+::: {.column width="50%"}
+-   fórmulas,
+
+-   estadísticas,
+
+-   análisis y
+
+-   algoritmos
+:::
+
+::: {.column width="50%"}
+![](img/GIS-methods.png){fig-align="center"}
+:::
+:::::
+
+## Las seis partes de los SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+5.- **Personas:**
+
+. . .
+
+cualquiera que utiliza un SIG.
+
+. . .
+
+-   Profesionales `expertos` en SIG
+
+-   `Usuarios` expertos en SIG
+
+-   usuarios `novatos` en SIG
+
+-   cualquier usuario de SIG
+
+## Las seis partes de los SIG {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+. . .
+
+6.- **Red (network):** se refiere tanto a la `computadora` como a la `red social`
+
+::::: columns
+::: {.column width="50%"}
+-   difusión de datos
+
+    -   transferir datos
+    -   colaboración
+
+-   visualización de información
+
+    -   mapas web
+    -   aplicaciones web
+:::
+
+::: {.column width="50%"}
+![](img/network.png){fig-align="center"}
+:::
+:::::
+
+## ¿Cómo pueden ser usados los SIG? {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+::::: columns
+::: {.column width="50%"}
+-   Informacion catastral
+
+-   Entregas
+
+-   Militar
+
+-   `Agricultura`
+
+-   Mapeo de vida silvestre
+
+-   `Manejo de desastres`
+
+-   Infraestructura
+:::
+
+::: {.column width="50%"}
+-   `Soporte de decisión`
+
+-   Análisis 3D
+
+-   `Mapeo`
+
+-   Salud
+
+-   Minería de datos
+
+-   `Recursos naturales`
+:::
+:::::
+
+## Revolución geo-espacial {.smaller .scrollable background-image="../../imgs/logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"}
+
+Ejemplo de uso de la tecnología geoespacial
+
+[Revolución geoespacial](https://www.youtube.com/watch?v=ZdQjc30YPOk&t=27s)
+
+[climate change](https://www.youtube.com/watch?v=9F7z9LLYxf8&t=128s)
+
+[Pandemia](https://www.youtube.com/watch?v=CjAuDfnVKi4)
