@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Introducción a Tec. Información Geográfica"
@@ -21,7 +22,9 @@ website:
 
 format:
   html:
-    theme: simplex
+    theme: 
+      light: [litera, styles.scss]
+      dark: [darkly, styles-dark.scss]
     css: styles.css
     toc: true
     lang: es
