@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Francisco Zambrano">
+
+<title>Teledetección e Imágenes Satelitales – Introducción a Tec. Información Geográfica</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<script src="../../site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+<script src="../../site_libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+<script src="../../site_libs/clipboard-0.0.1/setClipboardText.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Introducción a Tec. Información Geográfica</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../clases.html"> 
+<span class="menu-text">Clases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talleres.html"> 
+<span class="menu-text">Talleres</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Acerca</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/frzambra"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/frzambra/SIG1-UMayor"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p><img src="../../imgs/HEMERA_UM_color.png" class="img-fluid"></p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#contenidos" id="toc-contenidos" class="nav-link active" data-scroll-target="#contenidos">Contenidos</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción">Introducción</a>
+  <ul class="collapse">
+  <li><a href="#datos-remotos-y-útiles" id="toc-datos-remotos-y-útiles" class="nav-link" data-scroll-target="#datos-remotos-y-útiles">Datos remotos y útiles</a></li>
+  <li><a href="#ejemplos" id="toc-ejemplos" class="nav-link" data-scroll-target="#ejemplos">Ejemplos</a></li>
+  <li><a href="#ejemplos-1" id="toc-ejemplos-1" class="nav-link" data-scroll-target="#ejemplos-1">Ejemplos</a></li>
+  <li><a href="#ejemplos-2" id="toc-ejemplos-2" class="nav-link" data-scroll-target="#ejemplos-2">Ejemplos</a></li>
+  <li><a href="#ejemplos-3" id="toc-ejemplos-3" class="nav-link" data-scroll-target="#ejemplos-3">Ejemplos</a></li>
+  <li><a href="#ejemplos-4" id="toc-ejemplos-4" class="nav-link" data-scroll-target="#ejemplos-4">Ejemplos</a></li>
+  <li><a href="#ejemplos-5" id="toc-ejemplos-5" class="nav-link" data-scroll-target="#ejemplos-5">Ejemplos</a></li>
+  <li><a href="#ejemplos-6" id="toc-ejemplos-6" class="nav-link" data-scroll-target="#ejemplos-6">Ejemplos</a></li>
+  </ul></li>
+  <li><a href="#teledetección" id="toc-teledetección" class="nav-link" data-scroll-target="#teledetección">Teledetección</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#principios-básicos" id="toc-principios-básicos" class="nav-link" data-scroll-target="#principios-básicos">Principios básicos</a></li>
+  <li><a href="#espectro-electromagnético-videos" id="toc-espectro-electromagnético-videos" class="nav-link" data-scroll-target="#espectro-electromagnético-videos">Espectro electromagnético (Videos)</a></li>
+  <li><a href="#espectro-electromagnético" id="toc-espectro-electromagnético" class="nav-link" data-scroll-target="#espectro-electromagnético">Espectro electromagnético</a></li>
+  <li><a href="#espectro-electromagnético-1" id="toc-espectro-electromagnético-1" class="nav-link" data-scroll-target="#espectro-electromagnético-1">Espectro electromagnético</a></li>
+  <li><a href="#principios-básicos-teledetección" id="toc-principios-básicos-teledetección" class="nav-link" data-scroll-target="#principios-básicos-teledetección">Principios básicos teledetección</a></li>
+  <li><a href="#curva-espectral-vegetación-sana" id="toc-curva-espectral-vegetación-sana" class="nav-link" data-scroll-target="#curva-espectral-vegetación-sana">Curva espectral vegetación sana</a></li>
+  <li><a href="#curva-espectral-vegetación-sana-1" id="toc-curva-espectral-vegetación-sana-1" class="nav-link" data-scroll-target="#curva-espectral-vegetación-sana-1">Curva espectral vegetación sana</a></li>
+  <li><a href="#curva-espectral-vegetación-sana-2" id="toc-curva-espectral-vegetación-sana-2" class="nav-link" data-scroll-target="#curva-espectral-vegetación-sana-2">Curva espectral vegetación sana</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
+  </ul></li>
+  <li><a href="#teoría-del-color" id="toc-teoría-del-color" class="nav-link" data-scroll-target="#teoría-del-color">Teoría del color</a>
+  <ul class="collapse">
+  <li><a href="#aditiva-y-sutractiva" id="toc-aditiva-y-sutractiva" class="nav-link" data-scroll-target="#aditiva-y-sutractiva">Aditiva y sutractiva</a></li>
+  <li><a href="#aditiva" id="toc-aditiva" class="nav-link" data-scroll-target="#aditiva">Aditiva</a></li>
+  <li><a href="#sustractiva" id="toc-sustractiva" class="nav-link" data-scroll-target="#sustractiva">Sustractiva</a></li>
+  <li><a href="#teoría-aditiva" id="toc-teoría-aditiva" class="nav-link" data-scroll-target="#teoría-aditiva">Teoría aditiva</a></li>
+  <li><a href="#teoría-aditiva-1" id="toc-teoría-aditiva-1" class="nav-link" data-scroll-target="#teoría-aditiva-1">Teoría aditiva</a></li>
+  <li><a href="#teoría-aditiva-2" id="toc-teoría-aditiva-2" class="nav-link" data-scroll-target="#teoría-aditiva-2">Teoría aditiva</a></li>
+  <li><a href="#teoría-aditiva-3" id="toc-teoría-aditiva-3" class="nav-link" data-scroll-target="#teoría-aditiva-3">Teoría aditiva</a></li>
+  <li><a href="#teoría-aditiva-4" id="toc-teoría-aditiva-4" class="nav-link" data-scroll-target="#teoría-aditiva-4">Teoría aditiva</a></li>
+  <li><a href="#composición-de-color" id="toc-composición-de-color" class="nav-link" data-scroll-target="#composición-de-color">Composición de color</a></li>
+  <li><a href="#composicion-de-color" id="toc-composicion-de-color" class="nav-link" data-scroll-target="#composicion-de-color">Composicion de color</a></li>
+  <li><a href="#composicion-de-color-1" id="toc-composicion-de-color-1" class="nav-link" data-scroll-target="#composicion-de-color-1">Composicion de color</a></li>
+  <li><a href="#composicion-de-color-2" id="toc-composicion-de-color-2" class="nav-link" data-scroll-target="#composicion-de-color-2">Composicion de color</a></li>
+  <li><a href="#falso-color" id="toc-falso-color" class="nav-link" data-scroll-target="#falso-color">Falso color</a></li>
+  <li><a href="#falso-color-1" id="toc-falso-color-1" class="nav-link" data-scroll-target="#falso-color-1">Falso color</a></li>
+  </ul></li>
+  <li><a href="#imágenes-satelitales" id="toc-imágenes-satelitales" class="nav-link" data-scroll-target="#imágenes-satelitales">Imágenes Satelitales</a>
+  <ul class="collapse">
+  <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
+  <li><a href="#tipos-de-imágenes-satelitales" id="toc-tipos-de-imágenes-satelitales" class="nav-link" data-scroll-target="#tipos-de-imágenes-satelitales">Tipos de imágenes satelitales</a></li>
+  <li><a href="#principios-básicos-1" id="toc-principios-básicos-1" class="nav-link" data-scroll-target="#principios-básicos-1">Principios básicos</a></li>
+  <li><a href="#landsat-usgsnasa" id="toc-landsat-usgsnasa" class="nav-link" data-scroll-target="#landsat-usgsnasa">Landsat (USGS/NASA)</a></li>
+  <li><a href="#landsat-usgsnasa-1" id="toc-landsat-usgsnasa-1" class="nav-link" data-scroll-target="#landsat-usgsnasa-1">Landsat (USGS/NASA)</a></li>
+  <li><a href="#landsat-usgsnasa-2" id="toc-landsat-usgsnasa-2" class="nav-link" data-scroll-target="#landsat-usgsnasa-2">Landsat (USGS/NASA)</a></li>
+  <li><a href="#landsat-usgsnasa---usa" id="toc-landsat-usgsnasa---usa" class="nav-link" data-scroll-target="#landsat-usgsnasa---usa">Landsat (USGS/NASA - USA)</a></li>
+  <li><a href="#sentinel-esa---europa" id="toc-sentinel-esa---europa" class="nav-link" data-scroll-target="#sentinel-esa---europa">Sentinel (ESA - Europa)</a></li>
+  <li><a href="#sentinel-2-ab" id="toc-sentinel-2-ab" class="nav-link" data-scroll-target="#sentinel-2-ab">Sentinel 2 (A/B)</a></li>
+  <li><a href="#sentinel-2-ab-1" id="toc-sentinel-2-ab-1" class="nav-link" data-scroll-target="#sentinel-2-ab-1">Sentinel 2 (A/B)</a></li>
+  <li><a href="#sentinel-2-ab-2" id="toc-sentinel-2-ab-2" class="nav-link" data-scroll-target="#sentinel-2-ab-2">Sentinel 2 (A/B)</a></li>
+  <li><a href="#worldview-4" id="toc-worldview-4" class="nav-link" data-scroll-target="#worldview-4">Worldview 4</a></li>
+  <li><a href="#worldview-4-1" id="toc-worldview-4-1" class="nav-link" data-scroll-target="#worldview-4-1">Worldview 4</a></li>
+  <li><a href="#cuál-usar-satelital-o-aérea" id="toc-cuál-usar-satelital-o-aérea" class="nav-link" data-scroll-target="#cuál-usar-satelital-o-aérea">¿Cuál usar? ¿satelital o aérea?</a></li>
+  </ul></li>
+  <li><a href="#indices-de-vegetación" id="toc-indices-de-vegetación" class="nav-link" data-scroll-target="#indices-de-vegetación">Indices de Vegetación</a>
+  <ul class="collapse">
+  <li><a href="#espectro-electromagnético-2" id="toc-espectro-electromagnético-2" class="nav-link" data-scroll-target="#espectro-electromagnético-2">Espectro electromagnético</a></li>
+  <li><a href="#espectro-electromagnético-3" id="toc-espectro-electromagnético-3" class="nav-link" data-scroll-target="#espectro-electromagnético-3">Espectro electromagnético</a></li>
+  <li><a href="#curva-espectral" id="toc-curva-espectral" class="nav-link" data-scroll-target="#curva-espectral">Curva espectral</a></li>
+  <li><a href="#respuesta-de-la-vegetación" id="toc-respuesta-de-la-vegetación" class="nav-link" data-scroll-target="#respuesta-de-la-vegetación">Respuesta de la vegetación</a></li>
+  <li><a href="#índices-de-vegetación" id="toc-índices-de-vegetación" class="nav-link" data-scroll-target="#índices-de-vegetación">Índices de vegetación</a></li>
+  <li><a href="#índices-de-vegetación-1" id="toc-índices-de-vegetación-1" class="nav-link" data-scroll-target="#índices-de-vegetación-1">Índices de vegetación</a></li>
+  <li><a href="#índices-de-vegetación-2" id="toc-índices-de-vegetación-2" class="nav-link" data-scroll-target="#índices-de-vegetación-2">Índices de vegetación</a></li>
+  <li><a href="#imagenes-de-satelite" id="toc-imagenes-de-satelite" class="nav-link" data-scroll-target="#imagenes-de-satelite">Imagenes de Satelite</a></li>
+  <li><a href="#bandas-sentinel-2" id="toc-bandas-sentinel-2" class="nav-link" data-scroll-target="#bandas-sentinel-2">Bandas Sentinel-2</a></li>
+  </ul></li>
+  <li><a href="#calculadora-raster-en-qgis" id="toc-calculadora-raster-en-qgis" class="nav-link" data-scroll-target="#calculadora-raster-en-qgis">Calculadora Raster en QGIS</a>
+  <ul class="collapse">
+  <li><a href="#utilidad" id="toc-utilidad" class="nav-link" data-scroll-target="#utilidad">Utilidad</a></li>
+  <li><a href="#ejemplo-2" id="toc-ejemplo-2" class="nav-link" data-scroll-target="#ejemplo-2">Ejemplo</a></li>
+  <li><a href="#para-cálculo-de-índices-de-vegetación" id="toc-para-cálculo-de-índices-de-vegetación" class="nav-link" data-scroll-target="#para-cálculo-de-índices-de-vegetación">Para cálculo de Índices de Vegetación</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="07_teledeteccion.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Teledetección e Imágenes Satelitales</h1>
+<p class="subtitle lead">Introducción a la Tecnología de Información Geográfica (IMSE1014)</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Francisco Zambrano </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">5 de diciembre de 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="contenidos" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="contenidos">Contenidos</h2>
+<ol type="1">
+<li>Introducción</li>
+<li>Teledetección</li>
+<li>Teoría del color</li>
+<li>Imágenes satelitales</li>
+<li>Índices de vegetación</li>
+</ol>
+</section>
+<section id="introducción" class="level1" data-background-color="brown">
+<h1 data-background-color="brown">Introducción</h1>
+<section id="datos-remotos-y-útiles" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="datos-remotos-y-útiles">Datos remotos y útiles</h2>
+<ul>
+<li><p>Datos sensados de forma remota</p>
+<ul>
+<li><p>Imágenes Aéreas</p></li>
+<li><p>Imágenes de Satélite</p></li>
+</ul></li>
+<li><p>Útiles por muchas razones</p>
+<ul>
+<li><p>Cubren grandes extensiones</p></li>
+<li><p>Rango espectral extendido</p></li>
+<li><p>Precisión geométrica</p></li>
+<li><p>Registro permanente</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="ejemplos" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos">Ejemplos</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-573f75f107c61477f653" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-573f75f107c61477f653">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],[],{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]}],"setView":[[-36,-72],12,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="ejemplos-1" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos-1">Ejemplos</h2>
+<p><strong>Volcan Llaima</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-5ccffa5014507c00f474" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-5ccffa5014507c00f474">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],[],{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]}],"setView":[[-38.7,-71.72],12,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+</div>
+</section>
+<section id="ejemplos-2" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos-2">Ejemplos</h2>
+<p><strong>Liceo El Carmen, San Fernando</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/im1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="530"></p>
+</figure>
+</div>
+</section>
+<section id="ejemplos-3" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos-3">Ejemplos</h2>
+<p><strong>Liceo El Carmen, San Fernando</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/im2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="530"></p>
+</figure>
+</div>
+</section>
+<section id="ejemplos-4" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos-4">Ejemplos</h2>
+<p><strong>Liceo El Carmen, San Fernando</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/im3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="530"></p>
+</figure>
+</div>
+</section>
+<section id="ejemplos-5" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos-5">Ejemplos</h2>
+<p><img src="img/fig1.png" class="img-fluid"></p>
+</section>
+<section id="ejemplos-6" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplos-6">Ejemplos</h2>
+<p><img src="img/fig2.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="teledetección" class="level1" data-background-color="ocean">
+<h1 data-background-color="ocean">Teledetección</h1>
+<section id="section" class="level2" data-background-image="img/What-Is-Remote-Sensing.jpg" data-background-position="contain">
+<h2 data-background-image="img/What-Is-Remote-Sensing.jpg" data-background-position="contain" class="anchored" data-anchor-id="section"></h2>
+</section>
+<section id="principios-básicos" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="principios-básicos">Principios básicos</h2>
+<ul>
+<li><p>La <strong>teledetección</strong> se basa en la energía electromagnética reflejada</p></li>
+<li><p>La energía solar caracterizada por la <strong>longitud de onda</strong></p>
+<ul>
+<li><p>cada <code>color</code> tiene una longitud de onda específica.</p></li>
+<li><p>el rango compleo de longitud de onda se denómina <strong>espectro electromagnético</strong></p></li>
+</ul>
+<p>nuestros ojos perciben la luz en el rango <strong>visible</strong> del espectro</p></li>
+</ul>
+</section>
+<section id="espectro-electromagnético-videos" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="espectro-electromagnético-videos">Espectro electromagnético (Videos)</h2>
+<ol type="1">
+<li><p><a href="https://www.youtube.com/watch?v=ixwxOQf50kc&amp;t=106s">Espectro electromagnetico</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=YCWvxv__nmQ">La luz visible</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=8ybXNZQGzSQ">Infrarojo</a></p></li>
+</ol>
+</section>
+<section id="espectro-electromagnético" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="espectro-electromagnético">Espectro electromagnético</h2>
+<p><img src="img/fig3.png" class="img-fluid"></p>
+</section>
+<section id="espectro-electromagnético-1" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="espectro-electromagnético-1">Espectro electromagnético</h2>
+<p><img src="img/EspectroElectromagnetico.png" class="img-fluid"></p>
+</section>
+<section id="principios-básicos-teledetección" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="principios-básicos-teledetección">Principios básicos teledetección</h2>
+<ol type="1">
+<li><p>Energía electromagnética que golpea un objeto puede ser <strong>absorvida</strong>, <strong>reflejada</strong> o <strong>transmitida</strong></p></li>
+<li><p>Los objetos se ven como el color que deben <strong>reflejar</strong>.</p></li>
+<li><p>Los objetos además reflejan otras porciones del espectro.</p></li>
+</ol>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="img/energia_incidente.png" class="img-fluid" style="width:60.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><span class="math inline">\(r = f_r/f_i\)</span> (reflectividad)<br>
+<span class="math inline">\(a = f_a/f_i\)</span> (absortividad)<br>
+<span class="math inline">\(t = f_t/f_i\)</span> (transmisividad)</p>
+</div>
+</div>
+</section>
+<section id="curva-espectral-vegetación-sana" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="curva-espectral-vegetación-sana">Curva espectral vegetación sana</h2>
+<p><img src="img/veg-reflect.png" class="img-fluid" width="700"></p>
+</section>
+<section id="curva-espectral-vegetación-sana-1" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="curva-espectral-vegetación-sana-1">Curva espectral vegetación sana</h2>
+<p><img src="img/leaf-reflected-infrared.png" class="img-fluid" width="700"></p>
+</section>
+<section id="curva-espectral-vegetación-sana-2" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="curva-espectral-vegetación-sana-2">Curva espectral vegetación sana</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/espectro_absor_pigmentos.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Hay diferentes pigmentos en la vegetación.</li>
+<li>Los cloroplastos absorben parte de la radiación para activar el proceso de la fotosíntesis.</li>
+<li>Dependiendo del tipo de pigmento se absorbe más en unas longitudes de onda que en otras.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="ejemplo" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplo">Ejemplo</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rgb.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="530"></p>
+</figure>
+</div>
+</section>
+<section id="ejemplo-1" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplo-1">Ejemplo</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/falso_color.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="530"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="teoría-del-color" class="level1" data-background-color="orange">
+<h1 data-background-color="orange">Teoría del color</h1>
+<section id="aditiva-y-sutractiva" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="aditiva-y-sutractiva">Aditiva y sutractiva</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/colores-aditivos-sustractivos.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</section>
+<section id="aditiva" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="aditiva">Aditiva</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Colores primarios: Rojo, Azul y verde.</li>
+<li>Cuando se unen forman luz blanca</li>
+<li><code>La teoría aditiva es la base para la interpretación de imágenes satelitales</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/colores-aditivos.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="sustractiva" class="level2 smaller scrollable" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller scrollable anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="sustractiva">Sustractiva</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>La teoria substractiva tiene como colores primario: Amarillo, Cian y Magenta.</li>
+<li>Los colores complementarios se crean al quitar un color al primario.</li>
+<li>Las pinturas, pigmentos y tintes funcionan con esta teoria</li>
+<li><code>La teoria sustractiva sienta las bases para las impresiones fotográficas.</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/colores--sustractivos.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="teoría-aditiva" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="teoría-aditiva">Teoría aditiva</h2>
+<p><img src="img/teoria_color_1.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="teoría-aditiva-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="teoría-aditiva-1">Teoría aditiva</h2>
+<p><img src="img/teoria_color_2.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="teoría-aditiva-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="teoría-aditiva-2">Teoría aditiva</h2>
+<p><img src="img/teoria_color_3.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="teoría-aditiva-3" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="teoría-aditiva-3">Teoría aditiva</h2>
+<p><img src="img/teoria_color_4.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="teoría-aditiva-4" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="teoría-aditiva-4">Teoría aditiva</h2>
+<p><img src="img/teoria_color_5.png" class="img-fluid" style="width:74.0%"></p>
+</section>
+<section id="composición-de-color" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="composición-de-color">Composición de color</h2>
+<p><strong>Falso Color</strong></p>
+<p>Se asignan bandas que no pueden verse con el ojo humano y se pueden combinar, produciendo una imagen de Falso Color</p>
+<ul>
+<li>Para visualizer una imagen en <code>falso color</code> hay que utilizar la siguiente combinación:
+<ul>
+<li>NIR band al display Rojo,</li>
+<li>Red band al display Verde,</li>
+<li>Green band al display Azul</li>
+</ul></li>
+</ul>
+</section>
+<section id="composicion-de-color" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="composicion-de-color">Composicion de color</h2>
+<p>Una composición de 3 bandas en falso color incluye una banda de la region no visible del espectro EM</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="img/foto_color_verdadero.png" class="img-fluid" style="width:100.0%"> Imagen de color verdadero</p>
+</div><div class="column" style="width:50%;">
+<p><img src="img/foto_falso_color.png" class="img-fluid" style="width:100.0%"> Imagen de falso color, La banda del rojo fue reemplazada por la del infrarrojo cercano</p>
+</div>
+</div>
+</section>
+<section id="composicion-de-color-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="composicion-de-color-1">Composicion de color</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>La banda azul se carga en el canal azul del visualizador.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/banda_azul.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+<p>La banda roja se carga en el canal rojo del visualizador.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/banda_roja.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>La banda azul se carga en el canal azul del visualizador.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/banda_verde.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+<p>El resultado es una composición de color verdadero (RGB)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/color_verdadero.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composicion-de-color-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="composicion-de-color-2">Composicion de color</h2>
+<p><img src="img/bandas_rgb2truecolor.png" class="img-fluid" style="width:100.0%"></p>
+</section>
+<section id="falso-color" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="falso-color">Falso color</h2>
+<p>Las tonalidades más habituales en una composición en falso color son:</p>
+<ul>
+<li>Rojo, indica una vegetación sana y bien desarrollada.</li>
+<li>Rosa, áreas vegetales menos densa o con vegetación menos desarrollada.</li>
+<li>Blanco, áreas con escasa o nula vegetación.</li>
+<li>Azul oscuro o negro indica la presencia de agua.</li>
+<li>Marrón, vegetación arbustiva muy variable.</li>
+<li>Beige-dorado, zonas de transición, prados secos asociados a matorral ralo.</li>
+</ul>
+</section>
+<section id="falso-color-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="falso-color-1">Falso color</h2>
+<p><img src="img/bandas_rgb2truecolor.png" class="img-fluid" style="width:100.0%"></p>
+<!-- # Imágenes aéreas y Drones (UAV) {background-color='darkgreen'} -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - Las imágenes aéreas han sido una fuente importante de información geográfica -->
+<!--   - Comenzaron al mismo tiempo que las camaras portables -->
+<!--   - Se hicieron prácticas con la invención de los aeroplanos. -->
+<!-- - Fotogrametría: ciencia de de medir geometria desde imágenes -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig9.png){width="450px" fig-align='center'}  -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig10.png){width="600px" fig-align='center'} -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig11.png){width="400px" fig-align='center'} -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig12.png){width="600px" fig-align='center'} -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig13.png){width="500px" fig-align='center') -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig14.jpg){fig-align='center'} -->
+<!-- ## Imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig15.png){fig-align='center'} -->
+<!-- ## Imágenes aéreas - atributos {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - En un principio se utilizaban camaras análogas con rollo (film) -->
+<!-- - luego se comenzo a utilizar camaras digitales, en vez de un rollo (film) se basan en el sistema CCD. -->
+<!-- - Hoy en día los drones pueden tener camaras multiespectrales -->
+<!-- ## Imágenes aéreas - Camaras digitales {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - Utilizan el sistema CCD (charge coupled device) o similar. -->
+<!--   - El CCD es un sistema rectangular de pixeles que responde a la luz -->
+<!-- - Multiples CCD se pueden utilizar con uno o multiples lentes -->
+<!-- ## Imágenes aéreas - Camaras digitales{.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig16.png){width="600px" fig-align='center'} -->
+<!-- ## Imágenes aéreas - Sensores multiespectrales {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- **Parrot Sequoia** -->
+<!-- [https://www.youtube.com/watch?time_continue=137&v=SaztuWuDEsg&feature=emb_logo](https://www.youtube.com/watch?time_continue=137&v=SaztuWuDEsg&feature=emb_logo) -->
+<!-- ## Calidad geométrica de una imágen aérea {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - Todas las imágenes aéreas tienen distorción geométrica -->
+<!-- - Ortofóto: posición del objeto despues de ser proyectado a un plano -->
+<!--   - equivalente a mirar verticalmente una escena desde una altura infinita -->
+<!-- - la mayoría de las fotos aéreas no proveen una vista ortofotográfica, sino que una vista en perspectiva, la que es una visión distorsionada de la imagen de la tierra. -->
+<!-- ## Calidad geométrica de una imágen aérea {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig17.jpg){width="600px" fig-align='center'} -->
+<!-- ## Calidad geométrica de una imágen aérea {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- Cinco principales fuentes de distorsión -->
+<!-- 1. terreno: error mayor -->
+<!-- 2. inclinación de la camara: error mayor -->
+<!-- 3. Lente de la camara: error menor -->
+<!-- 4. refracción atmosférica: error menor -->
+<!-- 5. otros errores de camara: error menor -->
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - La variación del terreno es generalmente la mayor fuente de distorisón geométrica -->
+<!-- - Produce desplaciamiento del relieve -->
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig18.png){width="600px" fig-align='center'} -->
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig19.png){width="600px" fig-align='center'} -->
+<!-- ## Distorsión de terreno {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - Las distorsiones de terreno son radiales. -->
+<!-- - La distorsión de relieve afecta angulos y distancias en una imágene aérea. -->
+<!-- - La escala no es constante en una imágene aérea -->
+<!-- - Una imágene aérea tomada vertical sobre el terreno no es **ortofotográfica** -->
+<!-- ## Distorsión por inclinación de la camara {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - Es cuando el eje de la camara no se encuentra en un angulo vertical -->
+<!-- - Resulta en una compleja convergencia de perspectiva -->
+<!-- ## Distorsión por inclinación de la camara {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig20.png){width="150px" fig-align='center'} -->
+<!-- ## Otros errores {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - Desplazamiento radial del lente: imperfección en la superficie de la camara del lente -->
+<!-- - Error sistemático: patron deformado -->
+<!-- - Errores atmosféricos: reflexión de la luz -->
+<!-- ## Corrección geométrica {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - La fotogrametríca proporciona herramientas para realizar corrección geométrica. -->
+<!-- - El proceso de corrección requiere medir las coordenadas de la imágen y sus correspondientes coordenadas en terreno. -->
+<!-- - **Resultado final:** imágen ortorectificada- una imágen con corrección de distorsión de terreno y perspectiva. -->
+<!-- ## Ortorectificación {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- ![](img/fig21.png) -->
+<!-- ## Usos de las imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - La base para la agromensura y mapeo topográfico -->
+<!--   - Mide X, Y, Z -->
+<!-- - Foto interpretación -->
+<!--   - Categorizar o asignar atributos a objetos/lugares en la superficie -->
+<!-- - Usadas como mapa de fondo (referencia) -->
+<!-- - Monitoreo agrícola -->
+<!--   - Estado de la vegetación - enfermedades -->
+<!--   - conteo de plantas -->
+<!--   - estado hídrico -->
+<!--   - ..... y mucho más -->
+<!-- ## Usos de las imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - **Fotointerpretación:** el proceso de convertir las imágenes en información -->
+<!-- - Los interpretes utilizan: -->
+<!--   - tamaño -->
+<!--   - forma -->
+<!--   - color -->
+<!--   - brillo -->
+<!--   - textura -->
+<!--   - ubicación relativa y absoluta -->
+<!-- para interpretar las imágenes -->
+<!-- ## Usos de las imágenes aéreas {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- **Fotointerpretación** -->
+<!-- tamaño, forma, color, brillo, textura, ubicación relativa y absoluta -->
+<!-- ![](img/fig22.png){width="350px" fig-align='center'} -->
+<!-- ![](img/fig23.png){width="350px" fig-align='center'} -->
+</section>
+</section>
+<section id="imágenes-satelitales" class="level1" data-background-color="orange">
+<h1 data-background-color="orange">Imágenes Satelitales</h1>
+<!-- ## Características {.smaller background-image="../../logo_medioambiente.jpeg" background-position="97.5% 2.5%" background-size="7.5%" layout="true"} -->
+<!-- - concepto similar a las imágenes aéreas -->
+<!-- - Tiene los mismo usos -->
+<!--   - Base para crear mapas -->
+<!--   - Interpretación de imágenes -->
+<!--   - Como mapa de referencia -->
+<!-- - ... pero hay algunas diferencias importantes -->
+<section id="características" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="características">Características</h2>
+<ul>
+<li><p>Perspectiva desde muy arriba</p>
+<ul>
+<li>reduce la distorsión de terreno</li>
+</ul></li>
+<li><p>Cubren grandes superficies</p>
+<ul>
+<li>costo muy alto para superficies pequeñas</li>
+</ul></li>
+<li><p>Requieren procesamiento especializado de imágenes</p></li>
+<li><p>Programar la adquisición de imágene se debe realizar con días o semanas de anticipación</p>
+<p>-O seguir los cronogramas de vuelos fijos</p></li>
+<li><p>Menor resolución efectiva</p></li>
+</ul>
+</section>
+<section id="tipos-de-imágenes-satelitales" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="tipos-de-imágenes-satelitales">Tipos de imágenes satelitales</h2>
+<ul>
+<li><p>Públicas:</p>
+<ul>
+<li><p>Landsat,</p></li>
+<li><p>Sentinel,</p></li>
+<li><p>MODIS</p></li>
+</ul></li>
+<li><p>Privadas:</p>
+<ul>
+<li><p>Ikonos,</p></li>
+<li><p>Worldview</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="principios-básicos-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="principios-básicos-1">Principios básicos</h2>
+<ul>
+<li><p>Los sensores en los satelites operan apuntando al área a ser tomada</p>
+<ul>
+<li>Vista instantane del campo (VIC): corresonde al área que puede ser vista por cada sensor.</li>
+</ul></li>
+<li><p>Los sensores construyen imágenes 2D de la superficie al registrar la energía reflejada</p></li>
+</ul>
+</section>
+<section id="landsat-usgsnasa" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="landsat-usgsnasa">Landsat (USGS/NASA)</h2>
+<ul>
+<li><p>Lanzado en Julio 1972 (Landsat-1)</p></li>
+<li><p>Primer sistema diseñado para adquirir datos de la superficie de la tierra.</p></li>
+<li><p>Tres sensores abordo</p>
+<ul>
+<li><p>Cámara de video</p></li>
+<li><p>sensor multiespectral</p></li>
+<li><p>mapeador temático (thematic mapper)</p></li>
+<li><p>mapeador temático mejorado (enhanced thematic mapper)</p></li>
+</ul></li>
+<li><p>Revisita cada 16 días.</p></li>
+<li><p>Resolución espacial de 15/30/100m</p></li>
+</ul>
+</section>
+<section id="landsat-usgsnasa-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="landsat-usgsnasa-1">Landsat (USGS/NASA)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig24.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
+</section>
+<section id="landsat-usgsnasa-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="landsat-usgsnasa-2">Landsat (USGS/NASA)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig25.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
+</section>
+<section id="landsat-usgsnasa---usa" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="landsat-usgsnasa---usa">Landsat (USGS/NASA - USA)</h2>
+<p>Embalse el Yeso</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig26.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
+</section>
+<section id="sentinel-esa---europa" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="sentinel-esa---europa">Sentinel (ESA - Europa)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig27.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
+</section>
+<section id="sentinel-2-ab" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="sentinel-2-ab">Sentinel 2 (A/B)</h2>
+<ul>
+<li><p>Sentinel A lanzado 23 Junio 2015</p></li>
+<li><p>Sentinel B lanzado 7 Marzo 2017</p></li>
+<li><p>Cuentan con un sensor multiespectral (MSI)</p></li>
+<li><p>Cada satelite captura imágenes cada 10 días, en conjunto la revisita es de 5 días.</p></li>
+<li><p>Resolución espacial 10/20/60 m</p></li>
+</ul>
+</section>
+<section id="sentinel-2-ab-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="sentinel-2-ab-1">Sentinel 2 (A/B)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig28.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
+</section>
+<section id="sentinel-2-ab-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="sentinel-2-ab-2">Sentinel 2 (A/B)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig29.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
+</section>
+<section id="worldview-4" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="worldview-4">Worldview 4</h2>
+<ul>
+<li><p>Bandas:</p>
+<ul>
+<li>Pancromática: 450 - 800nm</li>
+<li>Red: 655 - 690 nm,</li>
+<li>Green: 510 - 580 nm</li>
+<li>Blue: 450 - 510 nm</li>
+<li>Near-IR: 780-920</li>
+</ul></li>
+<li><p>Resolución espacial entre 0.31 a 4m</p></li>
+<li><p>Costo 22.5 <span class="math inline">\(USD/km^2\)</span></p></li>
+<li><p>Mínima superficie: 25 <span class="math inline">\(km^2\)</span></p></li>
+<li><p>Datos de archivo</p></li>
+</ul>
+</section>
+<section id="worldview-4-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="worldview-4-1">Worldview 4</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig31.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="650"></p>
+</figure>
+</div>
+</section>
+<section id="cuál-usar-satelital-o-aérea" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="cuál-usar-satelital-o-aérea">¿Cuál usar? ¿satelital o aérea?</h2>
+<p>Considerar los siguientes factores:</p>
+<ul>
+<li><p>Resolución espacial</p></li>
+<li><p>La superficie del área a analizar</p></li>
+<li><p>Costo</p></li>
+<li><p>Limitaciones de tiempo</p></li>
+<li><p>Post-proceso</p></li>
+<li><p>Requerimientos espectrales</p></li>
+</ul>
+</section>
+</section>
+<section id="indices-de-vegetación" class="level1" data-background-color="lightblue">
+<h1 data-background-color="lightblue">Indices de Vegetación</h1>
+<section id="espectro-electromagnético-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="espectro-electromagnético-2">Espectro electromagnético</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="800px"></p>
+</figure>
+</div>
+</section>
+<section id="espectro-electromagnético-3" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="espectro-electromagnético-3">Espectro electromagnético</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="800px"></p>
+</figure>
+</div>
+</section>
+<section id="curva-espectral" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="curva-espectral">Curva espectral</h2>
+<p><strong>Vegetación</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="550px"></p>
+</figure>
+</div>
+</section>
+<section id="respuesta-de-la-vegetación" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="respuesta-de-la-vegetación">Respuesta de la vegetación</h2>
+<p><strong>Vegetación</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="700px"></p>
+</figure>
+</div>
+</section>
+<section id="índices-de-vegetación" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="índices-de-vegetación">Índices de vegetación</h2>
+<p><strong>Índice de Diferencia Normalizada (NDVI)</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="550px"></p>
+</figure>
+</div>
+</section>
+<section id="índices-de-vegetación-1" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="índices-de-vegetación-1">Índices de vegetación</h2>
+<p><strong>Índice de Diferencia Normalizada (NDVI)</strong></p>
+<p><span class="math display">\[NDVI = \frac{NIR-RED}{NIR+RED} \]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="800px"></p>
+</figure>
+</div>
+</section>
+<section id="índices-de-vegetación-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="índices-de-vegetación-2">Índices de vegetación</h2>
+<p><strong>Índice de Humedad de Diferencia Normalizada (NDMI)</strong></p>
+<p><span class="math display">\[NDMI = \frac{NIR-SWIR}{NIR+SWIR} \]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="800px"></p>
+</figure>
+</div>
+</section>
+<section id="imagenes-de-satelite" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="imagenes-de-satelite">Imagenes de Satelite</h2>
+<p><strong>Imágenes Sentinel-2</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="800px"></p>
+</figure>
+</div>
+</section>
+<section id="bandas-sentinel-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="bandas-sentinel-2">Bandas Sentinel-2</h2>
+<p><strong>Imágenes Sentinel-2</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="600px"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="calculadora-raster-en-qgis" class="level1" data-background-color="orange">
+<h1 data-background-color="orange">Calculadora Raster en QGIS</h1>
+<section id="utilidad" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="utilidad">Utilidad</h2>
+<p>Permite realizar operaciones aritméticas con datos raster</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig10.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="600px"></p>
+</figure>
+</div>
+</section>
+<section id="ejemplo-2" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="ejemplo-2">Ejemplo</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fig11.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-width="700px"></p>
+</figure>
+</div>
+</section>
+<section id="para-cálculo-de-índices-de-vegetación" class="level2 smaller" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true">
+<h2 class="smaller anchored" data-background-image="../../logo_medioambiente.jpeg" data-background-position="97.5% 2.5%" data-background-size="7.5%" data-layout="true" data-anchor-id="para-cálculo-de-índices-de-vegetación">Para cálculo de Índices de Vegetación</h2>
+<p>La vamos a utilizar para calcular los índices de vegetación NDVI y NDMI.</p>
+<p><span class="math display">\[NDVI = \frac{NIR-RED}{NIR+RED} \]</span></p>
+<p><span class="math display">\[NDMI = \frac{NIR-SWIR}{NIR+SWIR} \]</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

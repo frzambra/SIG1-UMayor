@@ -1,0 +1,2438 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introducción a Tecnologías de la Información Geográfica",
+    "section": "",
+    "text": "En este repositorio pongo a disposición de los alumnos de la carrera de Ingeniería en Medio Ambiente y Sustentabilidad de la Universidad Mayor, las clases, talleres y material que se utilizará en la asignatura de Introducción a la Tecnología de Información Geográfica. Este repositorio está creado con quarto por medio del software R."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca",
+    "section": "",
+    "text": "Este repositorio ha sido creado por el Dr. Francisco Zambrano para el curso de Introducción a las Tecnologías de Información Geográfica.\nEl curso es parte de la carrera de Ingeniería en Medio Ambiente y Sustentabilidad de la Universidad Mayor. Para mayor información sobre la carrera hacer clic en el link\nLa carrera es coordinado por la escuela de Ingeniería en Medio Ambiente de la Universidad Mayor.\nEl Dr. Francisco es Ingeniero Civil Agrícola y Doctor en Ingeniería Agrícola con mención en Recursos Hídricos, Ambos de la Universidad de Concepción. El Dr. Zambrano, ha realizado estadias de investigación en el Centro de Sequía de la Universidad de Nebraska y el CALMIT, en Lincoln, Nebraska, Estados Unidos. También, en la Facultad de Ciencia Geo-Información y Observación de la Tierra, en la Universidad de Twente, Enschede, Paises Bajos.\nSus lineas de investigación están asociadas a el impacto del cambio climático en la agricultura y los recursos hídricos de Chile.\nPinche en el icono para ver listado de publicaciones"
+  },
+  {
+    "objectID": "clases.html",
+    "href": "clases.html",
+    "title": "Clases",
+    "section": "",
+    "text": "Unidad 1: Datos geoespaciales\n\nLunes 18 de marzo\n\nIntroducción al curso\nIntroducción a los SIG\nIntroducción a QGIS"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#breve-descripción",
+    "href": "clases/clase1/01_intro_curso.html#breve-descripción",
+    "title": "Presentación del curso",
+    "section": "Breve descripción",
+    "text": "Breve descripción\n\nDr. Francisco Zambrano Bigiarini\n\nIngeniero Civil Agrícola, Dr. en Ingeniería Agrícola c/m en Recursos Hídricos (Universidad de Concepción)\nInvestigador Asociado, Hémera Centro de Observación de la Tierra, Universidad Mayor\nfrancisco.zambrano@umayor.cl\nCamino la Piramide #5750, Edifico de Ciencias, Nivel 4."
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#centro-hémera",
+    "href": "clases/clase1/01_intro_curso.html#centro-hémera",
+    "title": "Presentación del curso",
+    "section": "Centro Hémera",
+    "text": "Centro Hémera\nhemera.umayor.cl\n@hemera\n¿Qué hacemos?\nUtilizamos teledetección para entender la dinámica del planeta.\nLíneas de investigación\n\nSequía\nCobertura terrestre y cambios en las formaciones vegetacionales\nRiesgos naturales geológicos y geomorfológicos\nEfecto del cambio climático y conservación de los recursos naturales\nAnálisis y evaluación de desastres naturales"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#centro-hémera-1",
+    "href": "clases/clase1/01_intro_curso.html#centro-hémera-1",
+    "title": "Presentación del curso",
+    "section": "Centro Hémera",
+    "text": "Centro Hémera"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#línea-de-investigación",
+    "href": "clases/clase1/01_intro_curso.html#línea-de-investigación",
+    "title": "Presentación del curso",
+    "section": "Línea de investigación",
+    "text": "Línea de investigación\n\nEscala regional: estudio de la sequía y su impacto en la vegetación en Chile usando teledetección.\nEscala local: uso de imágenes satelitales para entender la dinámica de la vegetación y su relación con el clima.\n\nSentinel 2 (10m, frecuencia de 5 días)\nLandsat 7/8/9 (30m, frecuencia de 16 días)\n\n\nMás información:\nResearchgate &lt;- clic\nGoogle Scholar &lt;- clic"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#proyectos",
+    "href": "clases/clase1/01_intro_curso.html#proyectos",
+    "title": "Presentación del curso",
+    "section": "Proyectos",
+    "text": "Proyectos\nDirector del proyecto:\n\nFondo de Sequía\n\nTítulo: A multi-scale drought observatory for Chile: an early warning system to mitigate agricultural and ecological impacts (ODES)\nMonto: $300.000.000\nPeriodo de ejecucción: 2022-2023\nFinanciamiento: ANID"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#odes",
+    "href": "clases/clase1/01_intro_curso.html#odes",
+    "title": "Presentación del curso",
+    "section": "ODES",
+    "text": "ODES\nVideo http://odes-chile.org"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#odes-1",
+    "href": "clases/clase1/01_intro_curso.html#odes-1",
+    "title": "Presentación del curso",
+    "section": "ODES",
+    "text": "ODES"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#odes-2",
+    "href": "clases/clase1/01_intro_curso.html#odes-2",
+    "title": "Presentación del curso",
+    "section": "ODES",
+    "text": "ODES\nVideo\nhttp://odes-chile.org"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#proyectos-1",
+    "href": "clases/clase1/01_intro_curso.html#proyectos-1",
+    "title": "Presentación del curso",
+    "section": "Proyectos",
+    "text": "Proyectos\nDirector del proyecto:\n\nFONDEF IDeA I+D 2020\n\nTítulo: Sistema Satelital para la Optimización de Riego (SatOri)\nMonto: $200.000.000\nPeriodo de ejecucción: 2022-2024\nFinanciamiento: ANID\n\n\nhttp://frzambra.shinyapps.io/monitoreo_cuarteles/"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#metodología-del-curso",
+    "href": "clases/clase1/01_intro_curso.html#metodología-del-curso",
+    "title": "Presentación del curso",
+    "section": "Metodología del curso",
+    "text": "Metodología del curso\nEl curso está diseñado con módulos de cátedra en dónde se enseñaran los fundamentos teóricos.\nAdemás, de modulos de laboratorio en donde se aprederá de forma práctica utilizando el software QGIS 3.30 ‘s-Hertogenbosch (www.qgis.org).\nHorarios\n\nCátedra y taller: lunes 08:30 - 12:40 (HHLI-213)"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#descripción-del-curso-1",
+    "href": "clases/clase1/01_intro_curso.html#descripción-del-curso-1",
+    "title": "Presentación del curso",
+    "section": "Descripción del curso",
+    "text": "Descripción del curso\nVisión general de los conceptos de los Sistema de Información Geográfica (SIG) y sus componentes.\nTanto la teoría como la aplicación practica de los SIG se enfatizarán en este curso."
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#objetivo-del-curso",
+    "href": "clases/clase1/01_intro_curso.html#objetivo-del-curso",
+    "title": "Presentación del curso",
+    "section": "Objetivo del curso",
+    "text": "Objetivo del curso\nQue los estudiantes aprendan los conceptos para el manejo de sistemas de información geográfica, además del manejo del software para Sistemas de Información Geográfica QGIS 3.30 y su aplicación en Ing. en Medio Ambiente."
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#objetivos-de-aprendizaje",
+    "href": "clases/clase1/01_intro_curso.html#objetivos-de-aprendizaje",
+    "title": "Presentación del curso",
+    "section": "Objetivos de aprendizaje",
+    "text": "Objetivos de aprendizaje\n\nDemostrar comprensión y competencia teórica de Sistemas de Información Geográfica;\nDemostrar comprensión y competencia en el registro, formato, almacenamiento y edición de datos epaciales;\nDemostrar comprensión y competencia para el diseño de mapas;\nDemostrar habilidad en el uso del software SIG QGIS 3.36."
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#calendario-de-clases",
+    "href": "clases/clase1/01_intro_curso.html#calendario-de-clases",
+    "title": "Presentación del curso",
+    "section": "Calendario de clases",
+    "text": "Calendario de clases\n\n\n\n\n\n\n\nFecha\nTema\n\n\n\n\n17 marzo\nPresentación curso, introducción SIG e introducción a QGIS\n\n\n24 marzo\nModelos de datos geoespaciales\n\n\n24 marzo\nTaller 1: modelos de datos geoespaciales\n\n\n31 marzo\nTabla de atributos\n\n\n31 marzo\nTaller 2: Tabla de atributos\n\n\n7 abril\nSistemas de coordenadas y proyecciones (parte 1)\n\n\n7 abril\nTaller 3: sistemas de coordenadas y proyecciones (parte 1)\n\n\n14 abril\nEvaluación 1 (30%): teórico + práctico\n\n\n21 abril\nSistemas de coordenadas y proyecciones (parte 2)\n\n\n21 abril\nTaller 4: Sistemas de coordenadas y proyecciones (parte 2)\n\n\n28 abril\nCreación de mapas\n\n\n28 abril\nTaller 5: Creación de mapas\n\n\n5 mayo\nOperaciones espaciales con datos vectoriales\n\n\n5 mayo\nTaller 6: Operaciones espaciales con datos vectoriales\n\n\n12 mayo\nOperaciones espaciales con datos raster\n\n\n12 mayo\nTaller 7: Operaciones espaciales con datos raster\n\n\n19 mayo\nEvaluación 2 (30%): teórico + prático\n\n\n26 mayo\nTeledeteccíón\n\n\n26 mayo\nTaller 8: Teledetección\n\n\n2 junio\nAplicaciones SIG\n\n\n2 junio\nTaller 9: Aplicaciones SIG\n\n\n9 junio\nPresentación trabajo final"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#evaluaciones",
+    "href": "clases/clase1/01_intro_curso.html#evaluaciones",
+    "title": "Presentación del curso",
+    "section": "Evaluaciones",
+    "text": "Evaluaciones\n\nPromedio notas de Taller (25%)\nEvaluación 1 (25%): 15 abril\nEvaluación 2 (25%): 3 junio\nTrabajo final (25%): 10 y 17 junio"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#bibliografía-recomendada",
+    "href": "clases/clase1/01_intro_curso.html#bibliografía-recomendada",
+    "title": "Presentación del curso",
+    "section": "Bibliografía recomendada",
+    "text": "Bibliografía recomendada\n\nPaul Bolstad. GIS Fundamentals: A First Text on Geographic Information Systems, Sixth Edition.\nVictor Olaya. Sístemas de Informacíon Geográfica. http://volaya.github.io/libro-sig/ (Disponible online)\nBuzai, Gustavo & Baxendale, Claudia & Humacata, Luis & Principi, Noelia. (2016). Sistemas de Información Geográfica. Cartografía temática y análisis espacial (Disponible en biblioteca).\nUna ligera introducción a SIG. [https://docs.qgis.org/3.10/es/docs/gentle_gis_introduction/index.html](https://docs.qgis.org/3.10/es/docs/gentle_gis_introduction/index.html. (Disponible online)\nBarnali Dixon and Venkatesh Uddameri. GIS and Geocomputation for Water Resources Science and Engineering. 2016"
+  },
+  {
+    "objectID": "clases/clase1/01_intro_curso.html#link-a-las-diapositivas-de-las-clases",
+    "href": "clases/clase1/01_intro_curso.html#link-a-las-diapositivas-de-las-clases",
+    "title": "Presentación del curso",
+    "section": "Link a las diapositivas de las clases",
+    "text": "Link a las diapositivas de las clases\nhttps://frzambra.github.io/IMSE1014/IMSE1014.html\n\n\n\n\nIMSD1020|1-2025"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#contenidos",
+    "href": "clases/clase1/02_intro_SIG.html#contenidos",
+    "title": "Introducción a los SIG",
+    "section": "Contenidos",
+    "text": "Contenidos\n\nUtilidad de los SIG\n¿Qué son los SIG?\nPartes de los SIG"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#algunas-aplicaciones",
+    "href": "clases/clase1/02_intro_SIG.html#algunas-aplicaciones",
+    "title": "Introducción a los SIG",
+    "section": "Algunas aplicaciones",
+    "text": "Algunas aplicaciones\n\nIPCC WGI Interactive Atlas\nCoronavirus COVID-19 global cases (Johns Hopkins)\nMonitoreo de calidad del aire (Chile)\nMonitoreo de calida del aire (España)"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#cómo-nos-pueden-servir-los-sig-para-medio-ambiente",
+    "href": "clases/clase1/02_intro_SIG.html#cómo-nos-pueden-servir-los-sig-para-medio-ambiente",
+    "title": "Introducción a los SIG",
+    "section": "¿Cómo nos pueden servir los SIG para medio ambiente?",
+    "text": "¿Cómo nos pueden servir los SIG para medio ambiente?\n\n\nManejo de desastres\nAnálisis de impacto ambiental\nModelos de distribución de especies\nIncendios forestales\nGestión de plagas\n…"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#ide-ministerio-de-medio-ambiente",
+    "href": "clases/clase1/02_intro_SIG.html#ide-ministerio-de-medio-ambiente",
+    "title": "Introducción a los SIG",
+    "section": "IDE Ministerio de Medio Ambiente",
+    "text": "IDE Ministerio de Medio Ambiente\nIDE: Infraestructura de datos espaciales\nSINIA: Sistema Nacional de Información Ambiental\nhttps://ide.mma.gob.cl/\n\nLos SIG nos permiten utilizar datos espaciales con aplicaciones en multiples disciplinas. Por ejemplo, medio ambiente.\n\nLos SIG nos ayudan a entender el mundo por medio de considerar la ubicación en el espacio"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#definición-de-sig",
+    "href": "clases/clase1/02_intro_SIG.html#definición-de-sig",
+    "title": "Introducción a los SIG",
+    "section": "Definición de SIG",
+    "text": "Definición de SIG\nEs un sistema basado en computador para ayudar a la recolección, mantención, almacenamiento, análisis, salida y distribución de información y datos espaciales y no-espaciales.\n\n1.- Recolección: a la habilidad del SIG de tomar diferentes tipos de información.\n\n\n2.- Mantención: capacidad de mantener los datos recolectados actualizaods.\n\n\n3.- Almacenamiento: la estructura de codificación de la información que es guardada en forma digital en el computador.\n\n\n4.- Análisis: proceso de transformar los datos a información.\n\n\n5.- Salida: se refiere a los mapas, reportes y estadísticas."
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#definición-de-sig-1",
+    "href": "clases/clase1/02_intro_SIG.html#definición-de-sig-1",
+    "title": "Introducción a los SIG",
+    "section": "Definición de SIG",
+    "text": "Definición de SIG\n6.- Distribución: intercambio de datos espaciales y no-espaciales.\n\nPuede distribuir información en formato visual o tabular.\n\ndatos e información espacial y no espacial” se refiere al hecho de que un SIG puede contener información si tiene un componente espacial o no.\n\n\n“Los SIG son simultáneamente el telescopio, el microscopio, la computadora y la impresora de análisis regional y síntesis de datos espaciales”.- Ron Abler (1988) -"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#los-sig-como-un-paraguas",
+    "href": "clases/clase1/02_intro_SIG.html#los-sig-como-un-paraguas",
+    "title": "Introducción a los SIG",
+    "section": "Los SIG como un paraguas",
+    "text": "Los SIG como un paraguas\n\n\n¿Quá hay bajo el paraguas?"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#los-sig-como-un-paraguas-1",
+    "href": "clases/clase1/02_intro_SIG.html#los-sig-como-un-paraguas-1",
+    "title": "Introducción a los SIG",
+    "section": "Los SIG como un paraguas",
+    "text": "Los SIG como un paraguas"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig",
+    "href": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig",
+    "title": "Introducción a los SIG",
+    "section": "Las seis partes de los SIG",
+    "text": "Las seis partes de los SIG\n1.- Hardware:\n\n\nComputadoras potentes\nImpresoras/ploters y otras capacidades de visualización\nDispositivos de entrada\nGran capacidad de espacio en disco/memoria"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-1",
+    "href": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-1",
+    "title": "Introducción a los SIG",
+    "section": "Las seis partes de los SIG",
+    "text": "Las seis partes de los SIG\n\n2.- Software:\n\n\nse refiere a los muchos paquetes de software gratuitos y comerciales que permiten a un usuario de SIG realizar funciones de SIG tales como la manipulación, almacenamiento, consulta y análisis de información espacial y no espacial."
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-2",
+    "href": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-2",
+    "title": "Introducción a los SIG",
+    "section": "Las seis partes de los SIG",
+    "text": "Las seis partes de los SIG\n\n3.- Datos:\n\n\nse refiere a toda la información espacial y no espacial almacenada en un formato digital en el computador\n\n\n\nun SIG puede trabajar con cualquier tipo de datos en muchos tipos diferentes de formatos. (espacial y no espacial)\n\n\n\n\nactualmente estamos sobrecargados de datos (data overload)\n\n\n\n\nla mitad de todo (50%) el tiempo que se pasa en un proyecto SIG, simplemente se estará trabajando en preparar los datos"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-3",
+    "href": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-3",
+    "title": "Introducción a los SIG",
+    "section": "Las seis partes de los SIG",
+    "text": "Las seis partes de los SIG\n\n4.- Métodos: Los métodos que forman parte de un SIG se refieren a las\n\n\n\nfórmulas,\nestadísticas,\nanálisis y\nalgoritmos"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-4",
+    "href": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-4",
+    "title": "Introducción a los SIG",
+    "section": "Las seis partes de los SIG",
+    "text": "Las seis partes de los SIG\n\n5.- Personas:\n\n\ncualquiera que utiliza un SIG.\n\n\n\nProfesionales expertos en SIG\nUsuarios expertos en SIG\nusuarios novatos en SIG\ncualquier usuario de SIG"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-5",
+    "href": "clases/clase1/02_intro_SIG.html#las-seis-partes-de-los-sig-5",
+    "title": "Introducción a los SIG",
+    "section": "Las seis partes de los SIG",
+    "text": "Las seis partes de los SIG\n\n6.- Red (network): se refiere tanto a la computadora como a la red social\n\n\n\ndifusión de datos\n\ntransferir datos\ncolaboración\n\nvisualización de información\n\nmapas web\naplicaciones web"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#cómo-pueden-ser-usados-los-sig",
+    "href": "clases/clase1/02_intro_SIG.html#cómo-pueden-ser-usados-los-sig",
+    "title": "Introducción a los SIG",
+    "section": "¿Cómo pueden ser usados los SIG?",
+    "text": "¿Cómo pueden ser usados los SIG?\n\n\n\nInformacion catastral\nEntregas\nMilitar\nAgricultura\nMapeo de vida silvestre\nManejo de desastres\nInfraestructura\n\n\n\nSoporte de decisión\nAnálisis 3D\nMapeo\nSalud\nMinería de datos\nRecursos naturales"
+  },
+  {
+    "objectID": "clases/clase1/02_intro_SIG.html#revolución-geo-espacial",
+    "href": "clases/clase1/02_intro_SIG.html#revolución-geo-espacial",
+    "title": "Introducción a los SIG",
+    "section": "Revolución geo-espacial",
+    "text": "Revolución geo-espacial\nEjemplo de uso de la tecnología geoespacial\nRevolución geoespacial\nclimate change\nPandemia\n\n\n\n\nIMSD1020|1-2025"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#contenidos",
+    "href": "clases/clase1/03_intro_qgis.html#contenidos",
+    "title": "Introducción a QGIS",
+    "section": "Contenidos",
+    "text": "Contenidos\n\n¿Qué es QGIS?\n¿Por qué usar QGIS?\nDescargar QGIS\nInstalar QGIS\nInterfaz de QGIS y sus partes"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#qué-es-qgis",
+    "href": "clases/clase1/03_intro_qgis.html#qué-es-qgis",
+    "title": "Introducción a QGIS",
+    "section": "1. ¿Qué es QGIS?",
+    "text": "1. ¿Qué es QGIS?\n\nQGIS es un Sistema de Información Geográfica (GIS) de código abierto fácil de usar con licencia bajo la Licencia Pública General GNU.\nQGIS es un proyecto oficial de la Open Source Geospatial Foundation (OSGeo).\nEs multiplataforma, es decir se ejecuta en Linux, Unix, Mac OSX, Windows y Android y admite numerosos formatos y funcionalidades vectoriales, raster y de base de datos."
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#qué-es-qgis-1",
+    "href": "clases/clase1/03_intro_qgis.html#qué-es-qgis-1",
+    "title": "Introducción a QGIS",
+    "section": "1. ¿Qué es QGIS?",
+    "text": "1. ¿Qué es QGIS?\n\nQGIS es un SIG de escritorio: eso significa que obtienes un programa que se abre en tu computadora con ventanas y botones.\nQGIS es de código abierto: eso significa que el código está disponible para que lo lea o modifique, si así lo desea, pero no es necesario.\nQGIS es un proyecto oficial de la Open Source Geospatial Foundation (OSGeo): “La Open Source Geospatial Foundation (OSGeo) es una organización sin fines de lucro cuya misión es fomentar la adopción global de tecnología geoespacial abierta al ser una fundación de software inclusiva dedicada a una filosofía abierta y un desarrollo participativo impulsado por la comunidad”."
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#por-qué-usar-qgis",
+    "href": "clases/clase1/03_intro_qgis.html#por-qué-usar-qgis",
+    "title": "Introducción a QGIS",
+    "section": "2. ¿Por qué usar QGIS?",
+    "text": "2. ¿Por qué usar QGIS?\nQGIS es un software SIG de escritorio de código abierto impulsado por la comunidad que permite a los usuarios visualizar y analizar datos espaciales de diversas maneras.\n\nEs un GIS de escritorio robusto y potente\nSe ejecuta en todas las plataformas principales: Mac, Linux y Windows\nGratis, todo el acceso (sin complementos ni extensiones de pago)\nActualizaciones frecuentes y corrección de errores\nComunidad receptiva y entusiasta\nIntegración con otras herramientas geoespaciales y lenguajes de programación como R, Python y PostGIS\nAcceso a herramientas de análisis de otro software establecido como GRASS y SAGA\nAcceso nativo a formatos de datos abiertos como geoJSON y GeoPackage\nViene en más de 40 idiomas, lo que facilita el trabajo con una mayor variedad de colaboradores\nUso creciente por parte de gobiernos locales, estatales, federales e internacionales"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#descargar-qgis",
+    "href": "clases/clase1/03_intro_qgis.html#descargar-qgis",
+    "title": "Introducción a QGIS",
+    "section": "3. Descargar QGIS",
+    "text": "3. Descargar QGIS\n\nIngresar a http://www.qgis.org\nIr a Descargar ahora\nElegir el sistema operativo (windows, linux, mac,..)"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#instalar-qgis",
+    "href": "clases/clase1/03_intro_qgis.html#instalar-qgis",
+    "title": "Introducción a QGIS",
+    "section": "4. Instalar QGIS",
+    "text": "4. Instalar QGIS"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-1",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-1",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS\n\nBarra de menús: La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar."
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-2",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-2",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-3",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-3",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS\n\nBarra de menús: La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.\nBarras de herramientas"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-4",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-4",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-5",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-5",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS\n\nBarra de menús: La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.\nBarras de herramientas\nPaneles: Desde el menú Ver, puede activar y desactivar los widgets (Paneles ►) y las barras de herramientas (Barras de herramientas ►) de QGIS."
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-6",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-6",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-7",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-7",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS\n\nBarra de menús: La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.\nBarras de herramientas\nPaneles: Desde el menú Ver, puede activar y desactivar los widgets (Paneles ►) y las barras de herramientas (Barras de herramientas ►) de QGIS.\nVista del mapa: La vista de mapa (también llamada lienzo de mapa) es el “extremo comercial” de QGIS: los mapas se muestran en esta área, en 2D."
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-8",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-8",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS"
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-9",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-9",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS\n\nBarra de menús: La barra de menú proporciona acceso a las funciones de QGIS utilizando menús jerárquicos estándar.\nBarras de herramientas\nPaneles: Desde el menú Ver, puede activar y desactivar los widgets (Paneles ►) y las barras de herramientas (Barras de herramientas ►) de QGIS.\nVista del mapa: La vista de mapa (también llamada lienzo de mapa) es el “extremo comercial” de QGIS: los mapas se muestran en esta área, en 2D.\nBarra de estado: La barra de estado le brinda información general sobre la vista del mapa y las acciones procesadas o disponibles, y le ofrece herramientas para administrar la vista del mapa."
+  },
+  {
+    "objectID": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-10",
+    "href": "clases/clase1/03_intro_qgis.html#interfaz-de-qgis-10",
+    "title": "Introducción a QGIS",
+    "section": "5. Interfaz de QGIS",
+    "text": "5. Interfaz de QGIS\n\n\n\n\n\nIMSD1020|1-2025"
+  },
+  {
+    "objectID": "talleres.html",
+    "href": "talleres.html",
+    "title": "Talleres",
+    "section": "",
+    "text": "Unidad 1: Datos geoespaciales\n\nTaller 1: Aplicaciones GIS en Medio Ambiente\nTaller 1: Ejemplo"
+  },
+  {
+    "objectID": "talleres/taller1.html",
+    "href": "talleres/taller1.html",
+    "title": "Taller 1: Aplicaciones SIG en Medio Ambiente",
+    "section": "",
+    "text": "Revise tres ejemplos de aplicación de los SIG relacionado con medio ambiente. Las revisiones de las aplicaciones deben prepararse a partir de literatura publicada en alguno de los siguientes links:\n\nRed SciELO (https://scielo.org/)\nAsociación Española de Teledetección (http://www.aet.org.es/)\nSciencedirect (http://www.sciencedirect.com)\n\nLas revisiones consistirán en un resumen de una página del artículo publicado y deben cumplir con los siguientes requisitos:\n\n\n\nDoble espacio, Times New Roman, 12pt.\nTítulo centrado en la parte superior de la página.\nNombre, curso y número del artículo en la esquina superior derecha del margen.\n\n\n\n\nPárrafo introductorio que describe el problema que se está abordando (1/3 página) - Párrafo dos: Párrafo central que describe la solución SIG al problema; incluya una descripción de software, hardware, datos, modelos de datos, algoritmos, modelos, según corresponda. ¿Qué hicieron para resolver el problema?\n\n\n\nPárrafo de conclusión que documenta su evaluación de SIG como la herramienta para resolver el problema; ¿Se están utilizando correctamente los datos, el software, el hardware, los métodos, etc.? ¿Por qué o por qué no?\n\n\n\nFuente de información en margen inferior. Norma APA (American Psychological Association). Ver https: //normasapa.com/como-hacer-referencias-bibliografia-en-normas-apa/\n\n\n\nLunes 24 marzo hasta las 08:30am"
+  },
+  {
+    "objectID": "talleres/taller1.html#formato",
+    "href": "talleres/taller1.html#formato",
+    "title": "Taller 1: Aplicaciones SIG en Medio Ambiente",
+    "section": "",
+    "text": "Doble espacio, Times New Roman, 12pt.\nTítulo centrado en la parte superior de la página.\nNombre, curso y número del artículo en la esquina superior derecha del margen."
+  },
+  {
+    "objectID": "talleres/taller1.html#párrafo-uno",
+    "href": "talleres/taller1.html#párrafo-uno",
+    "title": "Taller 1: Aplicaciones SIG en Medio Ambiente",
+    "section": "",
+    "text": "Párrafo introductorio que describe el problema que se está abordando (1/3 página) - Párrafo dos: Párrafo central que describe la solución SIG al problema; incluya una descripción de software, hardware, datos, modelos de datos, algoritmos, modelos, según corresponda. ¿Qué hicieron para resolver el problema?"
+  },
+  {
+    "objectID": "talleres/taller1.html#párrafo-tres",
+    "href": "talleres/taller1.html#párrafo-tres",
+    "title": "Taller 1: Aplicaciones SIG en Medio Ambiente",
+    "section": "",
+    "text": "Párrafo de conclusión que documenta su evaluación de SIG como la herramienta para resolver el problema; ¿Se están utilizando correctamente los datos, el software, el hardware, los métodos, etc.? ¿Por qué o por qué no?"
+  },
+  {
+    "objectID": "talleres/taller1.html#referencias",
+    "href": "talleres/taller1.html#referencias",
+    "title": "Taller 1: Aplicaciones SIG en Medio Ambiente",
+    "section": "",
+    "text": "Fuente de información en margen inferior. Norma APA (American Psychological Association). Ver https: //normasapa.com/como-hacer-referencias-bibliografia-en-normas-apa/"
+  },
+  {
+    "objectID": "talleres/taller1.html#plazo-de-entrega",
+    "href": "talleres/taller1.html#plazo-de-entrega",
+    "title": "Taller 1: Aplicaciones SIG en Medio Ambiente",
+    "section": "",
+    "text": "Lunes 24 marzo hasta las 08:30am"
+  },
+  {
+    "objectID": "talleres/taller1_ejemplo.html",
+    "href": "talleres/taller1_ejemplo.html",
+    "title": "Taller 1: Aplicaciones SIG",
+    "section": "",
+    "text": "El seguimiento de las polillas de la manzana con un SIG\nLos productores de árboles frutales en Columbia Británica, Canadá, están recurriendo a la tecnología para ayudar a proteger sus cultivos de las polillas de la manzana. Se creó un Sistema de Información Geográfica (SIG) para dibujar espacialmente la población de insectos en mapas del sur de Okanagan. Estos mapas se enviarán semanalmente a los agricultores para que puedan estar al tanto de los movimientos de los insectos, proporcionando a los productores una conciencia de las áreas de sus cultivos donde necesitan monitorear la presencia de las polillas.\nComo no existe un catastro para la provincia, los trabajadores viajan de comunidad en comunidad y juntan sus mapas existentes para crear un catastro en toda la provincia. Usando los nuevos mapas, se colocaron, mapearon y vincularon 2.500 trampas de polillas a 1.500 sitios de origen. Al contar la cantidad de polillas atrapadas y al ingresar esos datos en la computadora, se rastreó y analizó el movimiento de las polillas. Estos datos se integran con la propiedad y la información topográfica para crear nuevos mapas que muestran las áreas más activas de las polillas. Luego se emiten los mapas semanalmente en Internet, lugares donde los agricultores pueden acceder a ellos y en las oficinas de Liberación de Insectos Estériles.\nEl SIG fue una elección perfecta para ayudar a resolver este problema. No solo les dio a los agricultores otra herramienta para ayudar a combatir a las polillas, sino que dio nacimiento a la encuesta catastral de la provincia de Okanagan, que permite que su información sobre la tierra sea más accesible y uniforme. Además, el SIG está diseñado para ser fácil de mantener, lo que ahorra dinero al no tener que contratar expertos en SIG para ejecutar los programas. Esto es importante porque los agricultores, que están familiarizados con sus tierras, y saben qué quieren exactamente de los mapas, pueden mantener y recuperar datos útiles para sus necesidades. Este artículo no detalla los SIG utilizados, pero ofrece un excelente ejemplo del uso de SIG y sus beneficios inmediatos y continuos.\n\n\nReferencia\nMithan, Peter. GIS helps pinpoint codling moth problem areas. www.goodfruit.com/archive/Aug- 00/special5.html+gis+problem&hl=en. Accessed January 31, 2002"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html",
+    "href": "clases/clase7/07_teledeteccion.html",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "",
+    "text": "Introducción\nTeledetección\nTeoría del color\nImágenes satelitales\nÍndices de vegetación"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#contenidos",
+    "href": "clases/clase7/07_teledeteccion.html#contenidos",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "",
+    "text": "Introducción\nTeledetección\nTeoría del color\nImágenes satelitales\nÍndices de vegetación"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#datos-remotos-y-útiles",
+    "href": "clases/clase7/07_teledeteccion.html#datos-remotos-y-útiles",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Datos remotos y útiles",
+    "text": "Datos remotos y útiles\n\nDatos sensados de forma remota\n\nImágenes Aéreas\nImágenes de Satélite\n\nÚtiles por muchas razones\n\nCubren grandes extensiones\nRango espectral extendido\nPrecisión geométrica\nRegistro permanente"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos-1",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nVolcan Llaima"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos-2",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nLiceo El Carmen, San Fernando"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos-3",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos-3",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nLiceo El Carmen, San Fernando"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos-4",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos-4",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nLiceo El Carmen, San Fernando"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos-5",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos-5",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplos-6",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplos-6",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplos",
+    "text": "Ejemplos"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#principios-básicos",
+    "href": "clases/clase7/07_teledeteccion.html#principios-básicos",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Principios básicos",
+    "text": "Principios básicos\n\nLa teledetección se basa en la energía electromagnética reflejada\nLa energía solar caracterizada por la longitud de onda\n\ncada color tiene una longitud de onda específica.\nel rango compleo de longitud de onda se denómina espectro electromagnético\n\nnuestros ojos perciben la luz en el rango visible del espectro"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-videos",
+    "href": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-videos",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Espectro electromagnético (Videos)",
+    "text": "Espectro electromagnético (Videos)\n\nEspectro electromagnetico\nLa luz visible\nInfrarojo"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#espectro-electromagnético",
+    "href": "clases/clase7/07_teledeteccion.html#espectro-electromagnético",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Espectro electromagnético",
+    "text": "Espectro electromagnético"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-1",
+    "href": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Espectro electromagnético",
+    "text": "Espectro electromagnético"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#principios-básicos-teledetección",
+    "href": "clases/clase7/07_teledeteccion.html#principios-básicos-teledetección",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Principios básicos teledetección",
+    "text": "Principios básicos teledetección\n\nEnergía electromagnética que golpea un objeto puede ser absorvida, reflejada o transmitida\nLos objetos se ven como el color que deben reflejar.\nLos objetos además reflejan otras porciones del espectro.\n\n\n\n\n\n\\(r = f_r/f_i\\) (reflectividad)\n\\(a = f_a/f_i\\) (absortividad)\n\\(t = f_t/f_i\\) (transmisividad)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#curva-espectral-vegetación-sana",
+    "href": "clases/clase7/07_teledeteccion.html#curva-espectral-vegetación-sana",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Curva espectral vegetación sana",
+    "text": "Curva espectral vegetación sana"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#curva-espectral-vegetación-sana-1",
+    "href": "clases/clase7/07_teledeteccion.html#curva-espectral-vegetación-sana-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Curva espectral vegetación sana",
+    "text": "Curva espectral vegetación sana"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#curva-espectral-vegetación-sana-2",
+    "href": "clases/clase7/07_teledeteccion.html#curva-espectral-vegetación-sana-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Curva espectral vegetación sana",
+    "text": "Curva espectral vegetación sana\n\n\n\n\n\n\n\n\n\nHay diferentes pigmentos en la vegetación.\nLos cloroplastos absorben parte de la radiación para activar el proceso de la fotosíntesis.\nDependiendo del tipo de pigmento se absorbe más en unas longitudes de onda que en otras."
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplo",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplo",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplo",
+    "text": "Ejemplo"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplo-1",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplo-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplo",
+    "text": "Ejemplo"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#aditiva-y-sutractiva",
+    "href": "clases/clase7/07_teledeteccion.html#aditiva-y-sutractiva",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Aditiva y sutractiva",
+    "text": "Aditiva y sutractiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#aditiva",
+    "href": "clases/clase7/07_teledeteccion.html#aditiva",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Aditiva",
+    "text": "Aditiva\n\n\n\nColores primarios: Rojo, Azul y verde.\nCuando se unen forman luz blanca\nLa teoría aditiva es la base para la interpretación de imágenes satelitales"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#sustractiva",
+    "href": "clases/clase7/07_teledeteccion.html#sustractiva",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Sustractiva",
+    "text": "Sustractiva\n\n\n\nLa teoria substractiva tiene como colores primario: Amarillo, Cian y Magenta.\nLos colores complementarios se crean al quitar un color al primario.\nLas pinturas, pigmentos y tintes funcionan con esta teoria\nLa teoria sustractiva sienta las bases para las impresiones fotográficas."
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#teoría-aditiva",
+    "href": "clases/clase7/07_teledeteccion.html#teoría-aditiva",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Teoría aditiva",
+    "text": "Teoría aditiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#teoría-aditiva-1",
+    "href": "clases/clase7/07_teledeteccion.html#teoría-aditiva-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Teoría aditiva",
+    "text": "Teoría aditiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#teoría-aditiva-2",
+    "href": "clases/clase7/07_teledeteccion.html#teoría-aditiva-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Teoría aditiva",
+    "text": "Teoría aditiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#teoría-aditiva-3",
+    "href": "clases/clase7/07_teledeteccion.html#teoría-aditiva-3",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Teoría aditiva",
+    "text": "Teoría aditiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#teoría-aditiva-4",
+    "href": "clases/clase7/07_teledeteccion.html#teoría-aditiva-4",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Teoría aditiva",
+    "text": "Teoría aditiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#composición-de-color",
+    "href": "clases/clase7/07_teledeteccion.html#composición-de-color",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Composición de color",
+    "text": "Composición de color\nFalso Color\nSe asignan bandas que no pueden verse con el ojo humano y se pueden combinar, produciendo una imagen de Falso Color\n\nPara visualizer una imagen en falso color hay que utilizar la siguiente combinación:\n\nNIR band al display Rojo,\nRed band al display Verde,\nGreen band al display Azul"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#composicion-de-color",
+    "href": "clases/clase7/07_teledeteccion.html#composicion-de-color",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Composicion de color",
+    "text": "Composicion de color\nUna composición de 3 bandas en falso color incluye una banda de la region no visible del espectro EM\n\n\n Imagen de color verdadero\n\n Imagen de falso color, La banda del rojo fue reemplazada por la del infrarrojo cercano"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#composicion-de-color-1",
+    "href": "clases/clase7/07_teledeteccion.html#composicion-de-color-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Composicion de color",
+    "text": "Composicion de color\n\n\nLa banda azul se carga en el canal azul del visualizador.\n\n\n\n\n\nLa banda roja se carga en el canal rojo del visualizador.\n\n\n\n\n\n\nLa banda azul se carga en el canal azul del visualizador.\n\n\n\n\n\nEl resultado es una composición de color verdadero (RGB)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#composicion-de-color-2",
+    "href": "clases/clase7/07_teledeteccion.html#composicion-de-color-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Composicion de color",
+    "text": "Composicion de color"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#falso-color",
+    "href": "clases/clase7/07_teledeteccion.html#falso-color",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Falso color",
+    "text": "Falso color\nLas tonalidades más habituales en una composición en falso color son:\n\nRojo, indica una vegetación sana y bien desarrollada.\nRosa, áreas vegetales menos densa o con vegetación menos desarrollada.\nBlanco, áreas con escasa o nula vegetación.\nAzul oscuro o negro indica la presencia de agua.\nMarrón, vegetación arbustiva muy variable.\nBeige-dorado, zonas de transición, prados secos asociados a matorral ralo."
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#falso-color-1",
+    "href": "clases/clase7/07_teledeteccion.html#falso-color-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Falso color",
+    "text": "Falso color"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#características",
+    "href": "clases/clase7/07_teledeteccion.html#características",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Características",
+    "text": "Características\n\nPerspectiva desde muy arriba\n\nreduce la distorsión de terreno\n\nCubren grandes superficies\n\ncosto muy alto para superficies pequeñas\n\nRequieren procesamiento especializado de imágenes\nProgramar la adquisición de imágene se debe realizar con días o semanas de anticipación\n-O seguir los cronogramas de vuelos fijos\nMenor resolución efectiva"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#tipos-de-imágenes-satelitales",
+    "href": "clases/clase7/07_teledeteccion.html#tipos-de-imágenes-satelitales",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Tipos de imágenes satelitales",
+    "text": "Tipos de imágenes satelitales\n\nPúblicas:\n\nLandsat,\nSentinel,\nMODIS\n\nPrivadas:\n\nIkonos,\nWorldview"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#principios-básicos-1",
+    "href": "clases/clase7/07_teledeteccion.html#principios-básicos-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Principios básicos",
+    "text": "Principios básicos\n\nLos sensores en los satelites operan apuntando al área a ser tomada\n\nVista instantane del campo (VIC): corresonde al área que puede ser vista por cada sensor.\n\nLos sensores construyen imágenes 2D de la superficie al registrar la energía reflejada"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa",
+    "href": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Landsat (USGS/NASA)",
+    "text": "Landsat (USGS/NASA)\n\nLanzado en Julio 1972 (Landsat-1)\nPrimer sistema diseñado para adquirir datos de la superficie de la tierra.\nTres sensores abordo\n\nCámara de video\nsensor multiespectral\nmapeador temático (thematic mapper)\nmapeador temático mejorado (enhanced thematic mapper)\n\nRevisita cada 16 días.\nResolución espacial de 15/30/100m"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa-1",
+    "href": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Landsat (USGS/NASA)",
+    "text": "Landsat (USGS/NASA)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa-2",
+    "href": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Landsat (USGS/NASA)",
+    "text": "Landsat (USGS/NASA)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa---usa",
+    "href": "clases/clase7/07_teledeteccion.html#landsat-usgsnasa---usa",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Landsat (USGS/NASA - USA)",
+    "text": "Landsat (USGS/NASA - USA)\nEmbalse el Yeso"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#sentinel-esa---europa",
+    "href": "clases/clase7/07_teledeteccion.html#sentinel-esa---europa",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Sentinel (ESA - Europa)",
+    "text": "Sentinel (ESA - Europa)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#sentinel-2-ab",
+    "href": "clases/clase7/07_teledeteccion.html#sentinel-2-ab",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Sentinel 2 (A/B)",
+    "text": "Sentinel 2 (A/B)\n\nSentinel A lanzado 23 Junio 2015\nSentinel B lanzado 7 Marzo 2017\nCuentan con un sensor multiespectral (MSI)\nCada satelite captura imágenes cada 10 días, en conjunto la revisita es de 5 días.\nResolución espacial 10/20/60 m"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#sentinel-2-ab-1",
+    "href": "clases/clase7/07_teledeteccion.html#sentinel-2-ab-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Sentinel 2 (A/B)",
+    "text": "Sentinel 2 (A/B)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#sentinel-2-ab-2",
+    "href": "clases/clase7/07_teledeteccion.html#sentinel-2-ab-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Sentinel 2 (A/B)",
+    "text": "Sentinel 2 (A/B)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#worldview-4",
+    "href": "clases/clase7/07_teledeteccion.html#worldview-4",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Worldview 4",
+    "text": "Worldview 4\n\nBandas:\n\nPancromática: 450 - 800nm\nRed: 655 - 690 nm,\nGreen: 510 - 580 nm\nBlue: 450 - 510 nm\nNear-IR: 780-920\n\nResolución espacial entre 0.31 a 4m\nCosto 22.5 \\(USD/km^2\\)\nMínima superficie: 25 \\(km^2\\)\nDatos de archivo"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#worldview-4-1",
+    "href": "clases/clase7/07_teledeteccion.html#worldview-4-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Worldview 4",
+    "text": "Worldview 4"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#cuál-usar-satelital-o-aérea",
+    "href": "clases/clase7/07_teledeteccion.html#cuál-usar-satelital-o-aérea",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "¿Cuál usar? ¿satelital o aérea?",
+    "text": "¿Cuál usar? ¿satelital o aérea?\nConsiderar los siguientes factores:\n\nResolución espacial\nLa superficie del área a analizar\nCosto\nLimitaciones de tiempo\nPost-proceso\nRequerimientos espectrales"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-2",
+    "href": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Espectro electromagnético",
+    "text": "Espectro electromagnético"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-3",
+    "href": "clases/clase7/07_teledeteccion.html#espectro-electromagnético-3",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Espectro electromagnético",
+    "text": "Espectro electromagnético"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#curva-espectral",
+    "href": "clases/clase7/07_teledeteccion.html#curva-espectral",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Curva espectral",
+    "text": "Curva espectral\nVegetación"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#respuesta-de-la-vegetación",
+    "href": "clases/clase7/07_teledeteccion.html#respuesta-de-la-vegetación",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Respuesta de la vegetación",
+    "text": "Respuesta de la vegetación\nVegetación"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#índices-de-vegetación",
+    "href": "clases/clase7/07_teledeteccion.html#índices-de-vegetación",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Índices de vegetación",
+    "text": "Índices de vegetación\nÍndice de Diferencia Normalizada (NDVI)"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#índices-de-vegetación-1",
+    "href": "clases/clase7/07_teledeteccion.html#índices-de-vegetación-1",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Índices de vegetación",
+    "text": "Índices de vegetación\nÍndice de Diferencia Normalizada (NDVI)\n\\[NDVI = \\frac{NIR-RED}{NIR+RED} \\]"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#índices-de-vegetación-2",
+    "href": "clases/clase7/07_teledeteccion.html#índices-de-vegetación-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Índices de vegetación",
+    "text": "Índices de vegetación\nÍndice de Humedad de Diferencia Normalizada (NDMI)\n\\[NDMI = \\frac{NIR-SWIR}{NIR+SWIR} \\]"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#imagenes-de-satelite",
+    "href": "clases/clase7/07_teledeteccion.html#imagenes-de-satelite",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Imagenes de Satelite",
+    "text": "Imagenes de Satelite\nImágenes Sentinel-2"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#bandas-sentinel-2",
+    "href": "clases/clase7/07_teledeteccion.html#bandas-sentinel-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Bandas Sentinel-2",
+    "text": "Bandas Sentinel-2\nImágenes Sentinel-2"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#utilidad",
+    "href": "clases/clase7/07_teledeteccion.html#utilidad",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Utilidad",
+    "text": "Utilidad\nPermite realizar operaciones aritméticas con datos raster"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#ejemplo-2",
+    "href": "clases/clase7/07_teledeteccion.html#ejemplo-2",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Ejemplo",
+    "text": "Ejemplo"
+  },
+  {
+    "objectID": "clases/clase7/07_teledeteccion.html#para-cálculo-de-índices-de-vegetación",
+    "href": "clases/clase7/07_teledeteccion.html#para-cálculo-de-índices-de-vegetación",
+    "title": "Teledetección e Imágenes Satelitales",
+    "section": "Para cálculo de Índices de Vegetación",
+    "text": "Para cálculo de Índices de Vegetación\nLa vamos a utilizar para calcular los índices de vegetación NDVI y NDMI.\n\\[NDVI = \\frac{NIR-RED}{NIR+RED} \\]\n\\[NDMI = \\frac{NIR-SWIR}{NIR+SWIR} \\]"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html",
+    "href": "clases/clase2/04_modelos_datos_SIG.html",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "",
+    "text": "¿Qué hemos visto?\nConceptos del espacio\nModelos de datos geoespaciales\nTipos de modelos de datos geoespaciales\nAtributos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#contenidos",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#contenidos",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "",
+    "text": "¿Qué hemos visto?\nConceptos del espacio\nModelos de datos geoespaciales\nTipos de modelos de datos geoespaciales\nAtributos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#qué-son-los-sig",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#qué-son-los-sig",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "¿Qué son los SIG?",
+    "text": "¿Qué son los SIG?\n.center[Es un sistema basado en computador para ayudar a la recolección, mantención, almacenamiento, análisis, salida y distribución de  información y datos espaciales y no-espaciales]\n1.- Recolección: a la habilidad del SIG de tomar diferentes tipos de información.\n2.- Mantención: capacidad de mantener los datos recolectados actualizaods.\n3.- Almacenamiento: la estructura de codificación de la información que es guardada en forma digital en el computador.\n4.- Análisis: proceso de transformar los datos a información.\n5.- Salida: se refiere a los mapas, reportes y estadísticas.\n6.- Distribución: intercambio de datos espaciales y no-espaciales."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#los-componentes-del-sig",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#los-componentes-del-sig",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "¿Los componentes del SIG?",
+    "text": "¿Los componentes del SIG?\n\nHardware: ej: computador, celular\nSoftware: ej: QGIS\nDatos: con lo que se trabaja en los SIG, ej: datos censales\nMétodos: funciones algorítmos matemáticos\nPersonas: todo aquel que usa un SIG\nRed: tanto la internet como la forma colaborativa de trabajar en forma de red"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#conceptos-fundamentales-de-análisis-espacial",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#conceptos-fundamentales-de-análisis-espacial",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Conceptos Fundamentales de Análisis Espacial",
+    "text": "Conceptos Fundamentales de Análisis Espacial\n1.- Espacio\n2.- Localización\n3.- Distancia"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#espacio",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#espacio",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Espacio",
+    "text": "Espacio\nEl espacio se puede medir en términos absolutos, relativos y cognitivos\nEspacio absoluto\n\n\n\nSe puede pensar como un espacio matemático\nImplica la precisa medición de la ubicación (x,y,z)"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#espacio-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#espacio-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Espacio",
+    "text": "Espacio\nEl espacio se puede medir en términos absolutos, relativos y cognitivos\nEspacio relativo\n\n\n\nEspacio topológico\nSe preocupa de la conección entre lugares"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#espacio-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#espacio-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Espacio",
+    "text": "Espacio\nEl espacio se puede medir en términos absolutos, relativos y cognitivos\nEspacio cognitivo: refleja las creencias, experiencias y percepciones de las personas sobre los lugares."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#localización",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#localización",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Localización",
+    "text": "Localización\nLa ubicación/localización se puede medir en términos absolutos, relativos, cognitivos y nominales\nAbsolutos: Latitud/Longitud\nRelativos: sitio y situación\nCognitivos: nombre del lugar\nNominal: ¿Dónde estabas tú cuando….?"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#localización-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#localización-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Localización",
+    "text": "Localización\nAbsoluta\n. . .\nse considera un descriptor inequívoco de la ubicación, típicamente expresado como una coordenada, como la latitud y la longitud."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#localización-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#localización-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Localización",
+    "text": "Localización\nRelativa: se puede medir usando sitio y situación\n\n\nSitio:\nAtributo físico de un lugar\nEjemplo: terreno, suelo, vegetación, fuente de agua, entorno construido, etc\n\nSituación\nubicación de un lugar en relación con otros lugares y actividades humanas\nEjemplo: a 50km de Santiago, cerca de una materia prima (cobre), lejos de oportunidades laborales"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#localización-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#localización-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Localización",
+    "text": "Localización\nCognitiva: se refiere a las imágenes cognitivas personales de lugares y regiones compiladas a partir de conocimientos, experiencias e impresiones personales."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#localización-4",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#localización-4",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Localización",
+    "text": "Localización\nNominal: Una ubicación nominal es una ubicación en la que se recuerda haber estado cuando se enteró de un evento que tuvo lugar en una ubicación diferente.\n\nEs importante tener en cuenta que los sistemas de medición que representan la ubicación, por ejemplo, absoluto, relativo, nominal, son sistemas culturales que están integrados en diferentes culturas y cosmovisiones y se pueden inscribir en los lugares."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#distancia",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#distancia",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Distancia",
+    "text": "Distancia\nse puede definir en términos absolutos, relativos y cognitivos\nAbsoluto: es una unidad de medida física, por ejemplo, el número de kilometros entre el centro de la ciudad de Santiago y Rancagua.\nRelativa: se calcula midiendo la distancia, utilizando métricas como tiempo, esfuerzo o costo. Ej. Cuanta bencina se gasta.\nCognitiva: se refiere a la percepción individual de cuán lejos son las cosas"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#primera-ley-de-la-geografía",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#primera-ley-de-la-geografía",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Primera ley de la geografía",
+    "text": "Primera ley de la geografía\n\n“Todo está relacionado con todo lo demás, pero las cosas cercanas están más relacionadas entre sí”\n\n\nWaldo Tobler (profesor emérito de la Universidad de California en Santa Bárbara, Departamento de geografía)"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#qué-son",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#qué-son",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "¿Qué son?",
+    "text": "¿Qué son?\n. . .\n\nmedios formales de representar información espacialmente referenciada.\n\n. . .\n\nvista simplificada de entidades físicas\n\n. . .\n\nuna conceptualización de la realidad"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#componentes",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#componentes",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Componentes",
+    "text": "Componentes\nCompuestos de dos partes\n\n\nObjeto\n\nAtributo"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#ejemplo-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#ejemplo-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Ejemplo 1",
+    "text": "Ejemplo 1"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#ejemplo-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#ejemplo-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Ejemplo 2",
+    "text": "Ejemplo 2"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-fenómenos-espaciales",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-fenómenos-espaciales",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de Fenómenos Espaciales",
+    "text": "Tipos de Fenómenos Espaciales\n1.- Discretos\n2.- Continuos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#fenómenos-espaciales-discretos",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#fenómenos-espaciales-discretos",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Fenómenos Espaciales Discretos",
+    "text": "Fenómenos Espaciales Discretos\nDiscreto:\n\nindividualmente distinguibles\nNo existe entre observaciones\n\nEjemplos:\n\n\nrios,lagos\n\ncaminos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#fenómenos-espaciales-continuos",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#fenómenos-espaciales-continuos",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Fenómenos Espaciales Continuos",
+    "text": "Fenómenos Espaciales Continuos\nContinuos:\n\nExiste entre observaciones\nRepresenta datos de naturaleza continua\n\nEjemplos:\n\n\ntemperatura\n\nelevación"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#fenómenos-espaciales-continuos-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#fenómenos-espaciales-continuos-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Fenómenos espaciales continuos",
+    "text": "Fenómenos espaciales continuos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#organización-capas",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#organización-capas",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Organización (capas)",
+    "text": "Organización (capas)\nTípicamente, el fenómeno espacial se organiza en modelos de datos geoespaciales separados por tema."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#organización-capas-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#organización-capas-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Organización (capas)",
+    "text": "Organización (capas)"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#organización-capas-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#organización-capas-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Organización (capas)",
+    "text": "Organización (capas)"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#organización-capas-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#organización-capas-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Organización (capas)",
+    "text": "Organización (capas)"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-modelos-de-datos-espaciales-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-modelos-de-datos-espaciales-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de modelos de datos espaciales",
+    "text": "Tipos de modelos de datos espaciales\n\nDos modelos de datos espaciales\n\n. . .\n\nVectorial\n\n. . .\n\nRaster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Vectorial",
+    "text": "Datos Vectorial\n\nDefine objetos discretos\n\nEj. hidrante, caminos, rios,\n\nHay tres tipos de datos vectorial\n\nPunto\nLinea\nPolígono\n\nestán compuestos de coordenadas y atributos."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Vectorial",
+    "text": "Datos Vectorial\n\nPunto\n\nusa un par de coordenadas para definir la ubicación\nse consiera que no tiene dimensión (puede tener dimensión real, pero para el propóstio del SIG se considera dimención cero)\nla información de atributos se adjuna al punto\nEj. postes de luz, estación agroclimática, ubicación de un crimen"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Vectorial",
+    "text": "Datos Vectorial\n\nPunto"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Vectorial",
+    "text": "Datos Vectorial\n\nLinea\n\nse define por un conjunto ordenado de coordenadas.\ncada linea (y curva) están formadas de múltiples segmentos de linea\nOcasionalemnte, lineas curvas se representan matemáticamente\nel punto de partida de una linea es un nodo\npuntos intermedios de la linea son vertices\nlos atributos pueden estar adjuntos a toda la linea, un nodo o vertice.\nEj: caminos, tuberias, linea eléctrica"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectoriales",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectoriales",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos vectoriales",
+    "text": "Datos vectoriales\nRed de drenaje representada por lineas"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-4",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-4",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Vectorial",
+    "text": "Datos Vectorial\n\nPolígono\n\nformado por un grupo de lineas conectadas\npolígonos deben ser cerrados. El punto de partida y de término debe ser el mismo.\nlos polígonos tienen una región interior\ninformación de atributos se adjunta al polígono\nEj. lagos, ciudad, límites administrativos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-5",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-vectorial-5",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Vectorial",
+    "text": "Datos Vectorial\n\nPolígono"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#modelos-de-datos-espaciales",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#modelos-de-datos-espaciales",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Modelos de datos espaciales",
+    "text": "Modelos de datos espaciales\n\nDos modelos de datos espaciales\n\nVectorial\nRaster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster\n\n\n\nRepresenta objetos continuos Ej. temperatura, elevación\nconjunto regular de celdas (matriz) en un patrón cuadrículado\nobjetos del mundo real son representados por valores en las celdas"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster\n\n\nCargando paquete requerido: sp\n\n\nLinking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-4",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-4",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-5",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-5",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Resolución datos Raster",
+    "text": "Resolución datos Raster\n\nEl tamaño de la celda (pixel) corresponde a la resolución\nhay una compensación entre la resolución y el tamaño del archivo raster\nla coordenada de la celda corresponde al punto central del pixel\nla coordenada aplica al área total de la celda"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Resolución datos Raster",
+    "text": "Resolución datos Raster\n\nCada celda raster representa una determinada área y el valor asignado representa toda esta área.\nel valor de la celda raster representa el valor promedio, más común, o el único valor cubierto por la celda."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Resolución datos Raster",
+    "text": "Resolución datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#resolución-datos-raster-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Resolución datos Raster",
+    "text": "Resolución datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-6",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-6",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-7",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#datos-raster-7",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Datos Raster",
+    "text": "Datos Raster\nEjemplo: uso de suelo (landcover)\n\n\n\n\n\nZambrano et al. (2016)"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#raster-vs-vectorial",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#raster-vs-vectorial",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Raster vs Vectorial",
+    "text": "Raster vs Vectorial\n\n\nRaster\n\nbuenos para cambios frecuentes\nmodelo de datos simple\nfáciles superposiciones\nmejores para imágenes digitales\n\n\nVectorial\n\nalmacenamiento de datos compacto\nideal para representaciones lineales y de redes\nseres humanos más familiarizados con datos vectoriales\npuede contener topología"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#atributos-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#atributos-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Atributos",
+    "text": "Atributos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#atributos-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#atributos-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Atributos",
+    "text": "Atributos\n\nRegistrar características no espaciales que describen entidades espaciales\n\n\n\n\nDispuestos en tablas :\n\nFila: entidad\nColumna: atributo\n\n\n\n\n\n\n\nse puede almacenar como un formato de archivo plano, o en un sistema de gestión de base de datos (SGBD)."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#atributos-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#atributos-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Atributos",
+    "text": "Atributos"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Categorias de atributos",
+    "text": "Categorias de atributos\n\nNominal\nOrdinal\nIntervalo\nRazón"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Categorias de atributos",
+    "text": "Categorias de atributos\n\nNominal\n\nEntrega información descriptiva Ej. color, nombre de ciudad, tipo de planta\nno implica ningún orden\nTambien pueden ser imágenes, sonidos o peliculas"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Categorias de atributos",
+    "text": "Categorias de atributos\n\nOrdinal\n\nimplican un ranking u orden basado en sus valores.\nlos valores pueden ser texto descriptivo o numérico\n\nEj. alto/mediano/bajo o 1/50/100\n\nespecifiqua solo rango, y no escala\n\nEj. alto/50 es mayor que bajo/1 pero no sabemos por cuanto"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Categorias de atributos",
+    "text": "Categorias de atributos\n\nIntervalo\n\norden de rango y magnitud está implícito\nNo tiene un cero natural\n\nUsa un cero arbitrario\n\nUsa atributos númericos\n\nEj: 30° C son 10°C mayor que 20°C\n\nsuma y resta aplica pero no multiplicación ya que los valores son absolutos de un cero arbitrario."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-4",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-4",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Categorias de atributos",
+    "text": "Categorias de atributos\n\nRazón\n\norden de rango y magnitud está implícito\nTiene un cero natural\nUsa atributos númericos\n\nEj: 50 km/hr es dos veces más rápido que 25 km/hr\n\nsuma, resta, división y multiplicación tiene sentido, ya que los valores son absolutos de un cero natural"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-5",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#categorias-de-atributos-5",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Categorias de atributos",
+    "text": "Categorias de atributos\nIdentficar columnas como:\n- Nominal\n- Ordinal\n- Intervalo/Razón"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de datos de atributos",
+    "text": "Tipos de datos de atributos\n. . .\n\nlos datos de atributos son guardados en la memoria\n\n. . .\n\nel tipo de dato del atributo necesita ser definido para un eficiente uso de la memoria y determinación de la aplicabilidad operativa\n\n. . .\n\nhay cuatro tipos comunes de datos\n\nentero\nflotante/real\ntexto/caracter\nfecha"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de datos de atributos",
+    "text": "Tipos de datos de atributos\n1.- Entero\n\nSin punto decimal\nse puede usar para cálculos matemáticos\n\nsin embargo el resultado de una fracción será redondeado\n\nEjemplos:\n\n1\n2458\n-54"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de datos de atributos",
+    "text": "Tipos de datos de atributos\n2.- Flotante/real\n\nNúmero decimal\nse puede usar para cálculos matemáticos\nEjemplos:\n\n1,4532\n254783,1\n-845,157"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de datos de atributos",
+    "text": "Tipos de datos de atributos\n3.- texto/caracter\n\nno se puede usar para cálculos matemáticos\nel texto puede ser manipulado, ej. para encontrar subcadenas o para cortar cadenas.\nEj.\n\n“A”\n“SIG”\n“Avenida Bernardo O’Higgins 2345”"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-4",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-datos-de-atributos-4",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de datos de atributos",
+    "text": "Tipos de datos de atributos\n4- fecha\n\nguarda fechas\nno se puede usar para cálculos matemáticos\nsin embargo, se puede usar para calcular el periodo de tiempo entre dos fechas\nEj.\n\n12-12-1980\n12 de diciembre 1980\n12/12/80"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#inclusiones-en-polígonos-y-generalización-de-límites.",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#inclusiones-en-polígonos-y-generalización-de-límites.",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Inclusiones en polígonos y generalización de límites.",
+    "text": "Inclusiones en polígonos y generalización de límites."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#topología",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#topología",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Topología",
+    "text": "Topología\nLa topología expresa las relaciones espaciales entre entidades vectoriales adyacentes o conectadas (puntos, polilíneas y polígonos) en un SIG.\nLos datos topológicos o basados en topología son útiles para detectar y corregir errores de digitalización.\nLa topología es necesaria para realizar algunos tipos de análisis espacial, como el análisis de redes."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#topología-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#topología-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Topología",
+    "text": "Topología"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#topología-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#topología-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Topología",
+    "text": "Topología"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#topología-3",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#topología-3",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Topología",
+    "text": "Topología"
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-formatos-de-archvios-en-sig",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-formatos-de-archvios-en-sig",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de formatos de archvios en SIG",
+    "text": "Tipos de formatos de archvios en SIG\nDatos Vectoriales\n\nESRI Shapefile : formado por una serie de archivos con el mismo nombre pero diferente extensión.\nshp: es el archivo principal que almacena la geometría de la entidad; necesario.\n.shx: es el archivo de índice que almacena el índice de la geometría de la entidad; necesario.\n*.dbf: es la tabla dBASE que almacena la información de atributos de las entidades; necesaria.\n\nEntre la geometría y los atributos existe una relación de uno a uno, basada en el número de registro. Los registros de atributo del archivo dBase deben estar en el mismo orden que registros del archivo principal."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-formatos-de-archvios-en-sig-1",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-formatos-de-archvios-en-sig-1",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de formatos de archvios en SIG",
+    "text": "Tipos de formatos de archvios en SIG\nDatos Raster\nGeoTIFF: es un estándar de metadatos de dominio público que permite incrustar información de georreferenciación en un archivo TIFF.\nTIFF (Tagged Image File Format) es un formato de archivo informático para almacenar imágenes de mapa de bits.\nLa posible información adicional incluye proyección de mapas, sistemas de coordenadas, elipsoides, datos de referencia y todo lo demás necesario para establecer la referencia espacial exacta para el archivo."
+  },
+  {
+    "objectID": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-formatos-de-archvios-en-sig-2",
+    "href": "clases/clase2/04_modelos_datos_SIG.html#tipos-de-formatos-de-archvios-en-sig-2",
+    "title": "Modelos de datos geoespaciales (IMSE1014)",
+    "section": "Tipos de formatos de archvios en SIG",
+    "text": "Tipos de formatos de archvios en SIG\nVectorial y raster\nEl estándar de codificación GeoPackage describe un conjunto de convenciones para almacenar lo siguiente dentro de una base de datos SQLite:\n\ncaracterísticas vectoriales\nconjuntos de matrices de mosaicos de imágenes y mapas ráster a varias escalas\natributos (datos no espaciales)\nextensiones"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html",
+    "href": "clases/clase4/06_visualizacion.html",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "",
+    "text": "Mapa\nProceso para crear un mapa\nDiseño del mapa"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#contenidos",
+    "href": "clases/clase4/06_visualizacion.html#contenidos",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "",
+    "text": "Mapa\nProceso para crear un mapa\nDiseño del mapa"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#salida-de-un-sig-mapa",
+    "href": "clases/clase4/06_visualizacion.html#salida-de-un-sig-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Salida de un SIG: Mapa",
+    "text": "Salida de un SIG: Mapa\n\nPara que un SIG sea ampliamente utilizado, los mapas deben ser creado para difundir los datos."
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#qué-es-un-mapa",
+    "href": "clases/clase4/06_visualizacion.html#qué-es-un-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "¿Qué es un mapa?",
+    "text": "¿Qué es un mapa?\n. . .\nDefinición: Un mapa es una representación gráfica del entorno.\n. . .\nPropósito: medio para transmitir conocimiento\n. . .\n\ncomprende uno de los tres principales modos de comunicación."
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#quiénes-hacen-mapas",
+    "href": "clases/clase4/06_visualizacion.html#quiénes-hacen-mapas",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "¿Quiénes hacen mapas?",
+    "text": "¿Quiénes hacen mapas?\n. . .\nCartógrafos\n. . .\n\nalguien que diseña y prepara un mapa para su distribución\nestudian las bases filosóficas y teóricas de las reglas para crear/hacer mapas\n\n. . .\nLa cartografía es el arte y la ciencia de hacer mapas\n. . .\nHoy en día gracias a la accesibilidad a los software SIG muchos profesionales pueden realizar mapas.\nEj. Ingeniero en Medio ambiente"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#tipos-de-mapas",
+    "href": "clases/clase4/06_visualizacion.html#tipos-de-mapas",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Tipos de mapas",
+    "text": "Tipos de mapas\nDos tipos de mapas\n\n\n1 Referencia\n\nénfasis en la ubicación\nmuestra diversidad del mundo\nprincipalmente muestra objetos físicos\n\n\n\n2 Temático\n\nénfasis en atributos\nmuestra solo un tema"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#ejemplo-mapa-de-referencia",
+    "href": "clases/clase4/06_visualizacion.html#ejemplo-mapa-de-referencia",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Ejemplo: Mapa de Referencia",
+    "text": "Ejemplo: Mapa de Referencia"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#mapas-temáticos-dos-tipos",
+    "href": "clases/clase4/06_visualizacion.html#mapas-temáticos-dos-tipos",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Mapas temáticos: dos tipos",
+    "text": "Mapas temáticos: dos tipos\n\n\n1 Cualitativo\n\nMuestra datos nominales\nMuestra como están distribuidos\n\n\n\n\nLinking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE\n\n\nudunits database from /usr/share/xml/udunits/udunits2.xml\n\n\nℹ tmap mode set to \"view\".\n\n\n── tmap v3 code detected ───────────────────────────────────────────────────────\n\n[v3-&gt;v4] `tm_polygons()`: instead of `style = \"cat\"`, use fill.scale =\n`tm_scale_categorical()`.\n\n\n\n\n\n\n\n\n\n2 Cuantitativo\n\nmuestra datos numéricos\nmuestra variaciones entre lugares\nnúmeros generalizados"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#tres-medios-de-mapas",
+    "href": "clases/clase4/06_visualizacion.html#tres-medios-de-mapas",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Tres medios de mapas",
+    "text": "Tres medios de mapas\n1. Tangible"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#tres-medios-de-mapas-1",
+    "href": "clases/clase4/06_visualizacion.html#tres-medios-de-mapas-1",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Tres medios de mapas",
+    "text": "Tres medios de mapas\n2. Virtual"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#tres-medios-de-mapas-2",
+    "href": "clases/clase4/06_visualizacion.html#tres-medios-de-mapas-2",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Tres medios de mapas",
+    "text": "Tres medios de mapas\n3. Mental"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#recapitulando-tipos-de-mapas",
+    "href": "clases/clase4/06_visualizacion.html#recapitulando-tipos-de-mapas",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Recapitulando: tipos de mapas",
+    "text": "Recapitulando: tipos de mapas"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#cuál-es-el-proceso-para-crear-un-mapa",
+    "href": "clases/clase4/06_visualizacion.html#cuál-es-el-proceso-para-crear-un-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "¿Cuál es el proceso para crear un mapa?",
+    "text": "¿Cuál es el proceso para crear un mapa?\n\nes una serie de pasos que seguimos para pasar de un conjunto de datos no mapeado a un mapa final\n\n. . .\nPasos\n. . .\n\ndefinir el propósito y significado\n\n. . .\n\nelegir la escala\n\n. . .\n\ndeterminar el formato del mapa (limitaciones de impresión, costo de reproducción, etc)\n\n. . .\n\nresumir y generalizar\n\n. . .\n\ndiseño del mapa"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#definir-el-propósito-y-significado",
+    "href": "clases/clase4/06_visualizacion.html#definir-el-propósito-y-significado",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "1. definir el propósito y significado",
+    "text": "1. definir el propósito y significado\n. . .\n\ninterpretar lo que requiere el usuario\n\n. . .\n\n¿qué se debe comunicar?\n\n. . .\n\n¿cómo comunicar de la mejor forma lo que se quiere representar?"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#elegir-la-escala",
+    "href": "clases/clase4/06_visualizacion.html#elegir-la-escala",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "2. elegir la escala",
+    "text": "2. elegir la escala\nEscala del mapa: relación entre la distancia del mapa y la real.\nFunciona de forma continua, va desde una gran escala a una pequeña escala.\n. . .\nescala grande -&gt; 1:0 - 1:600.000\nescala media -&gt; 1:600.001 - 1:2.000.000\nescala pequeña -&gt; 1:2.000.001 - \\(\\infty\\)\n. . .\n\nLa selección de la escala del mapa es posiblemente la decisión más importante que debe tomar un cartógrafo"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#formato-del-mapa",
+    "href": "clases/clase4/06_visualizacion.html#formato-del-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "3. Formato del mapa",
+    "text": "3. Formato del mapa\n. . .\n\n¿qué tipo de mapa?\n\n. . .\n\n¿cómo se debe visualizar el mapa?\n\n. . .\n\n¿cuánto costará ($) hacer el mapa?"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#resumir-y-generalizar",
+    "href": "clases/clase4/06_visualizacion.html#resumir-y-generalizar",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "4. resumir y generalizar",
+    "text": "4. resumir y generalizar\n. . .\n\nsolo información que es útil para el contexto del mapa debe ser incluida\n\n. . .\n\nse selecciona y organiza la información que es necesaria para comunicar el concepto del mapa a quien revisará el mapa\n\n. . .\n\nse debe reducir la cantidad de detalle en el mapa para crear una visualización simple"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#resumir-y-generalizar-1",
+    "href": "clases/clase4/06_visualizacion.html#resumir-y-generalizar-1",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "4. resumir y generalizar",
+    "text": "4. resumir y generalizar\nCuatro métodos para resumir y generalizar\n\n\nSelección\n\nSimplificación\n\n\nClasificación\n\nSimbología"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#resumir-y-generalizar-2",
+    "href": "clases/clase4/06_visualizacion.html#resumir-y-generalizar-2",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "4. resumir y generalizar",
+    "text": "4. resumir y generalizar\nsimbología\n\nuse símbolos aceptados universalmente cuando sea posible\nasegurese de que los símbolos discretos y continuos se usan adecuadamente\nuse colores aceptados universalmente"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#diseño-del-mapa",
+    "href": "clases/clase4/06_visualizacion.html#diseño-del-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "5. diseño del mapa",
+    "text": "5. diseño del mapa\n\n\nElementos del mapa\n\ncuerpo del mapa\nmarco\ninserciones\nbarra de escala\nleyenda\ntítulo\nflecha norte\nmeta data\ntexto auxiliar\nobjetos auxiliares\ngrilla\netiqueta"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#proceso-de-crear-un-mapa",
+    "href": "clases/clase4/06_visualizacion.html#proceso-de-crear-un-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Proceso de crear un mapa",
+    "text": "Proceso de crear un mapa\n\nes una serie de pasos que seguimos para pasar de un conjunto de datos no mapeado a un mapa final\n\n. . .\n\ndefinir el propósito y significado\nelegir la escala\ndeterminar el formato del mapa, limitaciones de impresión, costo de reproducción\nresumir y generalizar\ndiseño del mapa"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#escala-tamaño-y-forma",
+    "href": "clases/clase4/06_visualizacion.html#escala-tamaño-y-forma",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Escala, tamaño y forma",
+    "text": "Escala, tamaño y forma\n\n\n\nTamaño del objeto principal\nLa forma del objeto principal\nTamaño y forma del medio en el que se producirá"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#escala-tamaño-y-forma-1",
+    "href": "clases/clase4/06_visualizacion.html#escala-tamaño-y-forma-1",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Escala, tamaño y forma",
+    "text": "Escala, tamaño y forma\n\n\n\nTamaño del objeto principal\nLa forma del objeto principal\nTamaño y forma del medio en el que se producirá"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#título",
+    "href": "clases/clase4/06_visualizacion.html#título",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Título",
+    "text": "Título\n\nTamaño dominante\nPone la atención en el propósito del mapa\nDebe ser breve\nTipicamente incluye: dónde, qué y cuando\nSe debe omitir si existe como figura con leyenda (ej, artículo científico)"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#cuerpo-del-mapa",
+    "href": "clases/clase4/06_visualizacion.html#cuerpo-del-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Cuerpo del mapa",
+    "text": "Cuerpo del mapa\n\nel foco principal del mapa\ncontiene características importantes al mensaje del mapa"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#mapa-insertado",
+    "href": "clases/clase4/06_visualizacion.html#mapa-insertado",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Mapa insertado",
+    "text": "Mapa insertado\n\npequeño mapa auxiliar\nde mayor escala que el cuerpo del mapa (generalmente)"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#mapa-insertado-1",
+    "href": "clases/clase4/06_visualizacion.html#mapa-insertado-1",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Mapa insertado",
+    "text": "Mapa insertado\n\nmuestra mayor detalle que el cuerpo del mapa\ndebería mostrar un esquema de las extensiones del mapa insertado en el cuerpo del mapa principal"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#mapa-de-ubicación",
+    "href": "clases/clase4/06_visualizacion.html#mapa-de-ubicación",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Mapa de ubicación",
+    "text": "Mapa de ubicación\n\n\n\npequeño mapa auxiliar\nde menor escala que el cuerpo del mapa\nidentifica la ubicación del cuerpo del mapa\nse utiliza cuando el área no es familiar para el que lee el mapa]"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#escala-del-mapa",
+    "href": "clases/clase4/06_visualizacion.html#escala-del-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Escala del mapa",
+    "text": "Escala del mapa\n\nse utiliza para mediar la relación lineal en el mapa\ntipicamente incluida en los mapas de referencia\na veces incluida en los mapas temáticos\nhay tres tipos de escalas:\n\ngráfica: \nverbal: un milimetro en el mapa corresponden a 100 kilometros\nfracción representativa: 1:100"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#leyenda",
+    "href": "clases/clase4/06_visualizacion.html#leyenda",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Leyenda",
+    "text": "Leyenda\n\nidentifica brevemente características del mapa desconocidas o únicas\npuede llevar título\n\n\n\nLeyenda general mapa de referencia\n\n\n\n\n\nIndicador de dirección\n![](img/fig13.jpg]{width=“150”}\n\nLeyenda de símbolos graduados\nVertical \nanidado"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#flecha-norte",
+    "href": "clases/clase4/06_visualizacion.html#flecha-norte",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Flecha norte",
+    "text": "Flecha norte\n\nnecesaria cuando el lector no está familiarizado con el área en el mapa\nno necesaria en mapas de pequeña escala (ej, global)"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#etiquetas",
+    "href": "clases/clase4/06_visualizacion.html#etiquetas",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Etiquetas",
+    "text": "Etiquetas\n\n\n\nComunica atributos o información auxiliar\nayuda a orientar al lector con el mapa"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#creditosmetadata",
+    "href": "clases/clase4/06_visualizacion.html#creditosmetadata",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Creditos/Metadata",
+    "text": "Creditos/Metadata\n\nSe cita las fuentes de datos usados para crear el mapa\nInformación del autor(es) del mapa\nFecha de cuando fue creado el mapa\nOtra información que explique la creación del mapa\nTipicamente puesta en la parte inferior del mapa y sin énfasis"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#grilla",
+    "href": "clases/clase4/06_visualizacion.html#grilla",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Grilla",
+    "text": "Grilla\n\n\n\nRepresentación visual del sistema de coordenadas o esquema de localización\nincluir la grilla en un mapa para que el lector pueda hacer referencia a ubicaciones de coordenadas en todo el mapa.\nusar divisiones significativas\ntipicamente no utilizada en mapa temáticos"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#marco-del-mapa",
+    "href": "clases/clase4/06_visualizacion.html#marco-del-mapa",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Marco del mapa",
+    "text": "Marco del mapa\n\nTipicamente el marco debe contener el mapa y si es necesario los elementos del mapa\nEl objetivo es proporcionar un marco que lo aisle del resto de los elementos."
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#textos-y-objetos-auxiliares",
+    "href": "clases/clase4/06_visualizacion.html#textos-y-objetos-auxiliares",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Textos y objetos auxiliares",
+    "text": "Textos y objetos auxiliares\n\ninformación adicional que proporciona un mejor entendimiento de el tema del mapa\npuede se texto, gráfico, fotos, etc,…\nindica como se manipularon los datos para ayudar a una mejor interpretación\nindica casos especiales o datos faltámtes"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#buenas-prácticas",
+    "href": "clases/clase4/06_visualizacion.html#buenas-prácticas",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Buenas prácticas",
+    "text": "Buenas prácticas\nUbica los elementos del mapa de forma que …\n\nque su tamaño y posición esté de acuerdo a su importancia\nreducir espacios en blanco\nel diseño del mapa debe estar balanceado"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#código-de-ética-de-la-cartografía",
+    "href": "clases/clase4/06_visualizacion.html#código-de-ética-de-la-cartografía",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Código de ética de la cartografía",
+    "text": "Código de ética de la cartografía\n\nUn objetivo simple\nesforzarce por conocer a su audiencia\nno mentir intencionalmente con los datos\nsiempre muestra toda la información relevante cuando sea posible\nno descarta datos que sean contrarios, solo por ser contrarios\nesforzarce por una representación precisa de los datos\nevitar el plagio\nla seleccion de símbolos no debe sesgar el mapa\nel mapa debe ser repetible\nprestar atención a diferentes valores culturales y principios"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#lectura-recomendada",
+    "href": "clases/clase4/06_visualizacion.html#lectura-recomendada",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Lectura Recomendada",
+    "text": "Lectura Recomendada\nDocumentación QGIS\nManual de entrenamiento QGIS\nhttps://docs.qgis.org/3.28/es/docs/training_manual/index.html"
+  },
+  {
+    "objectID": "clases/clase4/06_visualizacion.html#taller-5-creación-de-un-mapa-básico-con-el-compositor-de-impresión",
+    "href": "clases/clase4/06_visualizacion.html#taller-5-creación-de-un-mapa-básico-con-el-compositor-de-impresión",
+    "title": "Creación de mapas con datos geoespaciales",
+    "section": "Taller 5: Creación de un mapa básico con el compositor de impresión",
+    "text": "Taller 5: Creación de un mapa básico con el compositor de impresión\nDescargar datos desde https://github.com/qgis/QGIS-Training-Data/archive/release_3.28.zip\nRealizar las lecciones\n\nCrear y explorar un mapa básico\n2.2. Añadiendo las primeras capas\n2.4. Lesson: Simbología\nModule: Clasificación de Datos Vectoriales\n3.1. Lesson: Atributos de Datos Vectoriales\n3.2. Lesson: Etiquetas\n3.3. Lesson: Clasificación\nModule: Trazando los mapas\n4.1. Lesson: Usando el Compositor de impresión\n4.2. Lesson: Creando una Impresión de Composición Dinámica\n4.3. Ejercicio 1"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html",
+    "href": "clases/clase3/05_SRC.html",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "",
+    "text": "¿Qué hemos visto?\n\n¿Todos los mapas están mal?\nIntroducción a los SRC\nDatum\nProyecciones\nSistemas de referencia de coordenadas 3D\nSistemas de referencia de coordenadas 2D"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#contenidos",
+    "href": "clases/clase3/05_SRC.html#contenidos",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "",
+    "text": "¿Qué hemos visto?\n\n¿Todos los mapas están mal?\nIntroducción a los SRC\nDatum\nProyecciones\nSistemas de referencia de coordenadas 3D\nSistemas de referencia de coordenadas 2D"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#contenidos-hasta-el-momento",
+    "href": "clases/clase3/05_SRC.html#contenidos-hasta-el-momento",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Contenidos hasta el momento",
+    "text": "Contenidos hasta el momento\n. . .\n\n¿Qué son los SIG y cuáles son sus partes?\n\n. . .\n\nConceptos del Espacio\n\n. . .\n\nModelos de datos geospaciales y sus formatos\n\n. . .\n\nAtributos y tabla de atributos"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#antes-de-empezar..",
+    "href": "clases/clase3/05_SRC.html#antes-de-empezar..",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Antes de empezar..",
+    "text": "Antes de empezar..\n\n¿Es la tierra redonda?\n¿Cómo lo sabemos?\n\nhttps://www.youtube.com/watch?v=JiwFpDuQtFE"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#cuál-es-la-superficie-real",
+    "href": "clases/clase3/05_SRC.html#cuál-es-la-superficie-real",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "¿Cuál es la superficie real?",
+    "text": "¿Cuál es la superficie real?\n\nThe true size of\nPor qué todo los mapas están malos"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#por-qué-necesito-saber-esto",
+    "href": "clases/clase3/05_SRC.html#por-qué-necesito-saber-esto",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "¿Por qué necesito saber esto?",
+    "text": "¿Por qué necesito saber esto?\n\nLos SIG trabajan con información espacial\n\n. . .\n\nLos datos se deben ubicar en una posición en el espacio\n\n. . .\n\nAunque los globos terráqueos son buenos para propósitos de visualización, no son prácticos para otros usos\n\n. . .\n\nUna tierra redonda no se puede ajustar sin distorsión en una hoja de papel plano"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#distorsión-en-un-mapa",
+    "href": "clases/clase3/05_SRC.html#distorsión-en-un-mapa",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Distorsión en un mapa",
+    "text": "Distorsión en un mapa"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#coordenadas",
+    "href": "clases/clase3/05_SRC.html#coordenadas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Coordenadas",
+    "text": "Coordenadas\n\nRepresentar el espacio es importante\n¿Cómo podemos representar este espacio numéricamente?\nSRC 2D y 3D"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#coordenadas-esféricas",
+    "href": "clases/clase3/05_SRC.html#coordenadas-esféricas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Coordenadas esféricas",
+    "text": "Coordenadas esféricas\n\nSolo 3D\nNo ignora la curvatura de la tierra\nUtiliza dos ángulos de rotación (latitud/longitud) y un radio para especificar la ubicación."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#coordenadas-esféricas-1",
+    "href": "clases/clase3/05_SRC.html#coordenadas-esféricas-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Coordenadas esféricas",
+    "text": "Coordenadas esféricas"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#longitud-aka-meridianos",
+    "href": "clases/clase3/05_SRC.html#longitud-aka-meridianos",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Longitud (aka Meridianos)",
+    "text": "Longitud (aka Meridianos)\n\nSe mide de Este a Oeste\nVaría de +180°E a -180° O"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#latitud-aka-paralelos",
+    "href": "clases/clase3/05_SRC.html#latitud-aka-paralelos",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Latitud (aka Paralelos)",
+    "text": "Latitud (aka Paralelos)\n\nSe mide de Norte a Sur\nVaría desde +90°N a -90°S"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#representación-esférica-de-las-coordenadas",
+    "href": "clases/clase3/05_SRC.html#representación-esférica-de-las-coordenadas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Representación esférica de las coordenadas",
+    "text": "Representación esférica de las coordenadas\n\nLatitud y longitud se pueden representar de dos formas\n\nGrados, Minutos, Segundos (GMS)\n\n-34°23’45.23”, +124°12’45.32”\n\nGrados decimales (GD)\n\n-34.395897, 124.212589 (usados por computador)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#coordenadas-cartesianas",
+    "href": "clases/clase3/05_SRC.html#coordenadas-cartesianas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Coordenadas Cartesianas",
+    "text": "Coordenadas Cartesianas\n\nDefine la ubicación y localización espacial\n\n\n\n.2D(x,y)\n\n3D (x,y,z)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#coordenadas-cartesianas-1",
+    "href": "clases/clase3/05_SRC.html#coordenadas-cartesianas-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Coordenadas Cartesianas",
+    "text": "Coordenadas Cartesianas\n\nLos datos SIG tipicamente utilizan el sistema cartesiano\nIgnora la curvatura de la tierra\n\nUsualmente aceptable para áreas pequeñas"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#representación-de-coordenadas-cartesianas",
+    "href": "clases/clase3/05_SRC.html#representación-de-coordenadas-cartesianas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Representación de coordenadas cartesianas",
+    "text": "Representación de coordenadas cartesianas\n\nMuchas representaciones posibles\n\nIncluso puedes crear las tuyas.\n\nRepresentación comun.\n\nSistema de Coordenadas Universal Transversal de Mercator (UTM)\nSistema de coordenadas de plano de estado (SPCS) (Estados Unidos)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#forma-de-la-tierra",
+    "href": "clases/clase3/05_SRC.html#forma-de-la-tierra",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Forma de la tierra",
+    "text": "Forma de la tierra\nGeoide: superficie equipotencial del campo gravitatorio terrestre que coincide con el nivel del agua de mar"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#forma-de-la-tierra-1",
+    "href": "clases/clase3/05_SRC.html#forma-de-la-tierra-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Forma de la tierra",
+    "text": "Forma de la tierra"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#tipos-de-elevaciones",
+    "href": "clases/clase3/05_SRC.html#tipos-de-elevaciones",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Tipos de elevaciones",
+    "text": "Tipos de elevaciones"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#forma-de-la-tierra-2",
+    "href": "clases/clase3/05_SRC.html#forma-de-la-tierra-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Forma de la tierra",
+    "text": "Forma de la tierra\nElipsoide: es la forma geométrica que mejor se adapta a la forma real de la Tierra, y por tanto la que mejor permite idealizar esta, logrando un mayor ajuste."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#definición",
+    "href": "clases/clase3/05_SRC.html#definición",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Definición",
+    "text": "Definición\n. . .\n\nUn datum es una superficie de referencia para poder medir localizaciones en la tierra\n\n. . .\n\nUn datum tiene dos componenetes principales\n\n. . .\n\nespecificaciones de un elipsoide\n\n. . .\n\nconjunto de puntos y líneas que han sido reconocidos y definen el origen y la orientación de las líneas de latitud y longitud\n\n. . .\nVideo: https://www.youtube.com/watch?v=xKGlMp__jog"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#ejemplos-elipsoides",
+    "href": "clases/clase3/05_SRC.html#ejemplos-elipsoides",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Ejemplos Elipsoides",
+    "text": "Ejemplos Elipsoides"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#datum-comunes-en-chile",
+    "href": "clases/clase3/05_SRC.html#datum-comunes-en-chile",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Datum comunes en Chile",
+    "text": "Datum comunes en Chile\n\nProvisional Sudamericano de 1956 (PSAD56)\n\nUtilizado para cartografía 1:50.000 y 1:100.000\nElipsoide internacional de 1924 (Hayford)\nCubre Chile en el rango 17°30° - 43°30’ latitud sur."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#datum-comunes",
+    "href": "clases/clase3/05_SRC.html#datum-comunes",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Datum comunes",
+    "text": "Datum comunes\n\nSudamericano del 1969 (SAD69)\n\nUtilizado para cartografía regular 1:50.000 de la zona austral\nUtilizado para cartografía nacional 1:25.000 de la zona austral\nElipsoide de referencia Sudamericano 1969\nEmpleado desde los 43°30’ a los 56° latitud sur"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#datum-comunes-1",
+    "href": "clases/clase3/05_SRC.html#datum-comunes-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Datum comunes",
+    "text": "Datum comunes\n\nSistema Geodésico Mundial 1984 (WGS84)\n\nBasado en medicones de satélite doppler\nBasado en el elipsoide WGS84, que es similar al elipsoide GRS80\nLos datum no son estáticos y con frecuencia son actualizados y ajustados a lo largo del tiempo.\nWGS84 ha sido actualizado multiples veces."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#datum-verticales",
+    "href": "clases/clase3/05_SRC.html#datum-verticales",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Datum verticales",
+    "text": "Datum verticales\n\nDatum vertical: una referencia para especificar elevación\n\nEstablecido a través de una serie de puntos de control medidos.\n\nNormal Chilena NCh-ISO 19111-2011\n\nSistema de Referencia de Coordenadas Verticales: Sistema de referencia de coordenadas unidimensionales basado en un Datum Vertical.\nSistema de Coordenadas Verticales: sistema de coordenadas unidimensionales usados para mediciones de altura o profundidad relacionada con la gravedad.\nDatum Vertical: datum que describe la relación de alturas o profundidades relacionadas con la gravedad a la tierra."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-1",
+    "href": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Universal Transversal de Mercator (UTM)",
+    "text": "Universal Transversal de Mercator (UTM)\n\nSistema de coordenadas global\n\nDivide la tierra en zonas de 6° de ancho y se extiende desde 80°S a 84°N.\nEnumerados desde 1 a 60 hacia el Este desde 180° O\n\nLas zonas también se dividen en norte y sur de acuerdo al Ecuador\n\n\nUTM es de uso comun para datos y áreas de estudio que cubren regiones extensas.\nLas coordenadas son siempre positivas y especificas en dirección Este (X) y dirección Norte (Y)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-2",
+    "href": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Universal Transversal de Mercator (UTM)",
+    "text": "Universal Transversal de Mercator (UTM)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#utm-chile",
+    "href": "clases/clase3/05_SRC.html#utm-chile",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "UTM Chile",
+    "text": "UTM Chile\n\n\n¿Cuáles husos corresponden a Chile?\n\nHuso 18 Sur (-78° a -72° de longitud)\nHuso 19 Sur (-72° a -66° de longitud)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-3",
+    "href": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-3",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Universal Transversal de Mercator (UTM)",
+    "text": "Universal Transversal de Mercator (UTM)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-4",
+    "href": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-4",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Universal Transversal de Mercator (UTM)",
+    "text": "Universal Transversal de Mercator (UTM)\n\n\n\nEl origen no tiene una coordenada X de 0 metros, sino de 500.000 metros.\nEl origen tiene una coordenada Y de 10.000.000 metros"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-5",
+    "href": "clases/clase3/05_SRC.html#universal-transversal-de-mercator-utm-5",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Universal Transversal de Mercator (UTM)",
+    "text": "Universal Transversal de Mercator (UTM)\n\n\n\nEl origen no tiene una coordenada X de 0 metros, sino de 500.000 metros.\nEl origen tiene una coordenada Y de 10.000.000 metros"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#introducción-a-las-proyecciones",
+    "href": "clases/clase3/05_SRC.html#introducción-a-las-proyecciones",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Introducción a las proyecciones",
+    "text": "Introducción a las proyecciones\n\nProyección geográfica: una representación sistemática de ubicaciones desde la curva superficie terrestre sobre una superficie plana del mapa.\nPropósito:\n\nForma práctica de retratar la curvatura de la tierra en una superficie plana\nEs dificl llevar una esfera en el bolsillo\n\n\nVideo: https://www.youtube.com/watch?v=2LcyMemJ3dE"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#introducción-a-las-proyecciones-1",
+    "href": "clases/clase3/05_SRC.html#introducción-a-las-proyecciones-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Introducción a las proyecciones",
+    "text": "Introducción a las proyecciones"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#introducción-a-las-proyecciones-2",
+    "href": "clases/clase3/05_SRC.html#introducción-a-las-proyecciones-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Introducción a las proyecciones",
+    "text": "Introducción a las proyecciones\n\nIdea ilustrativa básica de un mapa proyectado"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#las-tres-familias-de-proyecciones-cartográficas",
+    "href": "clases/clase3/05_SRC.html#las-tres-familias-de-proyecciones-cartográficas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Las tres familias de proyecciones cartográficas",
+    "text": "Las tres familias de proyecciones cartográficas"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#tipos-de-proyecciones-cartográficas",
+    "href": "clases/clase3/05_SRC.html#tipos-de-proyecciones-cartográficas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Tipos de proyecciones cartográficas",
+    "text": "Tipos de proyecciones cartográficas\nTangente"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#tipos-de-proyecciones-cartográficas-1",
+    "href": "clases/clase3/05_SRC.html#tipos-de-proyecciones-cartográficas-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Tipos de proyecciones cartográficas",
+    "text": "Tipos de proyecciones cartográficas\nSecante"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#orientación-de-proyecciones-cartográficas",
+    "href": "clases/clase3/05_SRC.html#orientación-de-proyecciones-cartográficas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Orientación de proyecciones cartográficas",
+    "text": "Orientación de proyecciones cartográficas"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#precisión-de-las-proyecciones-cartográficas",
+    "href": "clases/clase3/05_SRC.html#precisión-de-las-proyecciones-cartográficas",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Precisión de las proyecciones cartográficas",
+    "text": "Precisión de las proyecciones cartográficas\nTodas las proyecciones tienen alteración de área, forma, distancia y dirección en una proyección geográfica.\n¿Por qué?\nTodos los mapas tienen errores debido al proceso de transformación 3D a 2D\n¿Cómo?\nAl proyectar una superficie esférica en un plano causa un rasgado, deformación o compresión de la superficie."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#precisión-de-las-proyecciones-cartográficas-1",
+    "href": "clases/clase3/05_SRC.html#precisión-de-las-proyecciones-cartográficas-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Precisión de las proyecciones cartográficas",
+    "text": "Precisión de las proyecciones cartográficas\nSon cuatro\n\nArea\nForma\nDistancia\nDirección\n\nEstas cuatro propiedades de proyección de mapa describen cuatro características de una proyección geográfica que pueden ser mantenidas o distorsionadas."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#precisión-de-las-proyecciones-cartográficas-2",
+    "href": "clases/clase3/05_SRC.html#precisión-de-las-proyecciones-cartográficas-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Precisión de las proyecciones cartográficas",
+    "text": "Precisión de las proyecciones cartográficas\n\nPropiedades mayores\n\nÁrea y Forma: mutuamente excluyenetes\n\nPropiedades menores\n\nDistancia y Dirección:\nNo pueden existir en todas partes en un mapa"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#distorción-del-mapa",
+    "href": "clases/clase3/05_SRC.html#distorción-del-mapa",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Distorción del mapa",
+    "text": "Distorción del mapa\n\nSon inevitables cuando se crea un mapa plano a partir de una esféra\n\nLa distorción puede tomar distintas formas en diferentes partes del mapa\nPocos puntos donde la distorsión es cero.\nLa distorción comunmente es menor cerca de los puntos o lineas de intersección dónde la superficie del mapa intersecta la esfera."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#distorción-del-mapa-1",
+    "href": "clases/clase3/05_SRC.html#distorción-del-mapa-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Distorción del mapa",
+    "text": "Distorción del mapa\n\nUn mapa puede presentar una o más - pero nunca todas - al mismo tiempo de las siguientes propiedades\n\nÁrea real\nDistancia real\nDirección real\nForma real"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica de Igual Área",
+    "text": "Proyección Geográfica de Igual Área\nTambién conocido como: proyección geográfica equivalente\nObjetivo: preservar las relaciones de área de todas partes del mundo\nCaracterísticas identificativas:\n\nlos meridianos y paralelos no forman ángulos rectos.\nesta presente la distorsión de distancia\nla forma está sesgada."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área-1",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica de Igual Área",
+    "text": "Proyección Geográfica de Igual Área\nÚtil para:\n\npara mapas temáticos cuantitativos generales\ncuando se desea mantener las propiedades de área"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área-2",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica de Igual Área",
+    "text": "Proyección Geográfica de Igual Área\nProyección cilíndrica de igual área"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área-3",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-de-igual-área-3",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica de Igual Área",
+    "text": "Proyección Geográfica de Igual Área\nHammer-Aitoff"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-conforme",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-conforme",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Conforme",
+    "text": "Proyección Geográfica Conforme\nTambién conocida como: proyección geográfica ortomórfica\nObjetivo: conservar los ángulos alrededor de los puntos y la forma en áreas pequeñas\nmisma escala en todas las direcciones hacia/desde un punto en el mapa\nCaracterísticas identificativas:\n\nmeridianos intersectan paralelos en ángulo recto\nlas áreas están distorsionadas significativamente a escalas pequeñas\nlas formas de regiones grandes pueden estar severamente distorsionadas"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-conforme-1",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-conforme-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Conforme",
+    "text": "Proyección Geográfica Conforme\nÚtil para:\n\nmapas a gran escala\nfenómeno con patrones radiales circulares (transmisiones de radio, direcciones promedio del viento)"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-conforme-2",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-conforme-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Conforme",
+    "text": "Proyección Geográfica Conforme"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-equidistante",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-equidistante",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Equidistante",
+    "text": "Proyección Geográfica Equidistante\nObjetivo: preservar grandes distancias circulares\nse puede mantener la distancia real desde un punto a todos los demás puntos, o desde unos pocos puntos seleccionados a otros, pero no desde todos los puntos a todos los demás puntos\nla escala es uniforme a lo largo de estas líneas que mantienen la distancia real\nCaracterísticas identificativas:\n\nno es de tipo conforme ni de igual área,\nparece menos distorsionado."
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-equidistante-1",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-equidistante-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Equidistante",
+    "text": "Proyección Geográfica Equidistante\nÚtil para\n\nMapas de propósito general\nAtlas"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-equidistante-2",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-equidistante-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Equidistante",
+    "text": "Proyección Geográfica Equidistante\nProyección equidistante cilíndrica"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-acimutal",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-acimutal",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Acimutal",
+    "text": "Proyección Geográfica Acimutal\nTambién conocida como: dirección verdadera\nObjetivo: conserva la dirección de un punto a todos los demás puntos en el mapa.\nEs importante tener en cuenta que la dirección no es la verdadera entre puntos no centrales\nEs útil para\n\npreservar la dirección desde un punto"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-acimutal-1",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-acimutal-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica Acimutal",
+    "text": "Proyección Geográfica Acimutal\nProyección geográfica Azimutal equidistante"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#combinación-de-proyecciones-geográficas-en-una-única-proyección",
+    "href": "clases/clase3/05_SRC.html#combinación-de-proyecciones-geográficas-en-una-única-proyección",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Combinación de proyecciones geográficas en una única proyección",
+    "text": "Combinación de proyecciones geográficas en una única proyección\n\n\n\n.\nIgual Area\nConforme\nEquidistante\nAcimutal\n\n\n\n\nIgual área\n–\nNO\nNO\nSI\n\n\nConforme\nNO\n–\nNO\nSI\n\n\nEquidistante\nNO\nNO\n–\nSI\n\n\nAcimutal\nSI\nSI\nSI\n–"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-de-mínimo-error",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-de-mínimo-error",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica de Mínimo Error",
+    "text": "Proyección Geográfica de Mínimo Error\nTambién conocido como: proyección de compromiso\nObjetivo: Minimizar todas las propiedades de la proyección geográfica\nÚtil para: cartografía geográfica general"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyección-geográfica-de-mínimo-error-1",
+    "href": "clases/clase3/05_SRC.html#proyección-geográfica-de-mínimo-error-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyección Geográfica de Mínimo Error",
+    "text": "Proyección Geográfica de Mínimo Error\nProyección geográfica de Robinson"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#proyecciones-de-forma-interactiva",
+    "href": "clases/clase3/05_SRC.html#proyecciones-de-forma-interactiva",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Proyecciones de forma interactiva",
+    "text": "Proyecciones de forma interactiva"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#qué-es-las-indicatriz-de-tissot",
+    "href": "clases/clase3/05_SRC.html#qué-es-las-indicatriz-de-tissot",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "¿Qué es las indicatriz de Tissot?",
+    "text": "¿Qué es las indicatriz de Tissot?\n\nTodos los mapas proyectados distorsionan la forma, área, dirección y distancia.\nLa indicatriz de Tissor ayuda a cuantificar la distorsión y y propiedades de la proyección.\n\nse compone de círculos inconmensurablemente pequeños centrados en puntos en la tierra\nconsiderar la forma de los circulos antes de proyectar el mapa"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#qué-es-las-indicatriz-de-tissot-1",
+    "href": "clases/clase3/05_SRC.html#qué-es-las-indicatriz-de-tissot-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "¿Qué es las indicatriz de Tissot?",
+    "text": "¿Qué es las indicatriz de Tissot?"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#qué-es-las-indicatriz-de-tissot-2",
+    "href": "clases/clase3/05_SRC.html#qué-es-las-indicatriz-de-tissot-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "¿Qué es las indicatriz de Tissot?",
+    "text": "¿Qué es las indicatriz de Tissot?"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot",
+    "href": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Interpretando la indicatriz de Tissot",
+    "text": "Interpretando la indicatriz de Tissot\nIgual área\n\nLos circulos se transforman en elipses pero mantienen su área\n\nConforme (igual forma)\n\nLos nciruclos se transforman en circulos pero los tamaños varian en el mapa"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-1",
+    "href": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-1",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Interpretando la indicatriz de Tissot",
+    "text": "Interpretando la indicatriz de Tissot"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-2",
+    "href": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-2",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Interpretando la indicatriz de Tissot",
+    "text": "Interpretando la indicatriz de Tissot"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-3",
+    "href": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-3",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Interpretando la indicatriz de Tissot",
+    "text": "Interpretando la indicatriz de Tissot"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-4",
+    "href": "clases/clase3/05_SRC.html#interpretando-la-indicatriz-de-tissot-4",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Interpretando la indicatriz de Tissot",
+    "text": "Interpretando la indicatriz de Tissot"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#propiedades-de-proyección-conforme",
+    "href": "clases/clase3/05_SRC.html#propiedades-de-proyección-conforme",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Propiedades de proyección conforme",
+    "text": "Propiedades de proyección conforme\nProyección de Mercator"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#propiedades-de-projección-de-igual-área",
+    "href": "clases/clase3/05_SRC.html#propiedades-de-projección-de-igual-área",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Propiedades de projección de igual área",
+    "text": "Propiedades de projección de igual área\nProyección plana cuarto polar"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#propiedades-de-proyección-equidistante",
+    "href": "clases/clase3/05_SRC.html#propiedades-de-proyección-equidistante",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Propiedades de proyección equidistante",
+    "text": "Propiedades de proyección equidistante\nProyecicón cilíndrica equidistante"
+  },
+  {
+    "objectID": "clases/clase3/05_SRC.html#indicatriz-de-tissot-interactiva",
+    "href": "clases/clase3/05_SRC.html#indicatriz-de-tissot-interactiva",
+    "title": "Sistema de Referencia de Coordenadas (SRC) y Proyecciones Geográfica",
+    "section": "Indicatriz de Tissot interactiva",
+    "text": "Indicatriz de Tissot interactiva\nhttps://observablehq.com/@d3/tissots-indicatrix"
+  },
+  {
+    "objectID": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html",
+    "href": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html",
+    "title": "Análisis Espaciales con Datos Rasters",
+    "section": "",
+    "text": "Cortar y cortar por mascara (clip and mask)\nMosaico\nCalculadora raster"
+  },
+  {
+    "objectID": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#operaciones-espaciales-con-datos-rasters",
+    "href": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#operaciones-espaciales-con-datos-rasters",
+    "title": "Análisis Espaciales con Datos Rasters",
+    "section": "",
+    "text": "Cortar y cortar por mascara (clip and mask)\nMosaico\nCalculadora raster"
+  },
+  {
+    "objectID": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#cortar-y-enmsacarar-clipo-and-mask",
+    "href": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#cortar-y-enmsacarar-clipo-and-mask",
+    "title": "Análisis Espaciales con Datos Rasters",
+    "section": "Cortar y enmsacarar (clipo and mask)",
+    "text": "Cortar y enmsacarar (clipo and mask)\nCortar: Recorta una parte de un dataset ráster, un dataset de mosaico o una capa de servicio de imágenes.\n\nCortar por mascara: La herramienta extraer por máscara no cambia la extensión del ráster, pero convierte los valores fuera de la entidad de recorte/ráster a NoData."
+  },
+  {
+    "objectID": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#qué-es-un-mosaico",
+    "href": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#qué-es-un-mosaico",
+    "title": "Análisis Espaciales con Datos Rasters",
+    "section": "¿Qué es un mosaico?",
+    "text": "¿Qué es un mosaico?\nUn mosaico es una combinación o fusión de dos o más imágenes. En ArcGIS, puede crear un único dataset ráster a partir de varios datasets ráster disponiéndolos en forma de mosaico. También puede crear un dataset de mosaico y crear un mosaico virtual a partir de una colección de datasets ráster."
+  },
+  {
+    "objectID": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#qué-es-un-mosaico-1",
+    "href": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#qué-es-un-mosaico-1",
+    "title": "Análisis Espaciales con Datos Rasters",
+    "section": "¿Qué es un mosaico?",
+    "text": "¿Qué es un mosaico?\nEn muchos casos, los ejes de los datasets ráster que forman el mosaico presentarán cierto grado de superposición, como puede apreciarse en la ilustración."
+  },
+  {
+    "objectID": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#calculadora-raster",
+    "href": "clases/clase6/Tecnicas_analsis_geoespaciales_rasters.html#calculadora-raster",
+    "title": "Análisis Espaciales con Datos Rasters",
+    "section": "Calculadora raster",
+    "text": "Calculadora raster\nLa herramienta Calculadora ráster permite crear y ejecutar expresiones de Álgebra de mapas en una herramienta."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "",
+    "text": "Es la aplicación de operaciones para manipular o calcular coordenadas y/o atributos de datos relacionados.\nAplicados para resolver problemas como:\n\nRuta de buses\nZonas de inundación\nDeterminación de un sitio adecuado\n\nEl análisis espacial utiliza operaciones espaciales para manipular y calcular.\nAEs: se utilizará para referirse a análisis espacial por el resto de esta clase."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#qué-es-un-análisis-geoespacial",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#qué-es-un-análisis-geoespacial",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "",
+    "text": "Es la aplicación de operaciones para manipular o calcular coordenadas y/o atributos de datos relacionados.\nAplicados para resolver problemas como:\n\nRuta de buses\nZonas de inundación\nDeterminación de un sitio adecuado\n\nEl análisis espacial utiliza operaciones espaciales para manipular y calcular.\nAEs: se utilizará para referirse a análisis espacial por el resto de esta clase."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo-de-aes",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo-de-aes",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejemplo de AEs",
+    "text": "Ejemplo de AEs\nDelimitación de cuenca."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#input-operación-y-output",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#input-operación-y-output",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Input, Operación y Output",
+    "text": "Input, Operación y Output\n\nAEs generalmente usa datos de 1 o más capas para crear un output (salida)\n\nUno a uno\nUno a muchos\nMuchos a uno\nMuchos a muchos\n\nEl output no necesariamente debe ser espacial\n\nEstadísticas\nReporte/Informe"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#técnicas-de-análisis-geoespacial",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#técnicas-de-análisis-geoespacial",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Técnicas de análisis geoespacial",
+    "text": "Técnicas de análisis geoespacial\n\nSelección\nBuffering\nDisolver (dissolve)\nOperaciones de superposición (overlay)\nClasificación\nOperaciones con tablas"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "1. Selección",
+    "text": "1. Selección\n\nLas operaciones de selección identifican objetos que cumplen ciertas condiciones.\nLas condiciones de selección pueden ser espaciales o no espaciales\n\nSelección basada en atributos (no espacial)\nSelección basada en posición (espacial)"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Selección no espacial",
+    "text": "Selección no espacial\nConsulta de tabla de atributos\n\nConsulta de tabla es una operación SIG no espacial muy común.\nSelecciona una submuestra de los registros basado en valores específicos de atributos.\nUtiliza operaciones algebraicas y operadores booleanos"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Selección no espacial",
+    "text": "Selección no espacial\nOperaciones algebraicas\n\nOperaciones:\n\nMenor que &lt;\nMayor que &gt;\nIgual que =\nNo igual a &lt;&gt;\n\nmayor que y menor que no se pueden aplicar a atributos nominales\n\n¿Por qué?\n\nse pueden aplicar solos o en combinación"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial-2",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial-2",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Selección no espacial",
+    "text": "Selección no espacial\nOperaciones algebraicas\nEjemplo\nDatos de riego censo agropecuario 2007 (IDE Minagri). Descargar datos acá\n\nSuperficie de riego mayor a 1000 ha\n\nExpresión: “sup_riego” &gt;1000\n\nSuperficie de riego goteo menor a 10 ha\n\nExpresión: “goteo” &lt;10\n\nTodos los distritos que se encuentran en la región Metropolitana\n\nExpresión: “nom_reg” = ‘Región Metropolitana de Santiago’\n\nTodos los distritos que NO se encuentran en la región Metropolitana\n\nEspresión: “nom_reg” &lt;&gt; ‘Región Metropolitana de Santiago’"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial-3",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-no-espacial-3",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Selección no espacial",
+    "text": "Selección no espacial\nAlgebra booleana (lógicos)\n\nUtiliza condiciones OR, AND o NOT\nLa evaluación se hace asignando a la salida un valor de verdadero (TRUE) o falso (FALSE), a cada condición.\nEl orden de las operaciones no importa"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operadores-y-tablas-de-verdad",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operadores-y-tablas-de-verdad",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Operadores y tablas de verdad",
+    "text": "Operadores y tablas de verdad"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#cuál-es-el-resultado",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#cuál-es-el-resultado",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "¿Cuál es el resultado?",
+    "text": "¿Cuál es el resultado?\n\nNOT (F)\nV AND V\nF OR NOT(V)\nV OR (F OR (V AND V))\n(V AND V) OR F AND (NOT(F) AND V)"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#cuál-es-el-resultado-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#cuál-es-el-resultado-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "¿Cuál es el resultado?",
+    "text": "¿Cuál es el resultado?\n\nNOT (F) -&gt; V\nV AND V -&gt; V\nF OR NOT(V) -&gt; F\nV OR (F OR (V AND V)) -&gt; V\n(V AND V) OR F AND (NOT(F) AND V) -&gt; V"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nRiego Censo agropecuario 2007. Descargar datos acá\n\nSuperificie de riego por goteo distinta de 0 y que perteneza a la región de O’Higgins\n\n(“goteo” &lt;&gt;0) AND (“nom_reg” = ‘Región del Libertador General Bernardo O’‘Higgins’ )\n\n¿Qué pasa si cambio el AND por un OR?\n\n\n(“goteo” &lt;&gt;0) OR (“nom_reg” = ‘Región del Libertador General Bernardo O’‘Higgins’ )\n\n\nSi quiero seleccionar todos los distritos con superficie de riego total a 500 ha o que tengan superficie por goteo mayor a 100 ha y que estén en la región del Maule.\n\n. . .\n\n( “sup_riego” &gt; 500 OR “goteo” &gt;100) AND “nom_reg” = ‘Región del Maule’"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-espacial",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-espacial",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Selección Espacial",
+    "text": "Selección Espacial\nOperaciones espaciales de selección\n\nIntersección: Comprueba si una geometría se cruza con otra. Devuelve 1 (verdadero) si las geometrías se intersecan espacialmente (comparten cualquier parte del espacio, se superponen o se tocan) y 0 si no lo hacen.\nContiene: Devuelve 1 (verdadero) si y solo si ningún punto de b se encuentra en el exterior de a, y al menos un punto del interior de b se encuentra en el interior de a. Esto es lo opuesto a están dentro de.\nInconexo: Devuelve 1 (verdadero) si las geometrías no comparten ninguna porción de espacio (sin superposición, sin tocar).\nIgual: Devuelve 1 (verdadero) si y solo si las geometrías son exactamente iguales."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-espacial-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#selección-espacial-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Selección Espacial",
+    "text": "Selección Espacial\nOperaciones espaciales de selección\n\nTocan: Comprueba si una geometría toca a otra. Devuelve 1 (verdadero) si las geometrías tienen al menos un punto en común, pero sus interiores no se cruzan.\nSuperponer: Comprueba si una geometría se superpone a otra. Devuelve 1 (verdadero) si las geometrías comparten espacio, son de la misma dimensión, pero no están completamente contenidas entre sí.\nEstán dentro: Comprueba si una geometría está dentro de otra. Devuelve 1 (verdadero) si la geometría a está completamente dentro de la geometría b.\nCruza: Devuelve 1 (verdadero) si las geometrías proporcionadas tienen algunos puntos interiores en común, pero no todos, y el cruce real es de una dimensión menor que la geometría proporcionada más alta. Por ejemplo, una línea que cruza un polígono se cruzará como una línea (seleccionada). Dos líneas que se cruzan se cruzarán como un punto (seleccionado). Dos polígonos se cruzan como un polígono (no seleccionado)."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplos",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplos",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nPoligono de rectangulo y circulos. Descargar acá"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffers",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffers",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Buffers",
+    "text": "Buffers\n\nBuffers son regiones que estan a menos de o igual a una distancia desde uno o varios objetos.\n\nLos buffers se pueden crear desde puntos, lineas, poligonos, o raster.\n\nLos buffers son tipicamente usados para identificar areas o objetos que están dentro o fuera desde la distancia umbral.\n\n¿Ejemplos de usos de buffer?"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffering-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffering-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "2. Buffering",
+    "text": "2. Buffering\nBuffer de puntos"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffering-2",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffering-2",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "2. Buffering",
+    "text": "2. Buffering\nBuffer de lineas"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffering-3",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#buffering-3",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "2. Buffering",
+    "text": "2. Buffering\nBuffer de polígonos"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-buffers",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-buffers",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejercicio en QGIS (buffers)",
+    "text": "Ejercicio en QGIS (buffers)\nDatos: descargar desde acá\n\nseleccionar un distrito de Ñuble\ncrear puntos aleatorios y centroide\ncrear buffer para los puntos y para el distrito\n\nTaller: Guardar los dos buffer en un archivo geopackage. Las capas deben estar en SRC geográficas y datums WGS84. Subir en el campus virtual pregunta 1."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#disolver-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#disolver-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Disolver",
+    "text": "Disolver\n\nDisolver combina objetos similares dentro de una capa basado en atributos"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-disolver",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-disolver",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejercicio en QGIS (Disolver)",
+    "text": "Ejercicio en QGIS (Disolver)\nDatos: descargar desde acá\n\nDisolver por provincia y región la capa de comunas de la región Metropolitana.\n\nTaller: Guardar los resultados de la operación de disolver en un archivo geopackage. Las capas deben estar en SRC UTM y datums WGS84 Huso 19S. Subir en el campus virtual pregunta 2."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-de-superposición-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-de-superposición-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "4. Operaciones de superposición",
+    "text": "4. Operaciones de superposición\n\nConsideran la combinación de datos y atributos espaciales de dos o más capas espaciales.\n\nMuy poderosa y popular aplicación\n¿Ejemplos de superposición?\n\nSuperposición requiere que los datos esten en el mismo sistema de coordenadas"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#superposición-vectorial",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#superposición-vectorial",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "4. Superposición vectorial",
+    "text": "4. Superposición vectorial\n\nConsidera combinar geometrias de tipo punto, linea, poligono y sus atributos.\n\nLa superposición crea nuevas geometrías.\n\nEl resultado puede generar grandes tablas de atributos si la operación de superposición combina muchas capas.\n\nel duplicado de atributos también puede suceder"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#casos-básicos-de-superposición---cortar",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#casos-básicos-de-superposición---cortar",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Casos básicos de superposición - Cortar",
+    "text": "Casos básicos de superposición - Cortar\n\nCortar define el área de salida del objeto espacial basado en un póligono cortado\nLos atributos de la capa de corte no son pasados al objeto cortado final, solo los del objeto de entrada."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#casos-básicos-de-superposición---intersección",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#casos-básicos-de-superposición---intersección",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Casos básicos de superposición - Intersección",
+    "text": "Casos básicos de superposición - Intersección\n\nCombina los datos de los dos objetos, pero solo para regiones en que ambos objetos se intersectan.\nSimilar a cortar pero en este caso los atributos del poligono de corte son pasados al objeto de salida."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#casos-básicos-de-superposición---unión",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#casos-básicos-de-superposición---unión",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Casos básicos de superposición - Unión",
+    "text": "Casos básicos de superposición - Unión\n\nUnión es una operación de superposición que incluye todos los datos de los dos objetos.\nNo se descartan objetos espaciales en la unión y los atributos correspondientes son almacenados para todas las regiones."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-superposición",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-superposición",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejercicio en QGIS (superposición)",
+    "text": "Ejercicio en QGIS (superposición)\nDatos: descargar desde acá\n\nUtilice el poligono de superposición para cortar los distritos de la región de Ñuble. Guarde la capa en un archivo geopackage en SRC geográficas y datum WGS84.\nUtilice el poligono de superposición para unir con los distritos de la región de Ñuble. Guarde la capa en un archivo geopackage en SRC geográficas y datum WGS84.\nUtilice el poligono de superposición para intersectar con los distritos de la región de Ñuble. Guarde la capa en un archivo geopackage en SRC geográficas y datum WGS84.\nCompare las tablas de atributos\n\nTaller: Guardar los resultados de la operación de superposición en un archivo geopackage. Subir en el campus virtual pregunta 3."
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#problemas-de-superposición-vectorial",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#problemas-de-superposición-vectorial",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Problemas de superposición vectorial",
+    "text": "Problemas de superposición vectorial\n\nObjetos de entrada representen entidades comunes que se representan en ambas capas, pueden tener una geometría ligeramente diferente.\nEsto crea polígonos de astilla cuando las operaciones de astilla son realizadas.\nExisten diferentes técnicas para reducir la ocurrencia de polígonos de astilla"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejemplo",
+    "text": "Ejemplo"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo-2",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejemplo-2",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejemplo",
+    "text": "Ejemplo"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas-1",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas-1",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Operaciones con tablas",
+    "text": "Operaciones con tablas\n\nCombinar tablas de atributos es una poderosa herramienta de análisis\nTres tipos comunes de operaciones con tablas:\n\nIntersección\nUnión\nJuntar (Join)"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas---intersección",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas---intersección",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Operaciones con tablas - Intersección",
+    "text": "Operaciones con tablas - Intersección"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas---unión",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas---unión",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Operaciones con tablas - Unión",
+    "text": "Operaciones con tablas - Unión"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas---juntar",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#operaciones-con-tablas---juntar",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Operaciones con tablas - Juntar",
+    "text": "Operaciones con tablas - Juntar"
+  },
+  {
+    "objectID": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-juntar-tablas",
+    "href": "clases/clase5/Tecnicas_analsis_geoespaciales.html#ejercicio-en-qgis-juntar-tablas",
+    "title": "Análisis Espaciales con Datos Vectoriales",
+    "section": "Ejercicio en QGIS (juntar tablas)",
+    "text": "Ejercicio en QGIS (juntar tablas)\nDatos: descargar desde acá\n\nRealice la unión de las tablas de atributos de los distritos de linares para superficie de riego y superficie forestal.\nElimine los atributos duplicados.\nGuarde la capa resultante en un archivo geopackage con SRC geográfica y datum WGS84.\n\nTaller: Guardar los resultados de la operación de union en un archivo geopackage. Subir en el campus virtual pregunta 4."
+  }
+]
